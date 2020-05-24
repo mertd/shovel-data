@@ -70,7 +70,7 @@ func readFilesToArray(files []string) []string {
 
 func addAppName(manifest string, name string) string {
 	runes := []rune(manifest)
-	manifest = string(runes[1 : len(runes)-1])
+	manifest = string(runes[2 : len(runes)-1])
 	manifest = "{ \"name\": \"" + name + "\"," + manifest
 	return manifest
 }

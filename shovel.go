@@ -62,10 +62,17 @@ func readFilesToArray(files []string) []string {
 		dat, err := ioutil.ReadFile(files[i])
 		catch(err, "", "")
 		name := extractAppName(files[i])
-		log.Println(name)
-		result = append(result, string(dat))
+		manifest := addAppName(string(dat), name)
+		result = append(result, manifest)
 	}
 	return result
+}
+
+func addAppName(manifest string, name string) string {
+	runes := []rune(manifest)
+	manifest = string(runes[1 : len(runes)-1])
+	manifest = "{ \"name\": \"" + name + "\"," + manifest
+	return manifest
 }
 
 func extractAppName(path string) string {

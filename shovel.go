@@ -61,9 +61,26 @@ func readFilesToArray(files []string) []string {
 	for i := 0; i < len(files); i++ {
 		dat, err := ioutil.ReadFile(files[i])
 		catch(err, "", "")
-		result = append(result, string(dat))
+		name := extractAppName(files[i])
+		manifest := addAppName(string(dat), name)
+		result = append(result, manifest)
 	}
 	return result
+}
+
+func addAppName(manifest string, name string) string {
+	runes := []rune(manifest)
+	manifest = string(runes[1 : len(runes)-1])
+	manifest = "{ \"name\": \"" + name + "\"," + manifest
+	return manifest
+}
+
+func extractAppName(path string) string {
+	pathParts := strings.Split(path, "\\")
+	nameWithJSON := pathParts[len(pathParts)-1]
+	jsonParts := strings.Split(nameWithJSON, ".json")
+	name := jsonParts[0]
+	return name
 }
 
 func clean() {

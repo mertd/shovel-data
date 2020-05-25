@@ -56,31 +56,32 @@ func clone(url string) {
 }
 
 func readFilesToArray(files []string) []string {
-	log.Println("Reading manifests")
+	log.Println("Reading manifests and gathering additional data")
 	var result []string
 	for i := 0; i < len(files); i++ {
 		dat, err := ioutil.ReadFile(files[i])
 		catch(err, "", "")
-		name := extractAppName(files[i])
-		manifest := addAppName(string(dat), name)
+		name, bucket := extractManifestDetails(files[i])
+		manifest := addManifestDetails(string(dat), name, bucket)
 		result = append(result, manifest)
 	}
 	return result
 }
 
-func addAppName(manifest string, name string) string {
+func addManifestDetails(manifest string, name string, bucket string) string {
 	runes := []rune(manifest)
 	manifest = string(runes[2 : len(runes)-1])
-	manifest = "{ \"name\": \"" + name + "\"," + manifest
+	manifest = "{ \"name\": \"" + name + "\", \"bucket\": \"" + bucket + "\", " + manifest
 	return manifest
 }
 
-func extractAppName(path string) string {
+func extractManifestDetails(path string) (string, string) {
 	pathParts := strings.Split(path, "\\")
+	bucket := pathParts[0]
 	nameWithJSON := pathParts[len(pathParts)-1]
 	jsonParts := strings.Split(nameWithJSON, ".json")
 	name := jsonParts[0]
-	return name
+	return name, bucket
 }
 
 func clean() {

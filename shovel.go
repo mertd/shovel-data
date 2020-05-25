@@ -56,7 +56,7 @@ func clone(url string) {
 }
 
 func readFilesToArray(files []string) []string {
-	log.Println("Reading manifests")
+	log.Println("Reading manifests and gathering additional data")
 	var result []string
 	for i := 0; i < len(files); i++ {
 		dat, err := ioutil.ReadFile(files[i])

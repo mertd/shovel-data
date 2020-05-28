@@ -14,14 +14,7 @@ import (
 
 func main() {
 	cleanOldRuns()
-	// clone buckets
-	buckets := []string{
-		"https://github.com/ScoopInstaller/Main.git",
-		"https://github.com/lukesampson/scoop-extras.git",
-	}
-	for i := 0; i < len(buckets); i++ {
-		clone(buckets[i])
-	}
+	cloneBuckets()
 	// get a list of all json files
 	files, err := filepath.Glob("./*/bucket/*.json")
 	catch(err, "", "")
@@ -33,6 +26,25 @@ func main() {
 	log.Println("Writing manifests to file")
 	write("manifests.json", filesString)
 	log.Println("Done")
+}
+
+func cloneBuckets() {
+	buckets := []string{
+		"main": "https://github.com/ScoopInstaller/Main",
+		"extras": "https://github.com/lukesampson/scoop-extras",
+		"versions": "https://github.com/ScoopInstaller/Versions",
+		"nightlies": "https://github.com/ScoopInstaller/Nightlies",
+		"nirsoft": "https://github.com/kodybrown/scoop-nirsoft",
+		"php": "https://github.com/ScoopInstaller/PHP",
+		"nerd-fonts": "https://github.com/matthewjberger/scoop-nerd-fonts",
+		"nonportable": "https://github.com/TheRandomLabs/scoop-nonportable",
+		"java": "https://github.com/ScoopInstaller/Java",
+		"games": "https://github.com/Calinou/scoop-games",
+		"jetbrains": "https://github.com/Ash258/Scoop-JetBrains"
+	}
+	for i := 0; i < len(buckets); i++ {
+		clone(buckets[i])
+	}
 }
 
 func write(filename string, content string) {

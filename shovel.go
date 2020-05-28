@@ -13,8 +13,7 @@ import (
 )
 
 func main() {
-	// clean up old runs
-	clean()
+	cleanOldRuns()
 	// clone buckets
 	buckets := []string{
 		"https://github.com/ScoopInstaller/Main.git",
@@ -84,7 +83,7 @@ func extractManifestDetails(path string) (string, string) {
 	return name, bucket
 }
 
-func clean() {
+func cleanOldRuns() {
 	log.Println("Cleaning up previous runs (if any)")
 	files, err := filepath.Glob("./*/*")
 	catch(err, "", "")

@@ -13,16 +13,8 @@ import (
 )
 
 func main() {
-	// clean up old runs
-	clean()
-	// clone buckets
-	buckets := []string{
-		"https://github.com/ScoopInstaller/Main.git",
-		"https://github.com/lukesampson/scoop-extras.git",
-	}
-	for i := 0; i < len(buckets); i++ {
-		clone(buckets[i])
-	}
+	cleanOldRuns()
+	cloneBuckets()
 	// get a list of all json files
 	files, err := filepath.Glob("./*/bucket/*.json")
 	catch(err, "", "")
@@ -36,6 +28,31 @@ func main() {
 	log.Println("Done")
 }
 
+// A Bucket consists of its name and a git url
+type Bucket struct {
+	name string
+	url  string
+}
+
+func cloneBuckets() {
+	buckets := []Bucket{
+		Bucket{"main", "https://github.com/ScoopInstaller/Main"},
+		Bucket{"extras", "https://github.com/lukesampson/scoop-extras"},
+		Bucket{"versions", "https://github.com/ScoopInstaller/Versions"},
+		Bucket{"nightlies", "https://github.com/ScoopInstaller/Nightlies"},
+		Bucket{"nirsoft", "https://github.com/kodybrown/scoop-nirsoft"},
+		Bucket{"php", "https://github.com/ScoopInstaller/PHP"},
+		Bucket{"nerd-fonts", "https://github.com/matthewjberger/scoop-nerd-fonts"},
+		Bucket{"nonportable", "https://github.com/TheRandomLabs/scoop-nonportable"},
+		Bucket{"java", "https://github.com/ScoopInstaller/Java"},
+		Bucket{"games", "https://github.com/Calinou/scoop-games"},
+		Bucket{"jetbrains", "https://github.com/Ash258/Scoop-JetBrains"},
+	}
+	for i := 0; i < len(buckets); i++ {
+		clone(buckets[i])
+	}
+}
+
 func write(filename string, content string) {
 	file, err := os.Create("docs/" + filename)
 	catch(err, "", "")
@@ -44,11 +61,11 @@ func write(filename string, content string) {
 	catch(err, "", "")
 }
 
-func clone(url string) {
-	log.Println("Cloning bucket repository " + url)
+func clone(bucket Bucket) {
+	log.Println("Cloning bucket repository " + bucket.name)
 	var stdout bytes.Buffer
 	var stderr bytes.Buffer
-	cmd := exec.Command("git", "clone", url)
+	cmd := exec.Command("git", "clone", bucket.url, bucket.name)
 	cmd.Stdout = &stdout
 	cmd.Stderr = &stderr
 	err := cmd.Run()
@@ -84,7 +101,7 @@ func extractManifestDetails(path string) (string, string) {
 	return name, bucket
 }
 
-func clean() {
+func cleanOldRuns() {
 	log.Println("Cleaning up previous runs (if any)")
 	files, err := filepath.Glob("./*/*")
 	catch(err, "", "")

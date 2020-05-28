@@ -28,6 +28,7 @@ func main() {
 	log.Println("Done")
 }
 
+// A Bucket consists of its name and a git url
 type Bucket struct {
 	name string
 	url  string

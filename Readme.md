@@ -2,9 +2,11 @@
 
 A script that checks out all supported [scoop](https://scoop.sh/) buckets and collects the manifests in one searchable json file.
 
+Use [Shovel](https://shovel.sh) to access the search.
+
 ## Motivation
 
-This can be prework for a SPA that allows to search for scoop apps without having to run a server. Also, I wanted to try out Go.
+This is the prework for the [Shovel](https://shovel.sh) SPA that allows to search for scoop apps without having to run a server. Also, I wanted to try out Go.
 
 ## Run
 
@@ -14,10 +16,12 @@ This can be prework for a SPA that allows to search for scoop apps without havin
 
 `https://mertd.github.io/shovel-data/manifests.json`
 
-## Licence && Attribution
+# Licence
 
 MIT
 
-The manifests included in this repository were originally created and are maintained by contributors to the following scoop buckets:
-* [main](https://github.com/ScoopInstaller/Main)
-* [extras](https://github.com/lukesampson/scoop-extras)
+# Attribution
+
+Refer to `Attribution.md`.
+
+If a bucket you are looking for is not supported, it either is not a [known bucket](https://github.com/lukesampson/scoop/blob/master/buckets.json) or its licence is, in my amateur knowledge of the law (I am not a lawyer), incompatible with the MIT licence.

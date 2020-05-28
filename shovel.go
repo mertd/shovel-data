@@ -42,11 +42,9 @@ func cloneBuckets() {
 		Bucket{"nightlies", "https://github.com/ScoopInstaller/Nightlies"},
 		Bucket{"nirsoft", "https://github.com/kodybrown/scoop-nirsoft"},
 		Bucket{"php", "https://github.com/ScoopInstaller/PHP"},
-		Bucket{"nerd-fonts", "https://github.com/matthewjberger/scoop-nerd-fonts"},
 		Bucket{"nonportable", "https://github.com/TheRandomLabs/scoop-nonportable"},
 		Bucket{"java", "https://github.com/ScoopInstaller/Java"},
 		Bucket{"games", "https://github.com/Calinou/scoop-games"},
-		Bucket{"jetbrains", "https://github.com/Ash258/Scoop-JetBrains"},
 	}
 	for i := 0; i < len(buckets); i++ {
 		clone(buckets[i])

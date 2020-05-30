@@ -40,7 +40,7 @@ func cloneBuckets() {
 		Bucket{"extras", "https://github.com/lukesampson/scoop-extras"},
 		Bucket{"versions", "https://github.com/ScoopInstaller/Versions"},
 		Bucket{"nightlies", "https://github.com/ScoopInstaller/Nightlies"},
-		Bucket{"nirsoft", "https://github.com/kodybrown/scoop-nirsoft"},
+		// Bucket{"nirsoft", "https://github.com/kodybrown/scoop-nirsoft"}, contains faulty manifest insideclipboard
 		Bucket{"php", "https://github.com/ScoopInstaller/PHP"},
 		Bucket{"nonportable", "https://github.com/TheRandomLabs/scoop-nonportable"},
 		Bucket{"java", "https://github.com/ScoopInstaller/Java"},

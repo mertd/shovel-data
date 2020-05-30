@@ -47,4 +47,4 @@ jobs:
 
     - name: Push
       run: |
-        git push origin master
+        git push origin HEAD:${{ github.ref }}

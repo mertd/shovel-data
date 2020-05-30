@@ -91,7 +91,8 @@ func addManifestDetails(manifest string, name string, bucket string) string {
 }
 
 func extractManifestDetails(path string) (string, string) {
-	pathParts := strings.Split(path, "\\")
+	separator := string(os.PathSeparator)
+	pathParts := strings.Split(path, separator)
 	bucket := pathParts[0]
 	nameWithJSON := pathParts[len(pathParts)-1]
 	jsonParts := strings.Split(nameWithJSON, ".json")

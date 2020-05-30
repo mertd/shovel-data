@@ -27,7 +27,8 @@ jobs:
       uses: actions/checkout@v2
       with:
         fetch-depth: 0
-
+        ref: master
+        
     - name: Get dependencies
       run: |
         go get -v -t -d ./...
@@ -47,4 +48,4 @@ jobs:
 
     - name: Push
       run: |
-        git push origin HEAD:${{ github.ref }}
+        git push origin master

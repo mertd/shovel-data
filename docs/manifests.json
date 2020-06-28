@@ -20,12 +20,12 @@
         "url": "https://3rvx.com/releases/3RVX-$version.zip"
     }
 },{ "name": "7tt", "bucket": "extras", 
-    "homepage": "https://rammichael.com/7-taskbar-tweaker",
+    "version": "5.9",
     "description": "Allows you to configure various aspects of the Windows taskbar.",
-    "version": "5.8",
+    "homepage": "https://rammichael.com/7-taskbar-tweaker",
     "license": "Unknown",
     "url": "https://rammichael.com/downloads/7tt_setup.exe",
-    "hash": "4aa13d0fa8f746299f08c54997f581e5f9ad881be3b5e932004658ed624defcc",
+    "hash": "e090a1939f6e389201b0df3667e0ec2185f7fdedd97eb37dd8dfa1934cf0d5ce",
     "bin": "7+ Taskbar Tweaker.exe",
     "pre_install": "if(!(test-path \"$persist_dir\\7+ Taskbar Tweaker.ini\")) { Add-Content \"$dir\\7+ Taskbar Tweaker.ini\" \"[Config]`r`nupdcheckauto=0`r`nupdcheck=0\" }",
     "installer": {
@@ -42,10 +42,7 @@
             "7+ Taskbar Tweaker"
         ]
     ],
-    "checkver": {
-        "url": "https://rammichael.com/7-taskbar-tweaker",
-        "re": "Latest version: v([\\d.]+)"
-    },
+    "checkver": "Latest version: v([\\d.]+)",
     "autoupdate": {
         "url": "https://rammichael.com/downloads/7tt_setup.exe"
     }
@@ -1534,12 +1531,12 @@
         "url": "https://distfiles.audacious-media-player.org/audacious-$version-win32.zip"
     }
 },{ "name": "audacity", "bucket": "extras", 
-    "version": "2.4.1",
+    "version": "2.4.2",
     "description": "An easy-to-use, multi-track audio editor and recorder.",
     "homepage": "https://www.audacityteam.org",
     "license": "GPL-2.0-or-later",
-    "url": "https://fossies.org/windows/misc/audacity-2.4.1.zip",
-    "hash": "23f388b22974eb9ee05672e52d34971000e9c5656551bfe9b348e16ac1c5e495",
+    "url": "https://fossies.org/windows/misc/audacity-2.4.2.zip",
+    "hash": "0c14f7c6850c93b9dacc14fe66876b8dc3397d92dbd849898783a21bad1fff55",
     "bin": "audacity.exe",
     "shortcuts": [
         [
@@ -2973,7 +2970,7 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/cabal-club/cabal-desktop/releases/download/v6.0.4/cabal-desktop-6.0.4-windows.exe#/dl.7z",
-            "hash": "2850c72564c4a583779cdabd340130141e73808b798410bc59e6d5684849dddf"
+            "hash": "sha512:8613ea80e1fbebefb13672c1ec4be9396460fb6ee32798be33bc3ff6b460c0d1f01718c2668a50d440ebeaa670745d9e370f671a766165d736fec6d2e9acf7da"
         }
     },
     "bin": "Cabal.exe",
@@ -2995,7 +2992,11 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/cabal-club/cabal-desktop/releases/download/v$version/cabal-desktop-$version-windows.exe#/dl.7z"
+                "url": "https://github.com/cabal-club/cabal-desktop/releases/download/v$version/cabal-desktop-$version-windows.exe#/dl.7z",
+                "hash": {
+                    "url": "$baseurl/latest.yml",
+                    "regex": "sha512: $base64"
+                }
             }
         }
     }
@@ -3264,12 +3265,12 @@
         "extract_dir": "CapFrameX_v$version_Portable"
     }
 },{ "name": "caprine", "bucket": "extras", 
-    "version": "2.47.0",
+    "version": "2.48.0",
     "description": "Elegant Facebook Messenger desktop app",
     "homepage": "https://sindresorhus.com/caprine/",
     "license": "MIT",
-    "url": "https://github.com/sindresorhus/caprine/releases/download/v2.47.0/Caprine-Setup-2.47.0.exe#/dl.7z",
-    "hash": "sha512:df3332f4eaeef2985c238da53a2803b5ec18355a14727b5148a6066435725490d2605f534f04cd01238d1d1713f2727ebcb174496eda9faac567dea4514895eb",
+    "url": "https://github.com/sindresorhus/caprine/releases/download/v2.48.0/Caprine-Setup-2.48.0.exe#/dl.7z",
+    "hash": "sha512:881f4adeb2ac3829014dda864e1e6203acc89965b930d12bbe0e27bb5210b401a75ab4c844f4d4d3d96e819646ce4927956a12a254ee4231fce2327783eb946e",
     "architecture": {
         "64bit": {
             "installer": {
@@ -3829,10 +3830,10 @@
         }
     }
 },{ "name": "chromium-dev-nosync", "bucket": "extras", 
-    "version": "85.0.4148.0-r769185",
+    "version": "86.0.4185.0-r769185",
     "description": "An open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
-    "license": "BSD-3-Clause",
     "homepage": "https://www.chromium.org",
+    "license": "BSD-3-Clause",
     "checkver": {
         "url": "https://chromium.woolyss.com/api/v3/?os=windows&bit=64&type=dev-codecs-nosync&out=json",
         "jsonpath": "$.chromium.windows.download",
@@ -3853,8 +3854,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/macchrome/chromium/releases/download/v85.0.4148.0-r769185-Win64/Chrome-bin.7z",
-            "hash": "b590dbb77858c445022523afc1fc1e093ac82df8c3c4be3ddeed724df3860c3b",
+            "url": "https://github.com/macchrome/chromium/releases/download/v86.0.4185.0-r769185-Win64/Chrome-bin.7z",
+            "hash": "27391478d226e438395b95e6c16ae1fe8b61f6ef519db74534ebee697805c480",
             "extract_dir": "Chrome-bin"
         }
     },
@@ -4961,18 +4962,18 @@
         }
     }
 },{ "name": "cudatext", "bucket": "extras", 
-    "version": "1.105.8.0",
+    "version": "1.106.0.0",
     "description": "Text editor",
     "homepage": "http://uvviewsoft.com/cudatext/",
     "license": "MPL-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://www.fosshub.com/CudaText.html/cudatext-win-x64-1.105.8.0.zip",
-            "hash": "c0b799141c3b3e17c26e637b2ca56c4806b3c6af1b2124a4c660efdf51133179"
+            "url": "https://www.fosshub.com/CudaText.html/cudatext-win-x64-1.106.0.0.zip",
+            "hash": "7e54b14a0ada728846e83a66c94dfb5907210912c912005d374ee629eca8a0f4"
         },
         "32bit": {
-            "url": "https://www.fosshub.com/CudaText.html/cudatext-win-x32-1.105.8.0.zip",
-            "hash": "0fc2501f190a23a4fbd7cb170545a8b06a2fc414210653be9c7d23484c9b8f98"
+            "url": "https://www.fosshub.com/CudaText.html/cudatext-win-x32-1.106.0.0.zip",
+            "hash": "bbd071eb01e58f2c277f16c1c8c1c341bf198f22d7426b217d54f5bcc418240b"
         }
     },
     "bin": "cudatext.exe",
@@ -5349,13 +5350,13 @@
         }
     }
 },{ "name": "ddu", "bucket": "extras", 
-    "version": "18.0.2.5",
-    "homepage": "https://www.wagnardsoft.com/",
+    "version": "18.0.2.6",
     "description": "Driver removal utility that can help you completely uninstall AMD/NVIDIA graphics card drivers and packages from your system, without leaving leftovers behind (including registry keys, folders and files, driver store)",
+    "homepage": "https://www.wagnardsoft.com/",
     "license": "Unknown",
-    "url": "https://www.wagnardsoft.com/DDU/download/DDU%20v18.0.2.5.exe#/dl.7z",
-    "hash": "sha1:95172f86245568a5925c3c272b6ceab44038fe07",
-    "extract_dir": "DDU v18.0.2.5",
+    "url": "https://www.wagnardsoft.com/DDU/download/DDU%20v18.0.2.6.exe#/dl.7z",
+    "hash": "sha1:607e5378cc80c4886a5bcab97beb5136d5a55293",
+    "extract_dir": "DDU v18.0.2.6",
     "shortcuts": [
         [
             "Display Driver Uninstaller.exe",
@@ -6447,18 +6448,18 @@
         "extract_dir": "dotpeek-$version"
     }
 },{ "name": "doublecmd", "bucket": "extras", 
+    "version": "0.9.9",
     "description": "Cross platform open source file manager with two panels side by side inspired by Total Commander.",
     "homepage": "https://doublecmd.sourceforge.io/",
     "license": "GPL-2.0-only",
-    "version": "0.9.8",
     "architecture": {
         "64bit": {
-            "url": "https://downloads.sourceforge.net/project/doublecmd/DC%20for%20Windows%2064%20bit/Double%20Commander%200.9.8%20beta/doublecmd-0.9.8.x86_64-win64.msi",
-            "hash": "sha1:b122e744142de0b3666c1c9e3a508b178deaaafb"
+            "url": "https://downloads.sourceforge.net/project/doublecmd/DC%20for%20Windows%2064%20bit/Double%20Commander%200.9.9%20beta/doublecmd-0.9.9.x86_64-win64.msi",
+            "hash": "sha1:53aba81b88cb574f7f5833837bf352654c7d17a8"
         },
         "32bit": {
-            "url": "https://downloads.sourceforge.net/project/doublecmd/DC%20for%20Windows%2032%20bit/Double%20Commander%200.9.8%20beta/doublecmd-0.9.8.i386-win32.msi",
-            "hash": "sha1:b2c84ff99a8c2e9ad3ce9128aa942aac9faaa32f"
+            "url": "https://downloads.sourceforge.net/project/doublecmd/DC%20for%20Windows%2032%20bit/Double%20Commander%200.9.9%20beta/doublecmd-0.9.9.i386-win32.msi",
+            "hash": "sha1:2f4555038e051d31ac6cc6eba09489af6c4c28a9"
         }
     },
     "extract_dir": "Double Commander",
@@ -8886,18 +8887,18 @@
         }
     }
 },{ "name": "firefox-nightly", "bucket": "extras", 
-    "version": "79.0a1.20200626094540",
+    "version": "79.0a1.20200627093832",
     "description": "Nightly builds of Firefox: the popular open source web browser.",
     "homepage": "https://www.mozilla.org/en-US/firefox/nightly/",
     "license": "MPL-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://archive.mozilla.org/pub/firefox/nightly/2020/06/2020-06-26-09-45-40-mozilla-central/firefox-79.0a1.en-US.win64.installer.exe#/dl.7z",
-            "hash": "sha512:db445421b26f56aced84502488da9bfc2780c7ddffbf203604ce1232b614ba6595e7ef0da5212493289c35cbecff784aa86f7ad04d84fc7ad054848aabd02c3a"
+            "url": "https://archive.mozilla.org/pub/firefox/nightly/2020/06/2020-06-27-09-38-32-mozilla-central/firefox-79.0a1.en-US.win64.installer.exe#/dl.7z",
+            "hash": "sha512:b41dac1a368473dbd2c92897c30fb338d2b274c854387a6a83e3d5f9ccec83e81603c0fdcc9edab52b18e9629e10dc4d1912e912d87b06c55be37b1b40176a12"
         },
         "32bit": {
-            "url": "https://archive.mozilla.org/pub/firefox/nightly/2020/06/2020-06-26-09-45-40-mozilla-central/firefox-79.0a1.en-US.win32.installer.exe#/dl.7z",
-            "hash": "sha512:9e439e9e50d02ade5d3fa12a6f98328e4a2f371aab1949e1369d0c61bd130c666da2c69bd8832463abfbc61e537eadaca4a05ef914e94889b9bce98a5f6646d4"
+            "url": "https://archive.mozilla.org/pub/firefox/nightly/2020/06/2020-06-27-09-38-32-mozilla-central/firefox-79.0a1.en-US.win32.installer.exe#/dl.7z",
+            "hash": "sha512:974e7bf2a7ef1cadc1d78116ee2fad0deedfc8fcedd966333f66f90aecdd6a37bcfc484ed39cac8836a8684e1e3af3337f735c6d5ef302a6e269e84dbd015135"
         }
     },
     "extract_dir": "core",
@@ -11004,7 +11005,7 @@
         }
     }
 },{ "name": "googlechrome-canary", "bucket": "extras", 
-    "version": "85.0.4181.0",
+    "version": "86.0.4184.0",
     "description": "Fast, secure, and free web browser, built for the modern web.",
     "homepage": "https://www.google.com/chrome/canary",
     "license": {
@@ -11013,12 +11014,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://dl.google.com/release2/chrome/WrP8StawSOzNbYvkfv2JYg_85.0.4181.0/85.0.4181.0_chrome_installer.exe#/dl.7z",
-            "hash": "f57f4bcbc9cc031d61c6d573eb136c7c33fde2ee8a561a4a0adda368575c17b6"
+            "url": "https://dl.google.com/release2/chrome/AIRc0IZYqmA3qZ7iG5UVmKg_86.0.4184.0/86.0.4184.0_chrome_installer.exe#/dl.7z",
+            "hash": "423108e99a4715a9a38496a0e9a80dae16038f2a5d2e602dc9e43531afcd1f18"
         },
         "32bit": {
-            "url": "https://dl.google.com/release2/chrome/AO-abQDozciQFmc7q66Jd5Y_85.0.4181.0/85.0.4181.0_chrome_installer.exe#/dl.7z",
-            "hash": "96c3836556731c118ad35a37b0e53917ad9dba495821154ecf9908540e48f0d5"
+            "url": "https://dl.google.com/release2/chrome/eHjfYEFJchjp75_HMUbN4Q_86.0.4184.0/86.0.4184.0_chrome_installer.exe#/dl.7z",
+            "hash": "33619a1f1316ae9da25478e959f937c187eae23770c75a4dbeae52e58d627f2a"
         }
     },
     "installer": {
@@ -11059,7 +11060,7 @@
         }
     }
 },{ "name": "googlechrome-dev", "bucket": "extras", 
-    "version": "85.0.4173.0",
+    "version": "85.0.4181.9",
     "description": "Fast, secure, and free web browser, built for the modern web.",
     "homepage": "https://www.google.com/chrome/dev",
     "license": {
@@ -11068,12 +11069,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://dl.google.com/release2/chrome/MsTtNJN_EagklSoqKaRQkw_85.0.4173.0/85.0.4173.0_chrome_installer.exe#/dl.7z",
-            "hash": "1aa4d1cc780c854a2d1154428ff79e79bc7d4ba6fdc6559b12972bbd99dddaa0"
+            "url": "https://dl.google.com/release2/chrome/PYjrrP72ZNHArlk_N03PNQ_85.0.4181.9/85.0.4181.9_chrome_installer.exe#/dl.7z",
+            "hash": "b0bd17c80db41262575c174be78624593aecf021f2dac873e17d115895008704"
         },
         "32bit": {
-            "url": "https://dl.google.com/release2/chrome/AIKT2w1D32COXoV3rdaL74s_85.0.4173.0/85.0.4173.0_chrome_installer.exe#/dl.7z",
-            "hash": "bf572b5a9b4b52fd4fe13f81fd805ae355a47577c498e7c70f76a9a897687c2b"
+            "url": "https://dl.google.com/release2/chrome/JANTOWKPkJcBXr-1HNR6Pg_85.0.4181.9/85.0.4181.9_chrome_installer.exe#/dl.7z",
+            "hash": "11faf6263ad8d0de3843e6f5890f06c3a97c5ef51241db88706497dbc9ee2051"
         }
     },
     "installer": {
@@ -14117,14 +14118,14 @@
         "url": "http://app.pc.kakao.com/talk/win32/KakaoTalk_Setup.exe#/dl.7z"
     }
 },{ "name": "kate", "bucket": "extras", 
-    "version": "20.04.2-924",
+    "version": "20.04.2-925",
     "description": "Multi-document editor",
     "homepage": "https://kate-editor.org",
     "license": "LGPL-2.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://binary-factory.kde.org/view/Windows%2064-bit/job/Kate_Release_win64/924/artifact/kate-20.04.2-924-windows-msvc2019_64-cl.7z",
-            "hash": "017dcd965f5cc81c08cb357a612f692b4a76c166d4eaa54e51e9e0aa6d12b941"
+            "url": "https://binary-factory.kde.org/view/Windows%2064-bit/job/Kate_Release_win64/925/artifact/kate-20.04.2-925-windows-msvc2019_64-cl.7z",
+            "hash": "d59ccb70740361940449ee10456f2221fdd89d3779d2dbca46c1dbd8e1aa31aa"
         }
     },
     "bin": "bin\\kate.exe",
@@ -15094,13 +15095,13 @@
         "url": "https://downloads.sourceforge.net/project/lamexp/LameXP.$matchRelease.Release-Static.Build-$patchVersion.zip"
     }
 },{ "name": "languagetool", "bucket": "extras", 
-    "homepage": "https://languagetool.org/",
+    "version": "5.0",
     "description": "Grammar, Style and Spell Checker for +25 languages",
-    "version": "4.9",
+    "homepage": "https://languagetool.org/",
     "license": "LGPL-2.1-or-later",
-    "url": "https://languagetool.org/download/LanguageTool-4.9.zip",
-    "hash": "2e6998563a3ee4b142ffe91eb20d3ae3e15ade5f507964b9dc2ec19373329b35",
-    "extract_dir": "LanguageTool-4.9",
+    "url": "https://languagetool.org/download/LanguageTool-5.0.zip",
+    "hash": "212eb275cf9df8b6f49d8ce2bb386246081be7f01d907577fbd09a9f27055628",
+    "extract_dir": "LanguageTool-5.0",
     "bin": [
         "languagetool.bat",
         "languagetool-commandline.jar",
@@ -15121,7 +15122,7 @@
     "pre_install": "Set-Content \"$dir\\languagetool.bat\" (@('@echo off', 'start javaw.exe -jar %~dp0\\languagetool.jar %*') -join \"`r`n\") -Encoding Ascii",
     "checkver": {
         "url": "https://languagetool.org/download/",
-        "re": "LanguageTool-([\\d.]+).zip",
+        "regex": "LanguageTool-([\\d.]+).zip",
         "reverse": true
     },
     "autoupdate": {
@@ -16716,17 +16717,17 @@
         }
     }
 },{ "name": "material-maker", "bucket": "extras", 
-    "version": "0.9",
+    "version": "0.92",
     "description": "Extensible procedural material generator",
     "homepage": "https://rodzilla.itch.io/material-maker",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/RodZill4/godot-procedural-textures/releases/download/0.9/material_maker_0_9_windows.zip",
-            "hash": "6e83fad12b207b1a9ee7d310ad8177430427c318e527d5c7dd19882291aed4cc"
+            "url": "https://github.com/RodZill4/godot-procedural-textures/releases/download/0.92/material_maker_0_92_windows.zip",
+            "hash": "8da9cce2474ef60988935a08d76761f2bb841f6eafd247830456fd5879007981"
         }
     },
-    "extract_dir": "material_maker_0.9_windows",
+    "extract_dir": "material_maker_0.92_windows",
     "bin": "material_maker.exe",
     "shortcuts": [
         [
@@ -17480,18 +17481,18 @@
         "url": "https://github.com/FiloSottile/mkcert/releases/download/v$version/mkcert-v$version-windows-amd64.exe#/mkcert.exe"
     }
 },{ "name": "mkvtoolnix", "bucket": "extras", 
-    "version": "47.0.0",
-    "homepage": "https://mkvtoolnix.download",
+    "version": "48.0.0",
     "description": "A set of tools to create, alter and inspect Matroska files.",
+    "homepage": "https://mkvtoolnix.download",
     "license": "GPL-2.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://mkvtoolnix.download/windows/releases/47.0.0/mkvtoolnix-64-bit-47.0.0.7z",
-            "hash": "sha512:cd4643f1dbd72e7cf2b0901519ee636ee0314dfb70d58c99410d10ddfc0e6ea8ac9cb417818630994e37f37640faf4d1ebd6498571d01df840921fa09fde5a4e"
+            "url": "https://mkvtoolnix.download/windows/releases/48.0.0/mkvtoolnix-64-bit-48.0.0.7z",
+            "hash": "sha512:b02413e294e0e20efc59133bd5a5ea7145b3b750e6297e3f13d9ade300fe9c0f604b2750d06334b8b4771a37a46247ce563ead173a3114094b29b1d7a8013d47"
         },
         "32bit": {
-            "url": "https://mkvtoolnix.download/windows/releases/47.0.0/mkvtoolnix-32-bit-47.0.0.7z",
-            "hash": "sha512:dc26855d18181994626337f1acff7efc78e692ce7181344bdc069f4efe68a5e504075643eba83037eee8fa9d50a354381a337d93efe1697bf45907407e11fa61"
+            "url": "https://mkvtoolnix.download/windows/releases/48.0.0/mkvtoolnix-32-bit-48.0.0.7z",
+            "hash": "sha512:0776dbab0489a2c69c613bbaf7a602f7cb3ff6dc7a4c8e0c27a929ea5ec4c68b46d37058e5fdfec1f550ed8d74aabe5d36fee438098f67adaa9f20c331497261"
         }
     },
     "extract_dir": "mkvtoolnix",
@@ -18985,14 +18986,14 @@
         "url": "https://github.com/netlify/netlifyctl/releases/download/v$version/netlifyctl-windows-amd64-$version.zip"
     }
 },{ "name": "netron", "bucket": "extras", 
-    "version": "4.3.5",
+    "version": "4.3.6",
     "description": "Visualizer for deep learning and machine learning models.",
     "homepage": "https://github.com/lutzroeder/Netron",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/lutzroeder/netron/releases/download/v4.3.5/Netron-Setup-4.3.5.exe#/dl.7z",
-            "hash": "sha512:b6ee4134353f246c96af50e22454f72737a95ad2a03d3f715e97e7c58436cf6737663de3ed31ffbaf8f9c62ed28a45bfcd054134571e3fde4e7363f51df96f9a",
+            "url": "https://github.com/lutzroeder/netron/releases/download/v4.3.6/Netron-Setup-4.3.6.exe#/dl.7z",
+            "hash": "sha512:4aa56d74d037564df1cd32fe48545061943288620f70b23fcb245c9b5ab655ac3a6b7eff4875ad553a46e7486ddc8cc59291eb08a430b5b2d88d3f1075a8f9aa",
             "installer": {
                 "script": [
                     "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
@@ -23056,7 +23057,7 @@
         "url": "https://swupdate.openvpn.org/community/releases/openvpn-install-$version-I601-Win10.exe"
     }
 },{ "name": "opera-gx", "bucket": "extras", 
-    "version": "68.0.3618.186",
+    "version": "68.0.3618.191",
     "description": "Gaming counterpart of Opera web browser",
     "homepage": "https://www.opera.com/gx",
     "license": {
@@ -23065,12 +23066,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://download3.operacdn.com/pub/opera_gx/68.0.3618.186/win/Opera_GX_68.0.3618.186_Setup_x64.exe#/dl.7z",
-            "hash": "e2e8c395b514b58794e3a9e5dac7a9450fd294d46a1c287d71ce9e4fd644cbab"
+            "url": "https://download3.operacdn.com/pub/opera_gx/68.0.3618.191/win/Opera_GX_68.0.3618.191_Setup_x64.exe#/dl.7z",
+            "hash": "15a85fda87a5fd47d45f74bc72838264ec7123e6a7dfa1e9519911b4c5c58003"
         },
         "32bit": {
-            "url": "https://download3.operacdn.com/pub/opera_gx/68.0.3618.186/win/Opera_GX_68.0.3618.186_Setup.exe#/dl.7z",
-            "hash": "db3aa79859a0b92ee7b876f5c5d4d76acd5f696a4ea2cbfa4359a4372978a27a"
+            "url": "https://download3.operacdn.com/pub/opera_gx/68.0.3618.191/win/Opera_GX_68.0.3618.191_Setup.exe#/dl.7z",
+            "hash": "de870c6916567b315627262b5024042c1071d33df1efbf77a2d68af952d1e876"
         }
     },
     "installer": {
@@ -24834,7 +24835,7 @@
     },
     "notes": "See usage: https://github.com/dahlbyk/posh-git#using-posh-git"
 },{ "name": "postman", "bucket": "extras", 
-    "version": "7.27.0",
+    "version": "7.27.1",
     "description": "Complete API development environment.",
     "homepage": "https://www.getpostman.com/",
     "license": {
@@ -24843,12 +24844,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://dl.pstmn.io/download/7.27.0/Postman-win64-7.27.0-full.nupkg#/dl.7z",
-            "hash": "sha1:b0cf9c3a25e7f5cc274f7945dcb20621e206e434"
+            "url": "https://dl.pstmn.io/download/7.27.1/Postman-win64-7.27.1-full.nupkg#/dl.7z",
+            "hash": "sha1:7a483007fceb9cb4e6f8d176f4a9f5422d7ddcaf"
         },
         "32bit": {
-            "url": "https://dl.pstmn.io/download/7.27.0/Postman-win32-7.27.0-full.nupkg#/dl.7z",
-            "hash": "sha1:7c4b760e527cd1903bfe1b7c655d8df5ccd587b6"
+            "url": "https://dl.pstmn.io/download/7.27.1/Postman-win32-7.27.1-full.nupkg#/dl.7z",
+            "hash": "sha1:f02a4e29e2b5ebcc4a52cbf7c9f327d40fcef0bb"
         }
     },
     "extract_dir": "lib\\net45",
@@ -25074,12 +25075,12 @@
         }
     }
 },{ "name": "ppsspp", "bucket": "extras", 
-    "version": "1.9.3",
+    "version": "1.10",
     "description": "A Sony PlayStation Platform (PSP) emulator",
     "homepage": "https://www.ppsspp.org",
     "license": "GPL-2.0-only",
-    "url": "https://www.ppsspp.org/files/1_9_3/ppsspp_win.zip",
-    "hash": "364d177d3c7cf85aad41b55d3d668fab185930b6556d63fd7406b8130a5abae7",
+    "url": "https://www.ppsspp.org/files/1_10/ppsspp_win.zip",
+    "hash": "c320d3e114e3600170cac5748df03640971c165750200eba54d8de86da4b7831",
     "architecture": {
         "64bit": {
             "bin": [
@@ -25582,18 +25583,18 @@
         }
     }
 },{ "name": "putty", "bucket": "extras", 
-    "homepage": "https://www.chiark.greenend.org.uk/~sgtatham/putty/",
-    "version": "0.73",
+    "version": "0.74",
     "description": "A free implementation of SSH and Telnet, along with an xterm terminal emulator.",
+    "homepage": "https://www.chiark.greenend.org.uk/~sgtatham/putty/",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://the.earth.li/~sgtatham/putty/0.73/w64/putty.zip",
-            "hash": "sha512:700ff4dab1c0f92e358ffb01de478df65a6572a11e4fab554b53988144f138d1357881c00b975d9f4bcb1fea3633e4a3f9a25c15a79fdcfa2ed9e999ad13b571"
+            "url": "https://the.earth.li/~sgtatham/putty/0.74/w64/putty.zip",
+            "hash": "sha512:376f33cf6a1eddefd4d34b61bd5610cc01478bd92f938a3ec8f423446f50ed6233889af6d5de59c29b7afbd0245ae338d8f639e282f10b38a5de37e18e657085"
         },
         "32bit": {
-            "url": "https://the.earth.li/~sgtatham/putty/0.73/w32/putty.zip",
-            "hash": "sha512:9504b9ff7e5e8b12cc2c744a1bad2ac2920d4ca71e453b6187ff3a462af750212cd7dd836e1064caa1f1c7153ced3ae82b53d8b99612d2e5e3771e61cdc7446f"
+            "url": "https://the.earth.li/~sgtatham/putty/0.74/w32/putty.zip",
+            "hash": "sha512:5a586571a77ff08aaed68c52fb3964f0425bdeb25f092467aa4a29562a2ac6100e71ea803b26bd736ca0fb3b6b96ec674701b0b43796facc6a1c4ce1f9c2f034"
         }
     },
     "bin": [
@@ -25644,18 +25645,18 @@
         }
     }
 },{ "name": "puttytel", "bucket": "extras", 
-    "homepage": "https://www.chiark.greenend.org.uk/~sgtatham/putty/",
+    "version": "0.74",
     "description": "a Telnet-only client that is not included in putty all-in-one archive/installer",
-    "version": "0.73",
+    "homepage": "https://www.chiark.greenend.org.uk/~sgtatham/putty/",
     "license": "MIT",
     "architecture": {
         "64bit": {
             "url": "https://the.earth.li/~sgtatham/putty/latest/w64/puttytel.exe",
-            "hash": "6fdb46185ce659645c975f730a2e407ea837b944a7d25b37bb27caf84642314a"
+            "hash": "4d04ff4dca742e83bc9435650e10d3478df77c984788b2f95059a2a1a36482b8"
         },
         "32bit": {
             "url": "https://the.earth.li/~sgtatham/putty/latest/w32/puttytel.exe",
-            "hash": "569b9f982ff88ee703ef230a79157cdbf5b993054f2b9c8915203fd97a9525da"
+            "hash": "5949ac15996e5709395b1c16e22a94e0d3a27569ebae9e3629ba24c409a2da7f"
         }
     },
     "bin": "puttytel.exe",
@@ -36330,14 +36331,14 @@
         "extract_dir": "wabt-$version\\bin"
     }
 },{ "name": "waifu2x-caffe", "bucket": "extras", 
-    "homepage": "https://github.com/lltcggie/waifu2x-caffe",
-    "version": "1.2.0.2",
+    "version": "1.2.0.3",
     "description": "AI-powered image upscaler.",
+    "homepage": "https://github.com/lltcggie/waifu2x-caffe",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/lltcggie/waifu2x-caffe/releases/download/1.2.0.2/waifu2x-caffe.zip",
-            "hash": "73178769313623e6ff078e1c1a831f3fe1f4aedde3922660dae47c58aa04640f"
+            "url": "https://github.com/lltcggie/waifu2x-caffe/releases/download/1.2.0.3/waifu2x-caffe.zip",
+            "hash": "a6d5627425c8e08448c7c20d1e5fc246f51c57e511e4bc757c5320ce405230a7"
         }
     },
     "extract_dir": "waifu2x-caffe",
@@ -37161,12 +37162,12 @@
         "url": "https://github.com/microsoft/terminal/releases/download/v$version/Microsoft.WindowsTerminal_$version_8wekyb3d8bbwe.msixbundle#/dl.7z"
     }
 },{ "name": "windowsspyblocker", "bucket": "extras", 
-    "version": "4.29.0",
+    "version": "4.30.0",
     "description": "Block spying and tracking on Windows",
     "homepage": "https://github.com/crazy-max/WindowsSpyBlocker",
     "license": "MIT",
-    "url": "https://github.com/crazy-max/WindowsSpyBlocker/releases/download/4.29.0/WindowsSpyBlocker.exe",
-    "hash": "8aa3cf9a1d98b7a25a54719e96dea144e95113e3e3217fb1d8a6fe817222934a",
+    "url": "https://github.com/crazy-max/WindowsSpyBlocker/releases/download/4.30.0/WindowsSpyBlocker.exe",
+    "hash": "63795645de9a968b744825238b2ab1c92d92b6aba3978d22c845974f89e83a4c",
     "bin": "WindowsSpyBlocker.exe",
     "shortcuts": [
         [
@@ -39794,9 +39795,9 @@
     "homepage": "https://citra-emu.org/",
     "description": "Emulator for Nintendo 3DS, capable of playing many of your favorite games",
     "license": "MIT",
-    "version": "1791-20200624",
-    "url": "https://github.com/citra-emu/citra-canary/releases/download/canary-1791/citra-windows-mingw-20200624-0e9198e.7z",
-    "hash": "fc999fc60310527d717753a0e87ba75b01235bc8d1e30313e2cc99148433c43f",
+    "version": "1792-20200626",
+    "url": "https://github.com/citra-emu/citra-canary/releases/download/canary-1792/citra-windows-mingw-20200626-4093bd2.7z",
+    "hash": "4db62464797231bd655e456ca2430e6ce61ee637dbaa94b0c65a40dc34392ea4",
     "extract_dir": "canary-mingw",
     "pre_install": [
         "if (!(Test-Path \"$persist_dir\\user\")) {",
@@ -39832,9 +39833,9 @@
     "homepage": "https://citra-emu.org/",
     "description": "Emulator for Nintendo 3DS, capable of playing many of your favorite games",
     "license": "MIT",
-    "version": "1580-20200623",
-    "url": "https://github.com/citra-emu/citra-nightly/releases/download/nightly-1580/citra-windows-mingw-20200623-c4a4b40.7z",
-    "hash": "e4d692871a930f2f632e38cd58d2507ff4a283da8427554337498516f257e486",
+    "version": "1581-20200623",
+    "url": "https://github.com/citra-emu/citra-nightly/releases/download/nightly-1581/citra-windows-mingw-20200623-c4a4b40.7z",
+    "hash": "cdabd5c30e2b146f7cc3acc1415fb306019a74a00ff49af417b83566789e1f2b",
     "extract_dir": "nightly-mingw",
     "pre_install": [
         "if (!(Test-Path \"$persist_dir\\user\")) {",
@@ -41094,15 +41095,15 @@
     "homepage": "https://mgba.io/",
     "description": "A fast, accurate, and portable GBA emulator (development version)",
     "license": "MPL-2.0",
-    "version": "0.8.2-6229",
+    "version": "0.8.2-6235",
     "architecture": {
         "64bit": {
             "url": "https://s3.amazonaws.com/mgba/mGBA-build-latest-win64.7z",
-            "hash": "349d0c1fbb2e880f71dd48ddc0bfebaff17e1c579487363794caf945491733cf"
+            "hash": "724ae8a88fc3cd6840b5dd26d8428af463063437ee96aab51b5bebc689d16769"
         },
         "32bit": {
             "url": "https://s3.amazonaws.com/mgba/mGBA-build-latest-win32.7z",
-            "hash": "9b3159c3222f6d8bd3b7d58a9758b6a6ca13e0a1b918740462b944cfb289ea52"
+            "hash": "0f54cc7396f2ff5be2021a8258c9040dc02cf0d5d8d1f72c4cde94d2fe6611f0"
         }
     },
     "installer": {
@@ -41659,16 +41660,16 @@
 },{ "name": "openmw-nightly", "bucket": "games", 
     "homepage": "http://openmw.org/",
     "description": "An open-source open-world RPG game engine that supports playing Morrowind. (nightly version)",
-    "version": "20200625-da65a3b8d",
+    "version": "20200626-edbc1898f",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://rgw.ctrl-c.liu.se/openmw/Nightlies/OpenMW-da65a3b8d-win64.exe#/dl.7z",
-            "hash": "802df0291faaed719a22aec39ad33edf51c001d6369eb7df64b076af70c536b0"
+            "url": "https://rgw.ctrl-c.liu.se/openmw/Nightlies/OpenMW-edbc1898f-win64.exe#/dl.7z",
+            "hash": "5d8545af9da0245a078981f399c09a3b94c9d830e22f120a392dbaf086e466cb"
         },
         "32bit": {
-            "url": "https://rgw.ctrl-c.liu.se/openmw/Nightlies/OpenMW-da65a3b8d-win32.exe#/dl.7z",
-            "hash": "934d944ddacd1465f11fba4df23c79c6b4b033020a3e1ff9711bf35065c77a5f"
+            "url": "https://rgw.ctrl-c.liu.se/openmw/Nightlies/OpenMW-edbc1898f-win32.exe#/dl.7z",
+            "hash": "bc75cfd5d39b9097ff1c68a43bf365955bf0fcf32b4cd2b3b607b476e23b4eda"
         }
     },
     "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\Uninstall*\" -Force -Recurse",
@@ -42004,10 +42005,10 @@
     "homepage": "https://pcsx2.net/",
     "description": "A feature rich FOSS PlayStation 2 emulator (development version)",
     "license": "LGPL-3.0-or-later",
-    "version": "1.7.0-102",
-    "url": "https://buildbot.orphis.net/pcsx2/index.php?m=dl&rev=v1.7.0-dev-102-g3269c58c8&platform=windows-x86#/dl.7z",
-    "hash": "1b79bcbf4304797cc70b94099e9389c236d54d56ce69c5420100838f77277ce6",
-    "extract_dir": "pcsx2-v1.7.0-dev-102-g3269c58c8-windows-x86",
+    "version": "1.7.0-103",
+    "url": "https://buildbot.orphis.net/pcsx2/index.php?m=dl&rev=v1.7.0-dev-103-g0f1cbe741&platform=windows-x86#/dl.7z",
+    "hash": "bbc37478f02c15aba7b03371283d00fb97a5a0b3eed74dbf863232ec4c07fa74",
+    "extract_dir": "pcsx2-v1.7.0-dev-103-g0f1cbe741-windows-x86",
     "bin": "pcsx2.exe",
     "persist": [
         "bios",
@@ -42393,9 +42394,9 @@
     "homepage": "https://rpcs3.net/",
     "description": "Open-source Sony PlayStation 3 emulator (development version)",
     "license": "GPL-2.0-only",
-    "version": "0.0.10-10556",
-    "url": "https://github.com/rpcs3/rpcs3-binaries-win/releases/download/build-9679ae68cb73c3ae7e370b715e963a084fac9fe7/rpcs3-v0.0.10-10556-9679ae68_win64.7z",
-    "hash": "6689a155052824a7afd39387670325b0f1f3906120d3ea3d26c0fd4a3b45c8ef",
+    "version": "0.0.10-10560",
+    "url": "https://github.com/rpcs3/rpcs3-binaries-win/releases/download/build-5a8eb9d3d7043efa9790e26dbf27f5840676539b/rpcs3-v0.0.10-10560-5a8eb9d3_win64.7z",
+    "hash": "c6d6d6d412ff873c91bb61a081d02a672dfaabc685c068fffbbd05b2ba720198",
     "bin": "rpcs3.exe",
     "depends": "vcredist2019",
     "persist": [
@@ -46313,11 +46314,11 @@
     }
 },{ "name": "graalvm-nightly", "bucket": "java", 
     "description": "High-performance, embeddable, polyglot Virtual Machine for JVM-langs (Java, Scala, Kotlin), JavaScript/NodeJS, Python, Ruby, R, and LLVM-langs (C, C++, Rust)",
-    "version": "20.2.0-dev-20200626_0202",
+    "version": "20.2.0-dev-20200627_0204",
     "homepage": "https://graalvm.org",
     "license": "GPL-2.0",
-    "url": "https://github.com/graalvm/graalvm-ce-dev-builds/releases/download/20.2.0-dev-20200626_0202/graalvm-ce-java11-windows-amd64-20.2.0-dev.zip",
-    "hash": "3a3b6cd374655b056f96aad4b4ba0410d343636e97b3ff662438d00a4fccc805",
+    "url": "https://github.com/graalvm/graalvm-ce-dev-builds/releases/download/20.2.0-dev-20200627_0204/graalvm-ce-java11-windows-amd64-20.2.0-dev.zip",
+    "hash": "849b4dbff74fc6a0daa35221cd429710428d8420efbd3573d27784d1b0ce0bbd",
     "extract_dir": "graalvm-ce-java11-20.2.0-dev",
     "env_add_path": "bin",
     "env_set": {
@@ -46356,11 +46357,11 @@
     }
 },{ "name": "graalvm11-nightly", "bucket": "java", 
     "description": "High-performance, embeddable, polyglot Virtual Machine for JVM-langs (Java, Scala, Kotlin), JavaScript/NodeJS, Python, Ruby, R, and LLVM-langs (C, C++, Rust)",
-    "version": "20.2.0-dev-20200626_0202",
+    "version": "20.2.0-dev-20200627_0204",
     "homepage": "https://graalvm.org",
     "license": "GPL-2.0",
-    "url": "https://github.com/graalvm/graalvm-ce-dev-builds/releases/download/20.2.0-dev-20200626_0202/graalvm-ce-java11-windows-amd64-20.2.0-dev.zip",
-    "hash": "3a3b6cd374655b056f96aad4b4ba0410d343636e97b3ff662438d00a4fccc805",
+    "url": "https://github.com/graalvm/graalvm-ce-dev-builds/releases/download/20.2.0-dev-20200627_0204/graalvm-ce-java11-windows-amd64-20.2.0-dev.zip",
+    "hash": "849b4dbff74fc6a0daa35221cd429710428d8420efbd3573d27784d1b0ce0bbd",
     "extract_dir": "graalvm-ce-java11-20.2.0-dev",
     "env_add_path": "bin",
     "env_set": {
@@ -46399,11 +46400,11 @@
     }
 },{ "name": "graalvm8-nightly", "bucket": "java", 
     "description": "High-performance, embeddable, polyglot Virtual Machine for JVM-langs (Java, Scala, Kotlin), JavaScript/NodeJS, Python, Ruby, R, and LLVM-langs (C, C++, Rust)",
-    "version": "20.2.0-dev-20200626_0202",
+    "version": "20.2.0-dev-20200627_0204",
     "homepage": "https://graalvm.org",
     "license": "GPL-2.0",
-    "url": "https://github.com/graalvm/graalvm-ce-dev-builds/releases/download/20.2.0-dev-20200626_0202/graalvm-ce-java8-windows-amd64-20.2.0-dev.zip",
-    "hash": "84b999ae93c1b4dfe3059edf5db09f87c3c264493c85b49e233db769e76a0d27",
+    "url": "https://github.com/graalvm/graalvm-ce-dev-builds/releases/download/20.2.0-dev-20200627_0204/graalvm-ce-java8-windows-amd64-20.2.0-dev.zip",
+    "hash": "25b79ae714f1ec98f7df8acbbe26a0f227c6b01ca8d1212242c02242dc8d874a",
     "extract_dir": "graalvm-ce-java8-20.2.0-dev",
     "env_add_path": "bin",
     "env_set": {
@@ -48733,12 +48734,12 @@
 },{ "name": "sapmachine15-jre", "bucket": "java", 
     "description": "SapMachine 15: An OpenJDK release maintained and supported by SAP",
     "homepage": "https://sap.github.io/SapMachine/",
-    "version": "15-28-ea",
+    "version": "15-29-ea",
     "license": "GPL-2.0-only WITH Classpath-exception-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/SAP/SapMachine/releases/download//sapmachine-15%2B28/sapmachine-jre-15-ea.28_windows-x64_bin.zip",
-            "hash": "e8291eab13ba6dfc0e78b606d441b312b2163777e68ae9799d9a45db9b0ea918"
+            "url": "https://github.com/SAP/SapMachine/releases/download//sapmachine-15%2B29/sapmachine-jre-15-ea.29_windows-x64_bin.zip",
+            "hash": "17036bdfd91cda60f9c1fc372369f70e751e96b0daeb3d4e63cef3183221a0c3"
         }
     },
     "extract_dir": "sapmachine-jre-15",
@@ -48766,12 +48767,12 @@
 },{ "name": "sapmachine15", "bucket": "java", 
     "description": "SapMachine 15: An OpenJDK release maintained and supported by SAP",
     "homepage": "https://sap.github.io/SapMachine/",
-    "version": "15-28-ea",
+    "version": "15-29-ea",
     "license": "GPL-2.0-only WITH Classpath-exception-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/SAP/SapMachine/releases/download//sapmachine-15%2B28/sapmachine-jdk-15-ea.28_windows-x64_bin.zip",
-            "hash": "1338d5b2ddc025c6c45bfdf374c44eea33ab9d805e37c3f20db4664e6a804b4d"
+            "url": "https://github.com/SAP/SapMachine/releases/download//sapmachine-15%2B29/sapmachine-jdk-15-ea.29_windows-x64_bin.zip",
+            "hash": "c382909088404de936f9e44b78de71482d1e306f3972f11cbe2dd7771e60e02f"
         }
     },
     "extract_dir": "sapmachine-jdk-15",
@@ -50014,24 +50015,24 @@
         "url": "https://dl.google.com/android/repository/platform-tools_r$version-windows.zip"
     }
 },{ "name": "ag", "bucket": "main", 
-    "homepage": "https://geoff.greer.fm/ag/",
+    "version": "2.2.0-55-g5600c1b",
     "description": "A tool for searching code",
+    "homepage": "https://geoff.greer.fm/ag/",
     "license": "Apache-2.0",
-    "version": "2.2.0-24-gb93c271",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/k-takata/the_silver_searcher-win32/releases/download/2020-02-25/2.2.0-24-gb93c271/ag-2020-02-25_2.2.0-24-gb93c271-x64.zip",
-            "hash": "ed228e0f0901bbe427573d6bea8ca59319cfad84907c19522186fbd584979cea"
+            "url": "https://github.com/k-takata/the_silver_searcher-win32/releases/download/2020-06-27/2.2.0-55-g5600c1b/ag-2020-06-27_2.2.0-55-g5600c1b-x64.zip",
+            "hash": "e2b14d1479d2ff9c2d717bd80807fc4cd3fb518ffbbf7822665ec7497005225e"
         },
         "32bit": {
-            "url": "https://github.com/k-takata/the_silver_searcher-win32/releases/download/2020-02-25/2.2.0-24-gb93c271/ag-2020-02-25_2.2.0-24-gb93c271-x86.zip",
-            "hash": "4726f598c497e23db4b80eb5d23f01cd1a2cc5533de6c04418c9ca187e2c74a2"
+            "url": "https://github.com/k-takata/the_silver_searcher-win32/releases/download/2020-06-27/2.2.0-55-g5600c1b/ag-2020-06-27_2.2.0-55-g5600c1b-x86.zip",
+            "hash": "64eca3d7b78de0bfcb26d435b7a13fbaab140723e9570d3d224379267c37692c"
         }
     },
     "bin": "ag.exe",
     "checkver": {
         "url": "https://github.com/k-takata/the_silver_searcher-win32/releases",
-        "re": "/releases/tag/(?<date>[\\d-]+)%2F(?<version>[\\w.-]+)"
+        "regex": "/releases/tag/(?<date>[\\d-]+)%2F(?<version>[\\w.-]+)"
     },
     "autoupdate": {
         "architecture": {
@@ -51254,14 +51255,14 @@
         "extract_dir": "boxes-$version"
     }
 },{ "name": "broot", "bucket": "main", 
-    "version": "0.17.0",
+    "version": "0.18.0",
     "description": "A new way to see and navigate directory trees",
     "homepage": "https://dystroy.org/broot/",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Canop/broot/releases/download/v0.17.0/broot_0.17.0.zip",
-            "hash": "3e1d6b92d2c79a5158cef86c59dd79042e49dccecc8beb23beba0347b0220bbe",
+            "url": "https://github.com/Canop/broot/releases/download/v0.18.0/broot_0.18.0.zip",
+            "hash": "5a457725aa550f9607bb898b3f99a19907b5eaac5777605ef85e1d4dd00c77bf",
             "extract_dir": "build\\x86_64-pc-windows-gnu"
         }
     },
@@ -52354,14 +52355,14 @@
     },
     "##": "Do not extract hash, it's not up to date."
 },{ "name": "caddy", "bucket": "main", 
-    "version": "2.0.0",
+    "version": "2.1.0",
     "description": "HTTP/2 web server with automatic HTTPS",
     "homepage": "https://caddyserver.com",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/mholt/caddy/releases/download/v2.0.0/caddy_2.0.0_windows_amd64.zip",
-            "hash": "sha512:636bb25c9738400b480ca243a605da74988deb1bc856a1cabe7ee36511db0e048ec0a2688b1640d7b157bc239d437944e43500d91881c8acc7f2b8aa138945f9"
+            "url": "https://github.com/mholt/caddy/releases/download/v2.1.0/caddy_2.1.0_windows_amd64.zip",
+            "hash": "sha512:360bade38fea4d0e87bf00f2dc0c7e7b4434bb020af49d189b2c424246710bf6a3074e486ef2c3d6994473bcd62393302a1a704c215b4e323eeaecbfa359a533"
         }
     },
     "bin": "caddy.exe",
@@ -52379,12 +52380,12 @@
         }
     }
 },{ "name": "cake", "bucket": "main", 
-    "homepage": "https://cakebuild.net/",
+    "version": "0.38.4",
     "description": "Cake (C# Make) is a cross-platform build automation system with a C# DSL",
-    "version": "0.38.2",
+    "homepage": "https://cakebuild.net/",
     "license": "MIT",
-    "url": "https://github.com/cake-build/cake/releases/download/v0.38.2/Cake-bin-net461-v0.38.2.zip",
-    "hash": "d8eb823ca821fc214ec11832fb17bff25f51638ee99070e3c68d7c1476bf5c23",
+    "url": "https://github.com/cake-build/cake/releases/download/v0.38.4/Cake-bin-net461-v0.38.4.zip",
+    "hash": "95629cf444d6c07ad79b60a390fa9c2ef22bd8fef113cb82018de245ce09b659",
     "bin": "cake.exe",
     "suggest": {
         "NuGet": "nuget"
@@ -52961,12 +52962,12 @@
         }
     }
 },{ "name": "cmder-full", "bucket": "main", 
-    "homepage": "https://cmder.net",
+    "version": "1.3.15",
     "description": "Portable console emulator for Windows. (Full version)",
-    "version": "1.3.14",
+    "homepage": "https://cmder.net",
     "license": "MIT",
-    "url": "https://github.com/cmderdev/cmder/releases/download/v1.3.14/cmder.7z",
-    "hash": "3c5a02228f33acd2db92aba367a2b7f2dfba560baf5d117c125401e9ff52403f",
+    "url": "https://github.com/cmderdev/cmder/releases/download/v1.3.15/cmder.7z",
+    "hash": "4559000b89e33a9dff682e572a8ced18ecfc622fc75bb00528f272c176fcfe07",
     "pre_install": [
         "if (!(Test-Path \"$persist_dir\\vendor\\conemu-maximus5\\ConEmu.xml\")) {",
         "    Copy-Item \"$dir\\vendor\\ConEmu.xml.default\" \"$dir\\vendor\\conemu-maximus5\\ConEmu.xml\"",
@@ -52999,12 +53000,12 @@
         }
     }
 },{ "name": "cmder", "bucket": "main", 
-    "homepage": "https://cmder.net",
+    "version": "1.3.15",
     "description": "Portable console emulator for Windows. (Mini version)",
-    "version": "1.3.14",
+    "homepage": "https://cmder.net",
     "license": "MIT",
-    "url": "https://github.com/cmderdev/cmder/releases/download/v1.3.14/cmder_mini.zip",
-    "hash": "5d5c05fb60404b819d0e2730c04bd1e0e5cb6ef1227b78a5790ed1b935687d84",
+    "url": "https://github.com/cmderdev/cmder/releases/download/v1.3.15/cmder_mini.zip",
+    "hash": "8202f9abaeb4bdf5bb384996e22804d0fa7fbaeef8225808667088abbcdf03ca",
     "pre_install": [
         "if (!(Test-Path \"$persist_dir\\vendor\\conemu-maximus5\\ConEmu.xml\")) {",
         "    Copy-Item \"$dir\\vendor\\ConEmu.xml.default\" \"$dir\\vendor\\conemu-maximus5\\ConEmu.xml\"",
@@ -53942,14 +53943,14 @@
         }
     }
 },{ "name": "deno", "bucket": "main", 
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "A secure runtime for JavaScript and TypeScript",
     "homepage": "https://deno.land",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/denoland/deno/releases/download/v1.1.1/deno-x86_64-pc-windows-msvc.zip",
-            "hash": "d7859c70987940a320836d34a5be9987a8f2e0b6fc7b16aa6d2fa6fef515c57e"
+            "url": "https://github.com/denoland/deno/releases/download/v1.1.2/deno-x86_64-pc-windows-msvc.zip",
+            "hash": "14cc43692d7a447ae35f261cd2a5c48181c76dccffbb802f36a9db8d0cafe1d3"
         }
     },
     "bin": "deno.exe",
@@ -54818,12 +54819,12 @@
         }
     }
 },{ "name": "dvc", "bucket": "main", 
-    "version": "1.0.2",
+    "version": "1.1.1",
     "description": "Data & models versioning for ML projects, make them shareable and reproducible",
     "homepage": "https://dvc.org/",
     "license": "Apache-2.0",
-    "url": "https://github.com/iterative/dvc/releases/download/1.0.2/dvc-1.0.2.exe",
-    "hash": "d427f690c301dd3dadfc5b86913370c6cc337a3002c19d4477138eaa1362336f",
+    "url": "https://github.com/iterative/dvc/releases/download/1.1.1/dvc-1.1.1.exe",
+    "hash": "4e7f3cc757337d54c6abff9917ea99fdcb3abeaaefddbd1b694f065d0357d8e0",
     "innosetup": true,
     "bin": "dvc.exe",
     "checkver": {
@@ -55325,18 +55326,18 @@
         }
     }
 },{ "name": "fake", "bucket": "main", 
-    "homepage": "https://fake.build",
+    "version": "5.20.2",
     "description": "F# Make, build automation tool for .NET with similar capabilities to make and rake",
-    "version": "5.20.1",
+    "homepage": "https://fake.build",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/fsharp/FAKE/releases/download/5.20.1/fake-dotnetcore-win7-x64.zip",
-            "hash": "eb9a76fd92f18ea0e646c392478f273fcdffd935116b949e13092714888ab4bd"
+            "url": "https://github.com/fsharp/FAKE/releases/download/5.20.2/fake-dotnetcore-win7-x64.zip",
+            "hash": "f0a2e5923eb70171e0c8379f180babc9a5ca5021edacf714211ba80970b70f7e"
         },
         "32bit": {
-            "url": "https://github.com/fsharp/FAKE/releases/download/5.20.1/fake-dotnetcore-win7-x86.zip",
-            "hash": "3a358a80cd19548da08c01b5508056e0dcf1b74db3edf39f9ff72eeb659b161b"
+            "url": "https://github.com/fsharp/FAKE/releases/download/5.20.2/fake-dotnetcore-win7-x86.zip",
+            "hash": "7e67788adcd629233a5514029c38ec11fc0935bd18d828f68d77d90b087bafa7"
         }
     },
     "bin": "fake.exe",
@@ -55715,12 +55716,12 @@
         }
     }
 },{ "name": "flow", "bucket": "main", 
-    "version": "0.127.0",
+    "version": "0.128.0",
     "description": "A static type checker for JavaScript code.",
-    "license": "MIT",
-    "url": "https://github.com/facebook/flow/releases/download/v0.127.0/flow-win64-v0.127.0.zip",
     "homepage": "https://flowtype.org/",
-    "hash": "7b822696565d37d558478487002b4ad1c19e15b17d5f6f07ba2f3d547d31dd43",
+    "license": "MIT",
+    "url": "https://github.com/facebook/flow/releases/download/v0.128.0/flow-win64-v0.128.0.zip",
+    "hash": "79aab7619902bec8da05b4ff32802dc5a945d684a7c9588a0ec9ab96c2124dad",
     "bin": "flow.exe",
     "extract_dir": "flow",
     "checkver": {
@@ -56040,12 +56041,12 @@
         }
     }
 },{ "name": "gallery-dl", "bucket": "main", 
-    "homepage": "https://github.com/mikf/gallery-dl",
+    "version": "1.14.2",
     "description": "Command-line program to download image-galleries and -collections from several image hosting sites.",
-    "version": "1.14.1",
+    "homepage": "https://github.com/mikf/gallery-dl",
     "license": "GPL-2.0-or-later",
-    "url": "https://github.com/mikf/gallery-dl/releases/download/v1.14.1/gallery-dl.exe",
-    "hash": "d21666807093ee0461fa31c513974ace434e743c7bb224c8a1a05b346fe5ac28",
+    "url": "https://github.com/mikf/gallery-dl/releases/download/v1.14.2/gallery-dl.exe",
+    "hash": "3e6cca0829085ae686630afb92bf739c8fb575855d0b3ed079989db912ebcfea",
     "bin": "gallery-dl.exe",
     "checkver": "github",
     "autoupdate": {
@@ -58650,18 +58651,18 @@
         }
     }
 },{ "name": "helmfile", "bucket": "main", 
-    "version": "0.119.0",
+    "version": "0.119.1",
     "description": "Command line interface to deploy Kubernetes Helm Charts.",
     "homepage": "https://github.com/roboll/helmfile/",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/roboll/helmfile/releases/download/v0.119.0/helmfile_windows_amd64.exe#/helmfile.exe",
-            "hash": "0ac2896cd489ab6933f8e4f9898d610de1bd1e3a59b0a7864f4aef63380652de"
+            "url": "https://github.com/roboll/helmfile/releases/download/v0.119.1/helmfile_windows_amd64.exe#/helmfile.exe",
+            "hash": "aeb65441386df2aac2d83f4d198be21450bc5c39884f2c69a61afb66b6cbfb17"
         },
         "32bit": {
-            "url": "https://github.com/roboll/helmfile/releases/download/v0.119.0/helmfile_windows_386.exe#/helmfile.exe",
-            "hash": "0aa4172362a36e44fa6961f220b0df482456f101f67bdbc33874ffea28af87c3"
+            "url": "https://github.com/roboll/helmfile/releases/download/v0.119.1/helmfile_windows_386.exe#/helmfile.exe",
+            "hash": "28a455dd1e98a85d686ea9352d291fdef32683f81b989783b60200cd2e36ec0c"
         }
     },
     "bin": "helmfile.exe",
@@ -59282,15 +59283,15 @@
     "homepage": "https://imagemagick.org/",
     "description": "Create, edit, compose, and convert 200+ of bitmap images formats.",
     "license": "ImageMagick",
-    "version": "7.0.10-21",
+    "version": "7.0.10-22",
     "architecture": {
         "64bit": {
-            "url": "https://www.imagemagick.org/download/binaries/ImageMagick-7.0.10-21-portable-Q16-x64.zip",
-            "hash": "3e3d9f33c1bb242fd66bba2583743d8b4504f8ae70bea026e62394c7d79c0ec2"
+            "url": "https://www.imagemagick.org/download/binaries/ImageMagick-7.0.10-22-portable-Q16-x64.zip",
+            "hash": "952f23cf965f8c51ba577f591fbd7a3dee327327f6b4176123b8c29b84146cdd"
         },
         "32bit": {
-            "url": "https://www.imagemagick.org/download/binaries/ImageMagick-7.0.10-21-portable-Q16-x86.zip",
-            "hash": "1fa576bcf788a211c9b96a82b2b45b82262f3d2124c397b9ace07afb6de1033c"
+            "url": "https://www.imagemagick.org/download/binaries/ImageMagick-7.0.10-22-portable-Q16-x86.zip",
+            "hash": "5dd712b81384eb8cebad2ffd789464d773013ff0c0c1735e786fb123a1ab88d4"
         }
     },
     "depends": "ffmpeg",
@@ -59891,14 +59892,14 @@
         "url": "https://github.com/casey/just/releases/download/v$version/just-v$version-x86_64-pc-windows-msvc.zip"
     }
 },{ "name": "jx", "bucket": "main", 
-    "version": "2.1.82",
+    "version": "2.1.88",
     "description": "A command line tool for installing and using Jenkins X",
     "homepage": "https://github.com/jenkins-x/jx",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/jenkins-x/jx/releases/download/v2.1.82/jx-windows-amd64.zip",
-            "hash": "158ad68078a50efd64710b1304c033639fe1414dc03725255264b725f7460d10"
+            "url": "https://github.com/jenkins-x/jx/releases/download/v2.1.88/jx-windows-amd64.zip",
+            "hash": "2537a2b44d9d70f8818a3f61fc0fbc4d88efab0f7d2679cc4c697a18bc116174"
         }
     },
     "bin": "jx.exe",
@@ -61922,15 +61923,15 @@
         }
     }
 },{ "name": "minio-client", "bucket": "main", 
-    "homepage": "https://min.io/",
+    "version": "2020-06-26T19-56-55Z",
     "description": "A high performance, distributed object storage server, designed for large-scale data infrastructure. (client)",
+    "homepage": "https://min.io/",
     "license": "Apache-2.0",
-    "version": "2020-06-20T00-18-43Z",
     "bin": "mc.exe",
     "architecture": {
         "64bit": {
-            "url": "https://dl.min.io/client/mc/release/windows-amd64/archive/mc.RELEASE.2020-06-20T00-18-43Z#/mc.exe",
-            "hash": "efa0ed24a4739fa3a93ff0f9af98610e9bddc72faa2621ba0f93276c2f0a2bed"
+            "url": "https://dl.min.io/client/mc/release/windows-amd64/archive/mc.RELEASE.2020-06-26T19-56-55Z#/mc.exe",
+            "hash": "79955b18082653cf6425d5561e815db4baef9324bc2f308ff5d513f31e620281"
         }
     },
     "suggest": {
@@ -61938,7 +61939,7 @@
     },
     "checkver": {
         "github": "https://github.com/minio/mc",
-        "re": "releases/tag/RELEASE.([\\d-]+T[\\d-]+Z)"
+        "regex": "releases/tag/RELEASE.([\\d-]+T[\\d-]+Z)"
     },
     "autoupdate": {
         "architecture": {
@@ -62809,17 +62810,17 @@
 },{ "name": "nasm", "bucket": "main", 
     "homepage": "https://www.nasm.us",
     "license": "BSD-2-Clause",
-    "version": "2.14.02",
+    "version": "2.15.01",
     "description": "80x86 and x86-64 assembler designed for portability and modularity.",
-    "extract_dir": "nasm-2.14.02",
+    "extract_dir": "nasm-2.15.01",
     "architecture": {
         "64bit": {
-            "url": "https://www.nasm.us/pub/nasm/releasebuilds/2.14.02/win64/nasm-2.14.02-win64.zip",
-            "hash": "18918ac906e29417b936466e7a2517068206c8db8c04b9762a5befa18bfea5f0"
+            "url": "https://www.nasm.us/pub/nasm/releasebuilds/2.15.01/win64/nasm-2.15.01-win64.zip",
+            "hash": "d054bf8595eb2b31bb673a3cd4a999e61bb39394fedd07a09f30f75b2524953b"
         },
         "32bit": {
-            "url": "https://www.nasm.us/pub/nasm/releasebuilds/2.14.02/win32/nasm-2.14.02-win32.zip",
-            "hash": "250f9b5eeb2111e8c7b494a977490985b8604fe7518a6f5041cde37cc727a067"
+            "url": "https://www.nasm.us/pub/nasm/releasebuilds/2.15.01/win32/nasm-2.15.01-win32.zip",
+            "hash": "7ee1bad8c5b3ba195af4b4f984702fedc9745473e7f74cda65a7320425bd9114"
         }
     },
     "bin": [
@@ -63068,22 +63069,22 @@
         }
     }
 },{ "name": "nim", "bucket": "main", 
-    "homepage": "https://nim-lang.org/",
+    "version": "1.2.4",
     "description": "A statically typed compiled systems programming language, which combines successful concepts from mature languages like Python, Ada and Modula.",
-    "version": "1.2.2",
+    "homepage": "https://nim-lang.org/",
     "license": "MIT",
+    "depends": "gcc",
     "architecture": {
         "64bit": {
-            "url": "https://nim-lang.org/download/nim-1.2.2_x64.zip",
-            "hash": "142ade2508bf5c8020a1bafeb9383fbdc424161f1bd966172732035a1024f59a"
+            "url": "https://nim-lang.org/download/nim-1.2.4_x64.zip",
+            "hash": "0892b8988a7ee14e4ba477ad2057e8d7ce937f8a3d4d1aaac52fda9cf28ffe53"
         },
         "32bit": {
-            "url": "https://nim-lang.org/download/nim-1.2.2_x32.zip",
-            "hash": "7aca1fd47dc4e6348ed7399375775bfc056f0c0fd4d78676e48440244be97e18"
+            "url": "https://nim-lang.org/download/nim-1.2.4_x32.zip",
+            "hash": "7b5ae87a7bad27c0c386289acc2418f9006af4882e59d3fe786caae92781306e"
         }
     },
-    "depends": "gcc",
-    "extract_dir": "nim-1.2.2",
+    "extract_dir": "nim-1.2.4",
     "post_install": [
         "# Copy Nimble package",
         "Copy-Item -Recurse \"$dir\\dist\\nimble\\src\\nimblepkg\" \"$dir\\bin\""
@@ -63101,7 +63102,7 @@
     "persist": "config",
     "checkver": {
         "url": "https://nim-lang.org/install_windows.html",
-        "re": "nim-([\\d.]+)_x64"
+        "regex": "nim-([\\d.]+)_x64"
     },
     "autoupdate": {
         "architecture": {
@@ -64279,12 +64280,12 @@
         }
     }
 },{ "name": "paket", "bucket": "main", 
-    "version": "5.247.3",
+    "version": "5.247.4",
     "description": "Dependency manager for .NET with support for NuGet and Git repositories",
     "homepage": "https://fsprojects.github.io/Paket/",
     "license": "MIT",
-    "url": "https://github.com/fsprojects/Paket/releases/download/5.247.3/paket.exe",
-    "hash": "db0e83cd7d3209cb8f08966203ef2acd86bff6a47bef42aa681228077da04bee",
+    "url": "https://github.com/fsprojects/Paket/releases/download/5.247.4/paket.exe",
+    "hash": "17f3b54647491dcc246f1fd2099813de211446afa67c9aba359ceccada2ee6d8",
     "bin": "paket.exe",
     "checkver": {
         "github": "https://github.com/fsprojects/Paket"
@@ -65194,20 +65195,20 @@
         }
     }
 },{ "name": "prometheus", "bucket": "main", 
-    "homepage": "https://prometheus.io/",
+    "version": "2.19.2",
     "description": "Power your metrics and alerting with a leading open-source monitoring solution.",
+    "homepage": "https://prometheus.io/",
     "license": "Apache-2.0",
-    "version": "2.19.1",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/prometheus/prometheus/releases/download/v2.19.1/prometheus-2.19.1.windows-amd64.tar.gz",
-            "hash": "3b3d785b44f3e9d74b92c561b5b4862c3f99b4ea0291ba9ecf954104f6ec0719",
-            "extract_dir": "prometheus-2.19.1.windows-amd64"
+            "url": "https://github.com/prometheus/prometheus/releases/download/v2.19.2/prometheus-2.19.2.windows-amd64.tar.gz",
+            "hash": "dcaab771331462610d875cf9eca19136f7eabb7f4979c8c447b819d096c1a15f",
+            "extract_dir": "prometheus-2.19.2.windows-amd64"
         },
         "32bit": {
-            "url": "https://github.com/prometheus/prometheus/releases/download/v2.19.1/prometheus-2.19.1.windows-386.tar.gz",
-            "hash": "3836d73b894e9b0c56042bfa945a1342e28bde08629622e354f8d8e0037c2773",
-            "extract_dir": "prometheus-2.19.1.windows-386"
+            "url": "https://github.com/prometheus/prometheus/releases/download/v2.19.2/prometheus-2.19.2.windows-386.tar.gz",
+            "hash": "6cc821f9a48c80ab7a9ca873a390238a593e24b3919f4d347c11aa4fbe969055",
+            "extract_dir": "prometheus-2.19.2.windows-386"
         }
     },
     "bin": [
@@ -67945,14 +67946,14 @@
     },
     "notes": "Thank you for installing serve! Type `serve -h` to print its usage."
 },{ "name": "serverless", "bucket": "main", 
-    "version": "1.73.1",
+    "version": "1.74.0",
     "description": "Framework for building and operating serverless applications",
     "homepage": "https://serverless.com",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/serverless/serverless/releases/download/v1.73.1/serverless-win-x64.exe#/serverless.exe",
-            "hash": "2c44d7edf998cb69a03d5319736b99840844bc838116056416872ec58be5b934"
+            "url": "https://github.com/serverless/serverless/releases/download/v1.74.0/serverless-win-x64.exe#/serverless.exe",
+            "hash": "fa9c85da046af8e868fff410a3355aba88699cf667f4692b4b34e8e524926c35"
         }
     },
     "bin": "serverless.exe",
@@ -68031,18 +68032,18 @@
         "url": "https://github.com/koalaman/shellcheck/releases/download/v$version/shellcheck-v$version.zip"
     }
 },{ "name": "shfmt", "bucket": "main", 
+    "version": "3.1.2",
+    "description": "A shell parser, formatter and interpreter. Supports POSIX Shell, Bash and mksh.",
     "homepage": "https://github.com/mvdan/sh",
     "license": "BSD-3-Clause",
-    "description": "A shell parser, formatter and interpreter. Supports POSIX Shell, Bash and mksh.",
-    "version": "3.1.1",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/mvdan/sh/releases/download/v3.1.1/shfmt_v3.1.1_windows_amd64.exe#/shfmt.exe",
-            "hash": "5f7d9eb9506274d54a5418ace06cda64442b8f8c29fda14fce1df7c593fcb19f"
+            "url": "https://github.com/mvdan/sh/releases/download/v3.1.2/shfmt_v3.1.2_windows_amd64.exe#/shfmt.exe",
+            "hash": "5cafe309be761c092cea69221c9b25c68d13a9f89d12ad20601c9d5cc4b84457"
         },
         "32bit": {
-            "url": "https://github.com/mvdan/sh/releases/download/v3.1.1/shfmt_v3.1.1_windows_386.exe#/shfmt.exe",
-            "hash": "a9ebafe18a4fc9a25d71ce09ac9f33a2ea03d43f262718bd28adfd21ff1bd220"
+            "url": "https://github.com/mvdan/sh/releases/download/v3.1.2/shfmt_v3.1.2_windows_386.exe#/shfmt.exe",
+            "hash": "f2f03185014586c82bad6bfe2ec5df011cf670316ae44b8e0cbdaab7b2e5e2f2"
         }
     },
     "bin": "shfmt.exe",
@@ -68578,14 +68579,18 @@
         }
     }
 },{ "name": "starship", "bucket": "main", 
-    "version": "0.42.0",
+    "version": "0.43.0",
     "description": "The minimal, blazing fast, and extremely customizable prompt for any shell!",
     "homepage": "https://starship.rs",
     "license": "ISC",
+    "notes": [
+        "Usage: Add 'Invoke-Expression (&starship init powershell)' to the end of your PowerShell $PROFILE.",
+        "Prerequisites: A Powerline font installed and enabled in your terminal."
+    ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/starship/starship/releases/download/v0.42.0/starship-x86_64-pc-windows-msvc.zip",
-            "hash": "6a5c1c9802b9a93ab3aef6f0853f13031ee4eb0d4c20d8aaa5f019e8e4efa813"
+            "url": "https://github.com/starship/starship/releases/download/v0.43.0/starship-x86_64-pc-windows-msvc.zip",
+            "hash": "55b8e669e5217539eb7f91457186833101bde109cbc78c6fdc5620d431c21907"
         }
     },
     "bin": "starship.exe",
@@ -68601,11 +68606,7 @@
         "hash": {
             "url": "$url.sha256"
         }
-    },
-    "notes": [
-        "Usage: Add 'Invoke-Expression (&starship init powershell)' to the end of your PowerShell $PROFILE.",
-        "Prerequisites: A Powerline font installed and enabled in your terminal."
-    ]
+    }
 },{ "name": "stdiscosrv", "bucket": "main", 
     "version": "1.3.1",
     "description": "The Syncthing global discovery server",
@@ -69221,18 +69222,18 @@
         }
     }
 },{ "name": "tflint", "bucket": "main", 
-    "homepage": "https://github.com/terraform-linters/tflint",
+    "version": "0.17.0",
     "description": "A Terraform linter focused on possible errors, best practices, etc.",
+    "homepage": "https://github.com/terraform-linters/tflint",
     "license": "MPL-2.0",
-    "version": "0.16.2",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/terraform-linters/tflint/releases/download/v0.16.2/tflint_windows_amd64.zip",
-            "hash": "5cf61c96523c826d1e9bd470eb4215a0a2e876885450fcafdfcaf95ca41fedfd"
+            "url": "https://github.com/terraform-linters/tflint/releases/download/v0.17.0/tflint_windows_amd64.zip",
+            "hash": "eaea9f5946dae81d173c28388ca529f2b2a2cd1b74281c96d9a21bb2e15ade5e"
         },
         "32bit": {
-            "url": "https://github.com/terraform-linters/tflint/releases/download/v0.16.2/tflint_windows_386.zip",
-            "hash": "bacf870b68c2a336ca404e637758addc4e2f38a2ee93c8e94f29124e4a405d3d"
+            "url": "https://github.com/terraform-linters/tflint/releases/download/v0.17.0/tflint_windows_386.zip",
+            "hash": "5ca5e2ec65531a33594c9e15573387d52072bdc4fdf98ffd97c6776ebe684758"
         }
     },
     "bin": "tflint.exe",
@@ -70317,31 +70318,31 @@
         }
     }
 },{ "name": "vim-nightly", "bucket": "main", 
-    "version": "8.2.1058",
+    "version": "8.2.1065",
     "description": "A highly configurable text editor for efficiently creating and changing any kind of text.",
     "homepage": "https://www.vim.org",
     "license": "Vim",
     "architecture": {
         "64bit": {
             "url": [
-                "https://github.com/vim/vim-win32-installer/releases/download/v8.2.1058/gvim_8.2.1058_x64.zip",
+                "https://github.com/vim/vim-win32-installer/releases/download/v8.2.1065/gvim_8.2.1065_x64.zip",
                 "https://raw.githubusercontent.com/ScoopInstaller/Main/master/scripts/vim/install-context.reg",
                 "https://raw.githubusercontent.com/ScoopInstaller/Main/master/scripts/vim/uninstall-context.reg"
             ],
             "hash": [
-                "5df9b466534f94e577031ca992915ed62cdcf2bd51a484284277b0a15dfc6dd8",
+                "af62d8e6aad0053f6a5aea7df79b5f5a38b7d1b1b6bdff9f0b4c1f039dad0cfd",
                 "16a29881837047d783e8556506c73bbb292bdfefe042d77564d3c166d92b9d98",
                 "49225d3470bf4b397d3cab865eddca6e47610be356f812588588c2661a11557e"
             ]
         },
         "32bit": {
             "url": [
-                "https://github.com/vim/vim-win32-installer/releases/download/v8.2.1058/gvim_8.2.1058_x86.zip",
+                "https://github.com/vim/vim-win32-installer/releases/download/v8.2.1065/gvim_8.2.1065_x86.zip",
                 "https://raw.githubusercontent.com/ScoopInstaller/Main/master/scripts/vim/install-context.reg",
                 "https://raw.githubusercontent.com/ScoopInstaller/Main/master/master/scripts/vim/uninstall-context.reg"
             ],
             "hash": [
-                "ca8258644ad0a60aa9ab2346409c81595be7265e28f4b0e51b0232621a4da137",
+                "a6eb6c1c67a376793eec65fdcdc4b6308a31feb1a6c1067443fdf54d3d0d6f83",
                 "16a29881837047d783e8556506c73bbb292bdfefe042d77564d3c166d92b9d98",
                 "49225d3470bf4b397d3cab865eddca6e47610be356f812588588c2661a11557e"
             ]
@@ -71179,14 +71180,14 @@
         }
     }
 },{ "name": "wrangler", "bucket": "main", 
-    "version": "1.10.2",
+    "version": "1.10.3",
     "description": "Cloudflare Workers project manager",
     "homepage": "https://developers.cloudflare.com/workers/tooling/wrangler",
     "license": "MIT|Apache-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/cloudflare/wrangler/releases/download/v1.10.2/wrangler-v1.10.2-x86_64-pc-windows-msvc.tar.gz",
-            "hash": "cbc8c7e4752cc1f96f1c15d5f7bcfe76e1b0a2ff7325e545c8979fe7dd5a6a23"
+            "url": "https://github.com/cloudflare/wrangler/releases/download/v1.10.3/wrangler-v1.10.3-x86_64-pc-windows-msvc.tar.gz",
+            "hash": "b81582fb5a47ab2921e7f3b79284fd567700aff6ced07294dccd6159e2411a16"
         }
     },
     "extract_dir": "dist",
@@ -73551,130 +73552,6 @@
             }
         }
     }
-},{ "name": "nvidia-display-driver-with-3d-vision", "bucket": "nonportable", 
-    "version": "451.48",
-    "description": "NVIDIA display driver.",
-    "homepage": "https://www.nvidia.com/Download/index.aspx",
-    "license": "Freeware",
-    "notes": [
-        "This manifest has been moved to `nvidia-display-driver-with-3d-vision-np`.",
-        "This is only an installer for the NVIDIA display driver. Running `scoop uninstall nvidia-display-driver-with-3d-vision` will only unregister it from Scoop.",
-        "The NVIDIA display driver installer installs and enables the NVIDIA Display Container LS service, which is required for the NVIDIA Control Panel application but also contains telemetry components.",
-        "To disable this functionality and prevent it from being re-enabled on future updates, disable the service using the following commands:",
-        "$ Stop-Service NVDisplay.ContainerLocalSystem",
-        "$ Set-Service NVDisplay.ContainerLocalSystem -StartupType Disabled"
-    ],
-    "architecture": {
-        "64bit": {
-            "url": "https://us.download.nvidia.com/Windows/451.48/451.48-desktop-win10-64bit-international-whql.exe#/dl.7z",
-            "hash": "5b8761161e0932db12ba0dde0d3a09dcd5ffb51c03f060beda20821cfdfdf55c"
-        }
-    },
-    "installer": {
-        "script": [
-            "$service_disabled = (Get-WMIObject win32_service -Filter \"name='NVDisplay.ContainerLocalSystem'\" -ComputerName '.').StartMode -eq 'Disabled'",
-            "",
-            "New-Item \"$dir\\extract\" -ItemType Directory | Out-Null",
-            "Move-Item \"$dir\\*\" -Destination \"$dir\\extract\"",
-            "New-Item \"$dir\\setup\" -ItemType Directory | Out-Null",
-            "# Move everything we want",
-            "Move-Item \"$dir\\extract\\Display.Driver\" -Destination \"$dir\\setup\"",
-            "Move-Item \"$dir\\extract\\Display.Optimus\" -Destination \"$dir\\setup\"",
-            "Move-Item \"$dir\\extract\\HDAudio\" -Destination \"$dir\\setup\"",
-            "Move-Item \"$dir\\extract\\NV3DVision\" -Destination \"$dir\\setup\"",
-            "Move-Item \"$dir\\extract\\NV3DVisionUSB.Driver\" -Destination \"$dir\\setup\"",
-            "Move-Item \"$dir\\extract\\NVI2\" -Destination \"$dir\\setup\"",
-            "Move-Item \"$dir\\extract\\PhysX\" -Destination \"$dir\\setup\"",
-            "Move-Item \"$dir\\extract\\*.txt\" -Destination \"$dir\\setup\"",
-            "Move-Item \"$dir\\extract\\setup.*\" -Destination \"$dir\\setup\"",
-            "# The installer will not run without these legal files",
-            "New-Item \"$dir\\setup\\GFExperience\" -ItemType Directory | Out-Null",
-            "Move-Item \"$dir\\extract\\GFExperience\\PrivacyPolicy\" -Destination \"$dir\\setup\\GFExperience\"",
-            "Move-Item \"$dir\\extract\\GFExperience\\EULA.html\" -Destination \"$dir\\setup\\GFExperience\"",
-            "Move-Item \"$dir\\extract\\GFExperience\\FunctionalConsent*\" -Destination \"$dir\\setup\\GFExperience\"",
-            "",
-            "if ($service_disabled) {",
-            "    Start-Process -Wait -WindowStyle Hidden cmd \"/c call `\"$dir\\setup\\setup.exe`\" -s -noreboot && sc config NVDisplay.ContainerLocalSystem start= disabled && sc stop NVDisplay.ContainerLocalSystem\" -Verb RunAs",
-            "} else {",
-            "    Start-Process -Wait \"$dir\\setup\\setup.exe\" \"-s -noreboot\" -Verb RunAs",
-            "}",
-            "",
-            "Remove-Item -Recurse \"$dir\\extract\"",
-            "Remove-Item -Recurse \"$dir\\setup\""
-        ]
-    },
-    "checkver": {
-        "url": "https://www.nvidia.com/Download/processFind.aspx?psid=95&pfid=694&osid=19&lid=1",
-        "regex": ">([\\d.]{6})<"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://us.download.nvidia.com/Windows/$version/$version-desktop-win10-64bit-international-whql.exe#/dl.7z"
-            }
-        }
-    }
-},{ "name": "nvidia-display-driver", "bucket": "nonportable", 
-    "version": "451.48",
-    "description": "NVIDIA display driver.",
-    "homepage": "https://www.nvidia.com/Download/index.aspx",
-    "license": "Freeware",
-    "notes": [
-        "This manifest has been moved to `nvidia-display-driver-np`.",
-        "This is only an installer for the NVIDIA display driver. Running `scoop uninstall nvidia-display-driver` will only unregister it from Scoop.",
-        "The NVIDIA display driver installer installs and enables the NVIDIA Display Container LS service, which is required for the NVIDIA Control Panel application but also contains telemetry components.",
-        "To disable this functionality and prevent it from being re-enabled on future updates, disable the service using the following commands:",
-        "$ Stop-Service NVDisplay.ContainerLocalSystem",
-        "$ Set-Service NVDisplay.ContainerLocalSystem -StartupType Disabled"
-    ],
-    "architecture": {
-        "64bit": {
-            "url": "https://us.download.nvidia.com/Windows/451.48/451.48-desktop-win10-64bit-international-whql.exe#/dl.7z",
-            "hash": "5b8761161e0932db12ba0dde0d3a09dcd5ffb51c03f060beda20821cfdfdf55c"
-        }
-    },
-    "installer": {
-        "script": [
-            "$service_disabled = (Get-WMIObject win32_service -Filter \"name='NVDisplay.ContainerLocalSystem'\" -ComputerName '.').StartMode -eq 'Disabled'",
-            "",
-            "New-Item \"$dir\\extract\" -ItemType Directory | Out-Null",
-            "Move-Item \"$dir\\*\" -Destination \"$dir\\extract\"",
-            "New-Item \"$dir\\setup\" -ItemType Directory | Out-Null",
-            "# Move everything we want",
-            "Move-Item \"$dir\\extract\\Display.Driver\" -Destination \"$dir\\setup\"",
-            "Move-Item \"$dir\\extract\\Display.Optimus\" -Destination \"$dir\\setup\"",
-            "Move-Item \"$dir\\extract\\HDAudio\" -Destination \"$dir\\setup\"",
-            "Move-Item \"$dir\\extract\\NVI2\" -Destination \"$dir\\setup\"",
-            "Move-Item \"$dir\\extract\\PhysX\" -Destination \"$dir\\setup\"",
-            "Move-Item \"$dir\\extract\\*.txt\" -Destination \"$dir\\setup\"",
-            "Move-Item \"$dir\\extract\\setup.*\" -Destination \"$dir\\setup\"",
-            "# The installer will not run without these legal files",
-            "New-Item \"$dir\\setup\\GFExperience\" -ItemType Directory | Out-Null",
-            "Move-Item \"$dir\\extract\\GFExperience\\PrivacyPolicy\" -Destination \"$dir\\setup\\GFExperience\"",
-            "Move-Item \"$dir\\extract\\GFExperience\\EULA.html\" -Destination \"$dir\\setup\\GFExperience\"",
-            "Move-Item \"$dir\\extract\\GFExperience\\FunctionalConsent*\" -Destination \"$dir\\setup\\GFExperience\"",
-            "",
-            "if ($service_disabled) {",
-            "    Start-Process -Wait -WindowStyle Hidden cmd \"/c call `\"$dir\\setup\\setup.exe`\" -s -noreboot && sc config NVDisplay.ContainerLocalSystem start= disabled && sc stop NVDisplay.ContainerLocalSystem\" -Verb RunAs",
-            "} else {",
-            "    Start-Process -Wait \"$dir\\setup\\setup.exe\" \"-s -noreboot\" -Verb RunAs",
-            "}",
-            "",
-            "Remove-Item -Recurse \"$dir\\extract\"",
-            "Remove-Item -Recurse \"$dir\\setup\""
-        ]
-    },
-    "checkver": {
-        "url": "https://www.nvidia.com/Download/processFind.aspx?psid=95&pfid=694&osid=19&lid=1",
-        "regex": ">([\\d.]{6})<"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://us.download.nvidia.com/Windows/$version/$version-desktop-win10-64bit-international-whql.exe#/dl.7z"
-            }
-        }
-    }
 },{ "name": "office-365-apps-minimal-np", "bucket": "nonportable",     "version": "office",
     "description": "Family of client software, server software and services developed by Microsoft. This package only includes Excel, PowerPoint and Word.",
     "homepage": "https://www.office.com/",
@@ -73866,18 +73743,19 @@
             }
         }
     }
-},{ "name": "putty-np", "bucket": "nonportable",     "version": "0.73",
+},{ "name": "putty-np", "bucket": "nonportable", 
+    "version": "0.74",
     "description": "SSH and telnet client.",
     "homepage": "https://www.chiark.greenend.org.uk/~sgtatham/putty/",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.73-installer.msi",
-            "hash": "sha512:63065b4022a29f36ed73f327282af264b7f71573da4969b8bc07553e6c0e00c3e87c6ee01fe45d8457ff3f28d1852880d85ad627b31aef36386d9281766529ae"
+            "url": "https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.74-installer.msi",
+            "hash": "sha512:150cc16d228cae7f09ad34afe3f5386685a6be44775d6000e838906d98dff6abccd4047134b041935469ba28bb999d6ae7f00f0a8e9a7f5f10ff4952c6f846e3"
         },
         "32bit": {
-            "url": "https://the.earth.li/~sgtatham/putty/latest/w32/putty-0.73-installer.msi",
-            "hash": "sha512:fbbcef32d2bb04a64e90fd71734b2fea8f7356e1fc32205c30df10ba19a0f9ee3489fe091fbc1f7e109ad594181e842765d58064c80714790ee210010d49733e"
+            "url": "https://the.earth.li/~sgtatham/putty/latest/w32/putty-0.74-installer.msi",
+            "hash": "sha512:3d5f4e7a6fe8082f11b89286872076d3e85bd6136529e4f38eebc2af21edc329550610ade283e7d0118baa0057f595dc271950e25408971f87105d0c7361ff2b"
         }
     },
     "installer": {
@@ -88244,18 +88122,18 @@
 },{ "name": "rclone-beta", "bucket": "versions", 
     "homepage": "https://rclone.org",
     "description": "rsync for cloud storage",
-    "version": "1.52.2-133-g9058ec32",
+    "version": "1.52.2-135-g0bcf4769",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://beta.rclone.org/v1.52.2-133-g9058ec32-beta/rclone-v1.52.2-133-g9058ec32-beta-windows-amd64.zip",
-            "extract_dir": "rclone-v1.52.2-133-g9058ec32-beta-windows-amd64",
-            "hash": "7116e5118996dc16b961d002ff9c07d7e7503b83a9084dc6de69fc8919356e0c"
+            "url": "https://beta.rclone.org/v1.52.2-135-g0bcf4769-beta/rclone-v1.52.2-135-g0bcf4769-beta-windows-amd64.zip",
+            "extract_dir": "rclone-v1.52.2-135-g0bcf4769-beta-windows-amd64",
+            "hash": "9a03f7a789dc7462c7322a9008e5cc196519f7f7b9b80b74b83bd74da69c8365"
         },
         "32bit": {
-            "url": "https://beta.rclone.org/v1.52.2-133-g9058ec32-beta/rclone-v1.52.2-133-g9058ec32-beta-windows-386.zip",
-            "extract_dir": "rclone-v1.52.2-133-g9058ec32-beta-windows-386",
-            "hash": "8332f950e447ed5faa2dd3c658a333820e4742d0bf037e6b2cf727c3c7c0f0c1"
+            "url": "https://beta.rclone.org/v1.52.2-135-g0bcf4769-beta/rclone-v1.52.2-135-g0bcf4769-beta-windows-386.zip",
+            "extract_dir": "rclone-v1.52.2-135-g0bcf4769-beta-windows-386",
+            "hash": "727b8c546b1663636b62dbed8bd2037bea4001147660cfc3d4f61e18311e0e67"
         }
     },
     "bin": [

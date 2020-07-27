@@ -3511,9 +3511,6 @@
     "checkver": {
         "url": "https://www.ccleaner.com/ccleaner/version-history",
         "regex": ">v([\\d.]+)"
-    },
-    "autoupdate": {
-        "url": "https://download.ccleaner.com/portable/ccsetup$majorVersion$minorVersion.zip"
     }
 },{ "name": "cdburnerxp", "bucket": "extras", 
     "version": "4.5.8.7128",
@@ -5379,13 +5376,13 @@
         }
     }
 },{ "name": "ddu", "bucket": "extras", 
-    "version": "18.0.2.7",
+    "version": "18.0.2.8",
     "description": "Driver removal utility that can help you completely uninstall AMD/NVIDIA graphics card drivers and packages from your system, without leaving leftovers behind (including registry keys, folders and files, driver store)",
     "homepage": "https://www.wagnardsoft.com/",
     "license": "Unknown",
-    "url": "https://www.wagnardsoft.com/DDU/download/DDU%20V18.0.2.7.exe#/dl.7z",
-    "hash": "sha1:5280c2afd23afca3a7710b3fe0509ed8504a93d7",
-    "extract_dir": "DDU v18.0.2.7",
+    "url": "https://www.wagnardsoft.com/DDU/download/DDU%20v18.0.2.8.exe#/dl.7z",
+    "hash": "sha1:3bd70c3bfb3b748e0aa0f326aebc98e8343461e8",
+    "extract_dir": "DDU v18.0.2.8",
     "shortcuts": [
         [
             "Display Driver Uninstaller.exe",
@@ -5394,7 +5391,7 @@
     ],
     "checkver": "\\(DDU\\) V([\\d.]+) Released",
     "autoupdate": {
-        "url": "https://www.wagnardsoft.com/DDU/download/DDU%20V$version.exe#/dl.7z",
+        "url": "https://www.wagnardsoft.com/DDU/download/DDU%20v$version.exe#/dl.7z",
         "hash": {
             "url": "https://www.wagnardsoft.com/content/display-driver-uninstaller-ddu-v$cleanVersion-released",
             "regex": "SHA1:\\s+$sha1"
@@ -8942,18 +8939,18 @@
         }
     }
 },{ "name": "firefox-nightly", "bucket": "extras", 
-    "version": "80.0a1.20200725211804",
+    "version": "80.0a1.20200726095051",
     "description": "Nightly builds of Firefox: the popular open source web browser.",
     "homepage": "https://www.mozilla.org/en-US/firefox/nightly/",
     "license": "MPL-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://archive.mozilla.org/pub/firefox/nightly/2020/07/2020-07-25-21-18-04-mozilla-central/firefox-80.0a1.en-US.win64.installer.exe#/dl.7z",
-            "hash": "sha512:88475cc5016574484c2cb0cba7f6453dfdcf7ff061795917a0d6c3034043ea33469ad25ee25d3ae079676b79abf30f6748d84915077cc43fc0b5e574804b268b"
+            "url": "https://archive.mozilla.org/pub/firefox/nightly/2020/07/2020-07-26-09-50-51-mozilla-central/firefox-80.0a1.en-US.win64.installer.exe#/dl.7z",
+            "hash": "sha512:a3fe0afd07e71e6022347106e07e343cec990cec29eb5f13736a665abf053c96ee7021bbb645e53f2c5ce46ea10fd70e9bfc59726e635c886725b425176e38b4"
         },
         "32bit": {
-            "url": "https://archive.mozilla.org/pub/firefox/nightly/2020/07/2020-07-25-21-18-04-mozilla-central/firefox-80.0a1.en-US.win32.installer.exe#/dl.7z",
-            "hash": "sha512:8a3f359dc36aa4d7bb0f5789ac9e3d3e8bb89e8b4c6e81a047dfa6ab5079dd865ec12ae3e85eaf5e52a6034829980667b20675907caac597aa00f7e72ce3be1c"
+            "url": "https://archive.mozilla.org/pub/firefox/nightly/2020/07/2020-07-26-09-50-51-mozilla-central/firefox-80.0a1.en-US.win32.installer.exe#/dl.7z",
+            "hash": "sha512:c478b24f70192fa9fb6922e212e09791d519926d97282cdca557426ecc313049f3cbdb691829389a6ddec967b8a6ec5da1ccb27307052dce2e47b5a5f3b16d75"
         }
     },
     "extract_dir": "core",
@@ -9044,7 +9041,7 @@
         "url": "https://www.sordum.org/eula/"
     },
     "url": "https://www.sordum.org/files/firewall-app-blocker/fab.zip",
-    "hash": "49fc035832d1f4ccd04d1305458c66f0e26b71c396183bbbda493437c5fade05",
+    "hash": "10df7ff46e799f8237cc57c5e4959ed571bdc05ccd470a56e6f09cfac3c00929",
     "extract_dir": "fab",
     "architecture": {
         "64bit": {
@@ -10821,12 +10818,12 @@
         "url": "https://downloads.sourceforge.net/project/gmkvextractgui/v$version/gMKVExtractGUI.v$version.7z"
     }
 },{ "name": "gnucash", "bucket": "extras", 
-    "version": "4.0",
+    "version": "4.1",
     "description": "Personal and small-business financial-accounting software",
     "homepage": "https://www.gnucash.org/",
     "license": "GPL-2.0-or-later",
-    "url": "https://github.com/Gnucash/gnucash/releases/download/4.0/gnucash-4.0.setup.exe",
-    "hash": "66dae273935f57714ee36e0b761f00f63f3802598752b9cc02b568a0a07d2032",
+    "url": "https://github.com/Gnucash/gnucash/releases/download/4.1/gnucash-4.1.setup.exe",
+    "hash": "836b36be639caf61321c2df24dda48691e57ddeb6b7aa13db49f8eddd5b096e0",
     "innosetup": true,
     "architecture": {
         "64bit": {
@@ -11050,7 +11047,7 @@
         }
     }
 },{ "name": "googlechrome-canary", "bucket": "extras", 
-    "version": "86.0.4212.0",
+    "version": "86.0.4213.0",
     "description": "Fast, secure, and free web browser, built for the modern web.",
     "homepage": "https://www.google.com/chrome/canary",
     "license": {
@@ -11059,12 +11056,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://dl.google.com/release2/chrome/AP12kMtqzthgP-pm3_zSdXc_86.0.4212.0/86.0.4212.0_chrome_installer.exe#/dl.7z",
-            "hash": "25ea6f469544c35568f4aa45635cbc5c067cac5b554e05e9a42e12f40a0815cd"
+            "url": "https://dl.google.com/release2/chrome/AJFZq-lNvQEU83I_3Pq2DiI_86.0.4213.0/86.0.4213.0_chrome_installer.exe#/dl.7z",
+            "hash": "3f9f6c827a393e84b99eab3d9719e3a2798f0cfd6b611b0c162dc91111013682"
         },
         "32bit": {
-            "url": "https://dl.google.com/release2/chrome/RS3jQMgaStwQf6o9JgtVwA_86.0.4212.0/86.0.4212.0_chrome_installer.exe#/dl.7z",
-            "hash": "106d657d4d3ca30e48f181f6946031cbb0c41f86689a5d69925e7a9c93e8b860"
+            "url": "https://dl.google.com/release2/chrome/AKatBD5w1se4RvAy0uP_GdU_86.0.4213.0/86.0.4213.0_chrome_installer.exe#/dl.7z",
+            "hash": "734805d7e702dda19f51bb74d26bdf0ca27a941a36b5d7d08ba61518ecf8d515"
         }
     },
     "installer": {
@@ -14188,14 +14185,14 @@
         "url": "http://app.pc.kakao.com/talk/win32/KakaoTalk_Setup.exe#/dl.7z"
     }
 },{ "name": "kate", "bucket": "extras", 
-    "version": "20.04.2-953",
+    "version": "20.04.2-954",
     "description": "Multi-document editor",
     "homepage": "https://kate-editor.org",
     "license": "LGPL-2.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://binary-factory.kde.org/view/Windows%2064-bit/job/Kate_Release_win64/953/artifact/kate-20.04.2-953-windows-msvc2019_64-cl.7z",
-            "hash": "c9512c072b4ee3b7c0dd3aeb43fc493235912668467ccddc7a3b81b9caa03d18"
+            "url": "https://binary-factory.kde.org/view/Windows%2064-bit/job/Kate_Release_win64/954/artifact/kate-20.04.2-954-windows-msvc2019_64-cl.7z",
+            "hash": "89ca6c27740e755ee8e24f1c1bac95d3411ad842d0058414deb1f8d3361aa07c"
         }
     },
     "bin": "bin\\kate.exe",
@@ -18092,7 +18089,7 @@
         }
     }
 },{ "name": "mpv-git", "bucket": "extras", 
-    "version": "20200718",
+    "version": "20200726",
     "description": "Video player based on MPlayer/mplayer2 (builds by shinchiro)",
     "homepage": "https://mpv.io",
     "license": "LGPL-2.1-or-later,GPL-2.0-or-later",
@@ -18103,12 +18100,12 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://downloads.sourceforge.net/project/mpv-player-windows/64bit/mpv-x86_64-20200718-git-96cdf53.7z",
-            "hash": "sha1:9eed92776d12939f059df653a2524467a213c7b5"
+            "url": "https://downloads.sourceforge.net/project/mpv-player-windows/64bit/mpv-x86_64-20200726-git-b536898.7z",
+            "hash": "sha1:0a8e381b9ef985e2b742eb767283148112168c4c"
         },
         "32bit": {
-            "url": "https://downloads.sourceforge.net/project/mpv-player-windows/32bit/mpv-i686-20200718-git-96cdf53.7z",
-            "hash": "sha1:555b6f5ec98b255af29428d816d3ba9e9807416c"
+            "url": "https://downloads.sourceforge.net/project/mpv-player-windows/32bit/mpv-i686-20200726-git-b536898.7z",
+            "hash": "sha1:0a19acccd7617b56e26a15f1b741e7ff1279ec7f"
         }
     },
     "bin": "mpv.com",
@@ -22850,15 +22847,15 @@
     "homepage": "https://openmpt.org/",
     "description": "Music tracker",
     "license": "BSD-3-Clause",
-    "version": "1.29.01.00",
+    "version": "1.29.02.00",
     "architecture": {
         "32bit": {
-            "url": "https://download.openmpt.org/archive/openmpt/1.29/OpenMPT-1.29.01.00-Setup.exe",
-            "hash": "sha1:1c739d8599e5616fd599cae070277fcd6c0560e2"
+            "url": "https://download.openmpt.org/archive/openmpt/1.29/OpenMPT-1.29.02.00-Setup.exe",
+            "hash": "sha1:974a49d3a5322d9466f584a5b36fd18410788bd1"
         },
         "64bit": {
-            "url": "https://download.openmpt.org/archive/openmpt/1.29/OpenMPT-1.29.01.00-Setup-x64.exe",
-            "hash": "sha1:14e973d45fbe954ecf3c51e681e635dcd02854dd"
+            "url": "https://download.openmpt.org/archive/openmpt/1.29/OpenMPT-1.29.02.00-Setup-x64.exe",
+            "hash": "sha1:f6894a4cd84e95612642cb1bff6d916346e1795a"
         }
     },
     "innosetup": true,
@@ -25838,7 +25835,7 @@
         }
     }
 },{ "name": "q-dir", "bucket": "extras", 
-    "version": "8.61",
+    "version": "8.66",
     "description": "A quad window file manager based on Windows File Explorer",
     "homepage": "https://www.softwareok.com/?seite=Freeware/Q-Dir",
     "license": {
@@ -25848,7 +25845,7 @@
     "architecture": {
         "64bit": {
             "url": "https://www.softwareok.com/Download/Q-Dir_Portable_x64.zip",
-            "hash": "ae43fc8c05f26d1524f3114194c3eebfbb2514ea9e9bc4621974be9327ade3c1",
+            "hash": "bad925ce303645e312f8b70fb447b4d1c5d00fc2544c3dea3d3dbfc38539e765",
             "bin": [
                 [
                     "Q-Dir_x64.exe",
@@ -25864,7 +25861,7 @@
         },
         "32bit": {
             "url": "https://www.softwareok.com/Download/Q-Dir_Portable.zip",
-            "hash": "8ac10a5806c97dfc71e4f3e4fc6db3a0b6973d1b9055f5ff3831ed7c19303334",
+            "hash": "28f94e1a80490f327ebe838f9681e64cb8bc51404b2d5f263f033f57c1917fd0",
             "bin": "Q-Dir.exe",
             "shortcuts": [
                 [
@@ -32792,12 +32789,12 @@
         "url": "https://download.teamviewer.com/download/version_$majorVersionx/TeamViewerPortable.zip"
     }
 },{ "name": "telegram", "bucket": "extras", 
-    "version": "2.1.13",
+    "version": "2.2.0",
     "description": "A messaging app with a focus on speed and security",
     "homepage": "https://telegram.org",
     "license": "GPL-3.0-only",
-    "url": "https://updates.tdesktop.com/tsetup/tportable.2.1.13.zip",
-    "hash": "14e4bb640d4329985e29125f2fbbdefc129210227b17134e8938b432df72b5a3",
+    "url": "https://updates.tdesktop.com/tsetup/tportable.2.2.0.zip",
+    "hash": "eb9a80f7ef66f7b52255ed5d6e1965a1f3f6b91187f50d506b9ed6979e4c4e4c",
     "extract_dir": "Telegram",
     "pre_install": "Set-Content \"$dir\\telegram.cmd\" '@start \"Telegram\" /D \"%~dp0\" \"%~dp0Telegram.exe\" %*' -Encoding Ascii",
     "bin": "telegram.cmd",
@@ -34158,12 +34155,12 @@
         "vcredist": "extras/vcredist2019"
     }
 },{ "name": "traymond", "bucket": "extras", 
-    "version": "1.0.2",
+    "version": "1.0.4",
     "description": "A simple Windows app for minimizing windows to tray icons",
     "homepage": "https://github.com/fcFn/traymond",
     "license": "MIT",
-    "url": "https://github.com/fcFn/traymond/releases/download/v1.0.2/Traymond.exe",
-    "hash": "7ebc06f9f8602f013034ed6ba93722edc1e62557ded21e0e028665235b3b6f94",
+    "url": "https://github.com/fcFn/traymond/releases/download/v1.0.4/Traymond.exe",
+    "hash": "4c87f96849d38d083199316a5afdd6e9cc1206825a1fcbcd00e5150a6e808a23",
     "bin": "Traymond.exe",
     "shortcuts": [
         [
@@ -40337,16 +40334,16 @@
 },{ "name": "eduke32", "bucket": "games", 
     "homepage": "https://www.eduke32.com/",
     "description": "Modern source port for Duke Nukem 3D",
-    "version": "20200716-9166-32096f6c6",
+    "version": "20200726-9203-94179a4dc",
     "license": "http://www.eduke32.com/buildlic.txt",
     "architecture": {
         "64bit": {
-            "url": "https://dukeworld.com/eduke32/synthesis/20200716-9166-32096f6c6/eduke32_win64_20200716-9166-32096f6c6.7z",
-            "hash": "b1141f9fee2db2236e205a862e4875f552404a8738f5f828539e31e81a4f5451"
+            "url": "https://dukeworld.com/eduke32/synthesis/20200726-9203-94179a4dc/eduke32_win64_20200726-9203-94179a4dc.7z",
+            "hash": "b115cec97bcb39cae1e17afc193388ec4dfda841fe992ac9f8432ae615b5f075"
         },
         "32bit": {
-            "url": "https://dukeworld.com/eduke32/synthesis/20200716-9166-32096f6c6/eduke32_win32_20200716-9166-32096f6c6.7z",
-            "hash": "4f3e3a90347099a63dd37f14732b0c880047b8701a3e93f5bf62c823681d6d52"
+            "url": "https://dukeworld.com/eduke32/synthesis/20200726-9203-94179a4dc/eduke32_win32_20200726-9203-94179a4dc.7z",
+            "hash": "5b89369e971782736cdd404beaec302780b59490f92479c42671c216db122c7e"
         }
     },
     "bin": [
@@ -42200,10 +42197,10 @@
     "homepage": "https://pcsx2.net/",
     "description": "A feature rich FOSS PlayStation 2 emulator (development version)",
     "license": "LGPL-3.0-or-later",
-    "version": "1.7.0-140",
-    "url": "https://buildbot.orphis.net/pcsx2/index.php?m=dl&rev=v1.7.0-dev-140-gb28382632&platform=windows-x86#/dl.7z",
-    "hash": "48967f9edbfb3944aa3216d534e55600b77c19fedd9a15d6f58223e8be67e107",
-    "extract_dir": "pcsx2-v1.7.0-dev-140-gb28382632-windows-x86",
+    "version": "1.7.0-143",
+    "url": "https://buildbot.orphis.net/pcsx2/index.php?m=dl&rev=v1.7.0-dev-143-gf44f676cc&platform=windows-x86#/dl.7z",
+    "hash": "6cecf3c26f683e4e3a71e934d40d41ed2773b5bc7059961ed82a33b9f1d5eefa",
+    "extract_dir": "pcsx2-v1.7.0-dev-143-gf44f676cc-windows-x86",
     "bin": "pcsx2.exe",
     "persist": [
         "bios",
@@ -42589,9 +42586,9 @@
     "homepage": "https://rpcs3.net/",
     "description": "Open-source Sony PlayStation 3 emulator (development version)",
     "license": "GPL-2.0-only",
-    "version": "0.0.11-10689",
-    "url": "https://github.com/rpcs3/rpcs3-binaries-win/releases/download/build-9f829b375a69ee933af1c90c2dc78fe28e872ba0/rpcs3-v0.0.11-10689-9f829b37_win64.7z",
-    "hash": "b7c2bda0dea3a117d448e0c9c6f1638509f9c0ea3d059305e054e0bf88690745",
+    "version": "0.0.11-10694",
+    "url": "https://github.com/rpcs3/rpcs3-binaries-win/releases/download/build-609182b1315210190158985757b1727a2704d37c/rpcs3-v0.0.11-10694-609182b1_win64.7z",
+    "hash": "8d9e7dccccfd440c19aee6a158d0f4d5339dab27058d15b51f92b51a33094020",
     "bin": "rpcs3.exe",
     "depends": "vcredist2019",
     "persist": [
@@ -43910,16 +43907,16 @@
 },{ "name": "adopt11-hotspot-jre-nightly", "bucket": "java", 
     "description": "AdoptOpenJDK 11 JRE with Oracle HotSpot JVM (Nightly builds)",
     "homepage": "https://adoptopenjdk.net",
-    "version": "202007240746",
+    "version": "202007260438",
     "license": "GPL-2.0-only WITH Classpath-exception-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk11u-2020-07-24-07-46/OpenJDK11U-jre_x64_windows_hotspot_2020-07-24-07-46.zip",
-            "hash": "766f330cb61a0e053a19f1b3c7202ed3d61994af4e9fe675740638d4cd2e3394"
+            "url": "https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk11u-2020-07-26-04-38/OpenJDK11U-jre_x64_windows_hotspot_2020-07-26-04-38.zip",
+            "hash": "5bdd919ad2338a529fd7befaccdee2f1fec54905c1ad8bbaa68d082e3d20a012"
         },
         "32bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk11u-2020-07-24-07-46/OpenJDK11U-jre_x86-32_windows_hotspot_2020-07-24-07-46.zip",
-            "hash": "1b898c2ec1ee12193412f3cf4790514c4fedd729c1102d5e049350670ed15097"
+            "url": "https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk11u-2020-07-26-04-38/OpenJDK11U-jre_x86-32_windows_hotspot_2020-07-26-04-38.zip",
+            "hash": "3ad06e075393dc42937fdd7414fa4f714e11f3bcd6ba42639342f24bb82fbd21"
         }
     },
     "extract_to": "tmp",
@@ -43997,16 +43994,16 @@
 },{ "name": "adopt11-hotspot-nightly", "bucket": "java", 
     "description": "AdoptOpenJDK 11 with Oracle HotSpot JVM (Nightly builds)",
     "homepage": "https://adoptopenjdk.net",
-    "version": "202007240746",
+    "version": "202007260438",
     "license": "GPL-2.0-only WITH Classpath-exception-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk11u-2020-07-24-07-46/OpenJDK11U-jdk_x64_windows_hotspot_2020-07-24-07-46.zip",
-            "hash": "71473f99eb2a9068d9fe83a4d921784c0111868e17af2a282ac81a39566dd7e8"
+            "url": "https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk11u-2020-07-26-04-38/OpenJDK11U-jdk_x64_windows_hotspot_2020-07-26-04-38.zip",
+            "hash": "f1509019431855eb451e07707f9722f5e19af2b72cecc28a497bf9d6b0108c88"
         },
         "32bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk11u-2020-07-24-07-46/OpenJDK11U-jdk_x86-32_windows_hotspot_2020-07-24-07-46.zip",
-            "hash": "79d5d9f585df8094e98f674ad29d58f82ffecdcb646ddee81125e8d57feb8718"
+            "url": "https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk11u-2020-07-26-04-38/OpenJDK11U-jdk_x86-32_windows_hotspot_2020-07-26-04-38.zip",
+            "hash": "081e9c026317a0ebacd3ab8ca3fabecdc7c633ebe33294b8a276abbbbe186c0e"
         }
     },
     "extract_to": "tmp",
@@ -44084,12 +44081,12 @@
 },{ "name": "adopt11-openj9-jre-nightly", "bucket": "java", 
     "description": "AdoptOpenJDK 11 JRE with Eclipse OpenJ9 JVM (Nightly builds)",
     "homepage": "https://adoptopenjdk.net",
-    "version": "202007251256",
+    "version": "202007260438",
     "license": "GPL-2.0-only WITH Classpath-exception-2.0,EPL-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk11u-2020-07-25-12-56/OpenJDK11U-jre_x64_windows_openj9_2020-07-25-12-56.zip",
-            "hash": "cc3eb8452eb0cfa2973ac391e4ff4593bfda563ae6b65d398a895e151190f9f0"
+            "url": "https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk11u-2020-07-26-04-38/OpenJDK11U-jre_x64_windows_openj9_2020-07-26-04-38.zip",
+            "hash": "e74e888c0751db5544bc5d816c78929271fce5c3a0f477371b5138aa21e23a0c"
         }
     },
     "extract_to": "tmp",
@@ -44157,12 +44154,12 @@
 },{ "name": "adopt11-openj9-nightly", "bucket": "java", 
     "description": "AdoptOpenJDK 11 with Eclipse OpenJ9 JVM (Nightly builds)",
     "homepage": "https://adoptopenjdk.net",
-    "version": "202007251256",
+    "version": "202007260438",
     "license": "GPL-2.0-only WITH Classpath-exception-2.0,EPL-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk11u-2020-07-25-12-56/OpenJDK11U-jdk_x64_windows_openj9_2020-07-25-12-56.zip",
-            "hash": "a80a8d11a6ba092cd5f30d70e8ad259d4fdcba19df98e94348b5225ee7b974a6"
+            "url": "https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk11u-2020-07-26-04-38/OpenJDK11U-jdk_x64_windows_openj9_2020-07-26-04-38.zip",
+            "hash": "92160d38b682e772f1802f986c90472b41ad54224b61b6296172475448688cd1"
         }
     },
     "extract_to": "tmp",
@@ -44196,12 +44193,12 @@
 },{ "name": "adopt11-openj9-xl-jre-nightly", "bucket": "java", 
     "description": "AdoptOpenJDK 11 JRE with Eclipse OpenJ9 JVM with large heap (Nightly builds)",
     "homepage": "https://adoptopenjdk.net",
-    "version": "202007251256",
+    "version": "202007260438",
     "license": "GPL-2.0-only WITH Classpath-exception-2.0,EPL-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk11u-2020-07-25-12-56/OpenJDK11U-jre_x64_windows_openj9_windowsXL_2020-07-25-12-56.zip",
-            "hash": "a812bdf9ff9dd7966004893aa286b5f0a5dd1b9d23cc89f4aa1afdeedc7c5dcd"
+            "url": "https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk11u-2020-07-26-04-38/OpenJDK11U-jre_x64_windows_openj9_windowsXL_2020-07-26-04-38.zip",
+            "hash": "98d8a52e6b87a7c48881fe7e3ec84e53941ddb842b1055a50b94c5644cf7b3e1"
         }
     },
     "extract_to": "tmp",
@@ -44269,12 +44266,12 @@
 },{ "name": "adopt11-openj9-xl-nightly", "bucket": "java", 
     "description": "AdoptOpenJDK 11 with Eclipse OpenJ9 JVM with large heap (Nightly builds)",
     "homepage": "https://adoptopenjdk.net",
-    "version": "202007251256",
+    "version": "202007260438",
     "license": "GPL-2.0-only WITH Classpath-exception-2.0,EPL-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk11u-2020-07-25-12-56/OpenJDK11U-jdk_x64_windows_openj9_windowsXL_2020-07-25-12-56.zip",
-            "hash": "48f05b05fbe685884c72dc80481c1ce932587b1b393d6e591961c43b0d866c73"
+            "url": "https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk11u-2020-07-26-04-38/OpenJDK11U-jdk_x64_windows_openj9_windowsXL_2020-07-26-04-38.zip",
+            "hash": "d4ecde2644d4c016710633b8e51c26751a2cfe2d5b663c488cc02ea6e5a32fff"
         }
     },
     "extract_to": "tmp",
@@ -44644,12 +44641,12 @@
 },{ "name": "adopt14-hotspot-jre-nightly", "bucket": "java", 
     "description": "AdoptOpenJDK 14 JRE with Oracle HotSpot JVM (Nightly builds)",
     "homepage": "https://adoptopenjdk.net",
-    "version": "202007250334",
+    "version": "202007260248",
     "license": "GPL-2.0-only WITH Classpath-exception-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk14u-2020-07-25-03-34/OpenJDK14U-jre_x64_windows_hotspot_2020-07-25-03-34.zip",
-            "hash": "e8fb383bd1e31664bc53948a1293802045ffb3bb77965e3d2cf5bfac6b60f0a2"
+            "url": "https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk14u-2020-07-26-02-48/OpenJDK14U-jre_x64_windows_hotspot_2020-07-26-02-48.zip",
+            "hash": "476ce18242d338cb86c9208fc7dc15cc599d72f74e16d25f08826f41eaca08c2"
         }
     },
     "extract_to": "tmp",
@@ -44717,12 +44714,12 @@
 },{ "name": "adopt14-hotspot-nightly", "bucket": "java", 
     "description": "AdoptOpenJDK 14 with Oracle HotSpot JVM (Nightly builds)",
     "homepage": "https://adoptopenjdk.net",
-    "version": "202007250334",
+    "version": "202007260248",
     "license": "GPL-2.0-only WITH Classpath-exception-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk14u-2020-07-25-03-34/OpenJDK14U-jdk_x64_windows_hotspot_2020-07-25-03-34.zip",
-            "hash": "f15f1a25f1e4d916a1bff087fdaa40eed53ef930f407a83bcc17c47dfb759c92"
+            "url": "https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk14u-2020-07-26-02-48/OpenJDK14U-jdk_x64_windows_hotspot_2020-07-26-02-48.zip",
+            "hash": "64067e8b9091ab7fe9f19c851dea487423d800c2ab30c0597da8d9552fc690d9"
         }
     },
     "extract_to": "tmp",
@@ -44790,12 +44787,12 @@
 },{ "name": "adopt14-openj9-jre-nightly", "bucket": "java", 
     "description": "AdoptOpenJDK 14 JRE with Eclipse OpenJ9 JVM (Nightly builds)",
     "homepage": "https://adoptopenjdk.net",
-    "version": "202007250334",
+    "version": "202007260248",
     "license": "GPL-2.0-only WITH Classpath-exception-2.0,EPL-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk14u-2020-07-25-03-34/OpenJDK14U-jre_x64_windows_openj9_2020-07-25-03-34.zip",
-            "hash": "874a7256f0f3d202c7c618d5d051b426dd0d9d65c3c21303f8d1dc64b960f35b"
+            "url": "https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk14u-2020-07-26-02-48/OpenJDK14U-jre_x64_windows_openj9_2020-07-26-02-48.zip",
+            "hash": "3693873bd23fe577873e2d2707a231b34530dd342fdce9cd5ab206d182db1967"
         }
     },
     "extract_to": "tmp",
@@ -44863,12 +44860,12 @@
 },{ "name": "adopt14-openj9-nightly", "bucket": "java", 
     "description": "AdoptOpenJDK 14 with Eclipse OpenJ9 JVM (Nightly builds)",
     "homepage": "https://adoptopenjdk.net",
-    "version": "202007250334",
+    "version": "202007260248",
     "license": "GPL-2.0-only WITH Classpath-exception-2.0,EPL-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk14u-2020-07-25-03-34/OpenJDK14U-jdk_x64_windows_openj9_2020-07-25-03-34.zip",
-            "hash": "01ec68a4637ddffdc00a5a610c0f0296c3ce27da137596773fe2449df51a70f6"
+            "url": "https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk14u-2020-07-26-02-48/OpenJDK14U-jdk_x64_windows_openj9_2020-07-26-02-48.zip",
+            "hash": "61344001e6140d320efbf775f19f212cd6fd8884a7e36cb56c302f200a5586e5"
         }
     },
     "extract_to": "tmp",
@@ -44902,12 +44899,12 @@
 },{ "name": "adopt14-openj9-xl-jre-nightly", "bucket": "java", 
     "description": "AdoptOpenJDK 14 JRE with Eclipse OpenJ9 JVM with large heap (Nightly builds)",
     "homepage": "https://adoptopenjdk.net",
-    "version": "202007250334",
+    "version": "202007260248",
     "license": "GPL-2.0-only WITH Classpath-exception-2.0,EPL-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk14u-2020-07-25-03-34/OpenJDK14U-jre_x64_windows_openj9_windowsXL_2020-07-25-03-34.zip",
-            "hash": "353003da117f7fa025cdec6693306caa89bcc369e5d5c6fad25de7ed25933620"
+            "url": "https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk14u-2020-07-26-02-48/OpenJDK14U-jre_x64_windows_openj9_windowsXL_2020-07-26-02-48.zip",
+            "hash": "983d096faa391fee048a914b94a582472ad918be0e61189727519043402b82a5"
         }
     },
     "extract_to": "tmp",
@@ -44975,12 +44972,12 @@
 },{ "name": "adopt14-openj9-xl-nightly", "bucket": "java", 
     "description": "AdoptOpenJDK 14 with Eclipse OpenJ9 JVM with large heap (Nightly builds)",
     "homepage": "https://adoptopenjdk.net",
-    "version": "202007250334",
+    "version": "202007260248",
     "license": "GPL-2.0-only WITH Classpath-exception-2.0,EPL-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk14u-2020-07-25-03-34/OpenJDK14U-jdk_x64_windows_openj9_windowsXL_2020-07-25-03-34.zip",
-            "hash": "2715353ed9e8ffae51de3d68c7ab2420e2648edb02da0a956176fff0dfebd54e"
+            "url": "https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk14u-2020-07-26-02-48/OpenJDK14U-jdk_x64_windows_openj9_windowsXL_2020-07-26-02-48.zip",
+            "hash": "c60fdec755e3dffd177e71a3129d3d3f90a12ac9c858891e2bc8ac434ff7e014"
         }
     },
     "extract_to": "tmp",
@@ -45082,12 +45079,12 @@
 },{ "name": "adopt8-hotspot-jre-nightly", "bucket": "java", 
     "description": "AdoptOpenJDK 8 JRE with Oracle HotSpot JVM (Nightly builds)",
     "homepage": "https://adoptopenjdk.net",
-    "version": "202007250245",
+    "version": "202007260105",
     "license": "GPL-2.0-only WITH Classpath-exception-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-07-25-02-45/OpenJDK8U-jre_x64_windows_hotspot_2020-07-25-02-45.zip",
-            "hash": "fcb68cae6903488538b711e81ab6251d223f7f668fca15b235d417af869c6ad5"
+            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-07-26-01-05/OpenJDK8U-jre_x64_windows_hotspot_2020-07-26-01-05.zip",
+            "hash": "b32b92148ea1af35490b8a928f6a6bf5b7fe9d94f9d59af251c48b6d8641bc74"
         }
     },
     "extract_to": "tmp",
@@ -45162,12 +45159,12 @@
 },{ "name": "adopt8-hotspot-nightly", "bucket": "java", 
     "description": "AdoptOpenJDK 8 with Oracle HotSpot JVM (Nightly builds)",
     "homepage": "https://adoptopenjdk.net",
-    "version": "202007250245",
+    "version": "202007260105",
     "license": "GPL-2.0-only WITH Classpath-exception-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-07-25-02-45/OpenJDK8U-jdk_x64_windows_hotspot_2020-07-25-02-45.zip",
-            "hash": "c29771703de0bad96449c8463526d0b218b1614582d429c27711bf5d0beb45db"
+            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-07-26-01-05/OpenJDK8U-jdk_x64_windows_hotspot_2020-07-26-01-05.zip",
+            "hash": "cd4c633179e66cecd0a33a7f65eeaec1e8dee26784caaab4a609c8c1e2cef4a4"
         }
     },
     "extract_to": "tmp",
@@ -45242,16 +45239,16 @@
 },{ "name": "adopt8-openj9-jre-nightly", "bucket": "java", 
     "description": "AdoptOpenJDK 8 JRE with Eclipse OpenJ9 JVM (Nightly builds)",
     "homepage": "https://adoptopenjdk.net",
-    "version": "202007250245",
+    "version": "202007260105",
     "license": "GPL-2.0-only WITH Classpath-exception-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-07-25-02-45/OpenJDK8U-jre_x64_windows_openj9_2020-07-25-02-45.zip",
-            "hash": "00e68ed2c7a6d8923c9af2d47be525ed9a258d6574a3a9b8bdf9597705ae591e"
+            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-07-26-01-05/OpenJDK8U-jre_x64_windows_openj9_2020-07-26-01-05.zip",
+            "hash": "deb60ccebcbf9228171c37770c9d559774a22d076b5553bd8fdf6b82df6e0dc2"
         },
         "32bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-07-25-02-45/OpenJDK8U-jre_x86-32_windows_openj9_2020-07-25-02-45.zip",
-            "hash": "056a295e672e71869617679adf4dc2e3a3163811e985f1efd2e718e205da0043"
+            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-07-26-01-05/OpenJDK8U-jre_x86-32_windows_openj9_2020-07-26-01-05.zip",
+            "hash": "e2f6fabff2be1e1df55838b2a814142c60822b6ddac51db4616e77bd90f4802b"
         }
     },
     "extract_to": "tmp",
@@ -45329,16 +45326,16 @@
 },{ "name": "adopt8-openj9-nightly", "bucket": "java", 
     "description": "AdoptOpenJDK 8 with Eclipse OpenJ9 JVM (Nightly builds)",
     "homepage": "https://adoptopenjdk.net",
-    "version": "202007250245",
+    "version": "202007260105",
     "license": "GPL-2.0-only WITH Classpath-exception-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-07-25-02-45/OpenJDK8U-jdk_x64_windows_openj9_2020-07-25-02-45.zip",
-            "hash": "6f1f6527166dd7c2b6d739a1f3d862c622f2375dbeaf405944ccb0a1fb2cff37"
+            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-07-26-01-05/OpenJDK8U-jdk_x64_windows_openj9_2020-07-26-01-05.zip",
+            "hash": "b102b8b2924499401e62fcd4964c8fbffbb1407d35dccdd066f7fa73c9987258"
         },
         "32bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-07-25-02-45/OpenJDK8U-jdk_x86-32_windows_openj9_2020-07-25-02-45.zip",
-            "hash": "a688738ab46a1468e821521edd74938e245bebc578c6d6b1f515e38e1ad916cc"
+            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-07-26-01-05/OpenJDK8U-jdk_x86-32_windows_openj9_2020-07-26-01-05.zip",
+            "hash": "eb7c5b602637a8245c98b9540f600e650542ac1786bec130968ba43f1f838ee6"
         }
     },
     "extract_to": "tmp",
@@ -45375,12 +45372,12 @@
 },{ "name": "adopt8-openj9-xl-jre-nightly", "bucket": "java", 
     "description": "AdoptOpenJDK 8 JRE with Eclipse OpenJ9 JVM with large heap (Nightly builds)",
     "homepage": "https://adoptopenjdk.net",
-    "version": "202007250245",
+    "version": "202007260105",
     "license": "GPL-2.0-only WITH Classpath-exception-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-07-25-02-45/OpenJDK8U-jre_x64_windows_openj9_windowsXL_2020-07-25-02-45.zip",
-            "hash": "39c16d2155a43c963035cfa9b4138767e3599f5b6464332ce606a180b293b4fb"
+            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-07-26-01-05/OpenJDK8U-jre_x64_windows_openj9_windowsXL_2020-07-26-01-05.zip",
+            "hash": "1e29a7bc0eb70a2de280771260e445d3b32d05becc6d33b520f40d0d0d19c0e7"
         }
     },
     "extract_to": "tmp",
@@ -45448,12 +45445,12 @@
 },{ "name": "adopt8-openj9-xl-nightly", "bucket": "java", 
     "description": "AdoptOpenJDK 8 with Eclipse OpenJ9 JVM with large heap (Nightly builds)",
     "homepage": "https://adoptopenjdk.net",
-    "version": "202007250245",
+    "version": "202007260105",
     "license": "GPL-2.0-only WITH Classpath-exception-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-07-25-02-45/OpenJDK8U-jdk_x64_windows_openj9_windowsXL_2020-07-25-02-45.zip",
-            "hash": "085ed74dc44087543a9b1c7261f697fe5004c5cae1cbe9e19a78a82db4a4efc0"
+            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-07-26-01-05/OpenJDK8U-jdk_x64_windows_openj9_windowsXL_2020-07-26-01-05.zip",
+            "hash": "914e9d0eea41b1563b5c94adf7d46f46974ec32a2ddde08ea07c86fe72ca0533"
         }
     },
     "extract_to": "tmp",
@@ -51496,14 +51493,14 @@
         "extract_dir": "boxes-$version"
     }
 },{ "name": "broot", "bucket": "main", 
-    "version": "0.19.1",
+    "version": "0.19.2",
     "description": "A new way to see and navigate directory trees",
     "homepage": "https://dystroy.org/broot/",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Canop/broot/releases/download/v0.19.1/broot_0.19.1.zip",
-            "hash": "d249b4c6a24de0e3ae902083d7bbe297095af41224a13d2a3cf880df18353d7f",
+            "url": "https://github.com/Canop/broot/releases/download/v0.19.2/broot_0.19.2.zip",
+            "hash": "882bdae264b07aeab750a9befe1a6f227626f6803c31f61f182b2338ce54c5dc",
             "extract_dir": "build\\x86_64-pc-windows-gnu"
         }
     },
@@ -61086,18 +61083,18 @@
         "url": "https://github.com/activescott/lessmsi/releases/download/v$version/lessmsi-v$version.zip"
     }
 },{ "name": "lf", "bucket": "main", 
-    "homepage": "https://godoc.org/github.com/gokcehan/lf",
+    "version": "r15",
     "description": "A terminal file manager written in Go",
+    "homepage": "https://godoc.org/github.com/gokcehan/lf",
     "license": "MIT",
-    "version": "r14",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/gokcehan/lf/releases/download/r14/lf-windows-amd64.zip",
-            "hash": "1f3ee1f4f0fc7e26488f63492cc6b3044b8efdbd3986732d30502cbac4b5675e"
+            "url": "https://github.com/gokcehan/lf/releases/download/r15/lf-windows-amd64.zip",
+            "hash": "b8c431433b4b7356272669e2d7d1d74d7f3d25b696cb39cab454c29c12d4cc2b"
         },
         "32bit": {
-            "url": "https://github.com/gokcehan/lf/releases/download/r14/lf-windows-386.zip",
-            "hash": "54b33d64317f1965aab7c2ce3d5c5296ef87d4e39af1af86a3ead92b833c923b"
+            "url": "https://github.com/gokcehan/lf/releases/download/r15/lf-windows-386.zip",
+            "hash": "3a253267bc1d6053e6ada091a3cbdc62794588ff0fb393f24037d9f08e7418cc"
         }
     },
     "bin": "lf.exe",
@@ -69946,13 +69943,13 @@
     "homepage": "https://mark0.net/soft-trid-e.html",
     "description": "A utility designed to identify file types from their binary signatures.",
     "license": "Shareware",
-    "version": "2.24-20.07.23",
+    "version": "2.24-20.07.26",
     "url": [
         "https://mark0.net/download/triddefs.zip",
         "https://mark0.net/download/trid_w32.zip"
     ],
     "hash": [
-        "dad9b95a7b7ce7c9b8b0651ec2eafe11bfdbbde065342db29ec48bf2c78e3289",
+        "2742a4cc93bbe1a57123ccc7594b21999b2cbef0bec8aed310bf6baaf7172654",
         "ea7f82363912f5b3c79217ba8716425ec3f2514887f788dcd5a2821d0b1fc83f"
     ],
     "bin": "trid.exe",
@@ -70713,31 +70710,31 @@
         }
     }
 },{ "name": "vim-nightly", "bucket": "main", 
-    "version": "8.2.1288",
+    "version": "8.2.1294",
     "description": "A highly configurable text editor for efficiently creating and changing any kind of text.",
     "homepage": "https://www.vim.org",
     "license": "Vim",
     "architecture": {
         "64bit": {
             "url": [
-                "https://github.com/vim/vim-win32-installer/releases/download/v8.2.1288/gvim_8.2.1288_x64.zip",
+                "https://github.com/vim/vim-win32-installer/releases/download/v8.2.1294/gvim_8.2.1294_x64.zip",
                 "https://raw.githubusercontent.com/ScoopInstaller/Main/master/scripts/vim/install-context.reg",
                 "https://raw.githubusercontent.com/ScoopInstaller/Main/master/scripts/vim/uninstall-context.reg"
             ],
             "hash": [
-                "04ee5039229ac3aac06cb444fcbaccf296900a6b5a1342a02afeec748b9dab59",
+                "8564f4fd3ec14d4f1635ddf8d7cf2e8a75ac629e55a5baf0f623ba8e2eaaa1fc",
                 "16a29881837047d783e8556506c73bbb292bdfefe042d77564d3c166d92b9d98",
                 "49225d3470bf4b397d3cab865eddca6e47610be356f812588588c2661a11557e"
             ]
         },
         "32bit": {
             "url": [
-                "https://github.com/vim/vim-win32-installer/releases/download/v8.2.1288/gvim_8.2.1288_x86.zip",
+                "https://github.com/vim/vim-win32-installer/releases/download/v8.2.1294/gvim_8.2.1294_x86.zip",
                 "https://raw.githubusercontent.com/ScoopInstaller/Main/master/scripts/vim/install-context.reg",
                 "https://raw.githubusercontent.com/ScoopInstaller/Main/master/master/scripts/vim/uninstall-context.reg"
             ],
             "hash": [
-                "aeca1bdc18e36f90bcc0748978bab562f37e902252b68c8ff744603f141f5953",
+                "c2f637ffa6aa151a18a0edb285b454e856c5a23ada23eb6c656d68e1c9904c99",
                 "16a29881837047d783e8556506c73bbb292bdfefe042d77564d3c166d92b9d98",
                 "49225d3470bf4b397d3cab865eddca6e47610be356f812588588c2661a11557e"
             ]
@@ -88761,18 +88758,18 @@
 },{ "name": "rclone-beta", "bucket": "versions", 
     "homepage": "https://rclone.org",
     "description": "rsync for cloud storage",
-    "version": "1.52.2-250-g4f9a80e2",
+    "version": "1.52.2-253-g71173605",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://beta.rclone.org/v1.52.2-250-g4f9a80e2-beta/rclone-v1.52.2-250-g4f9a80e2-beta-windows-amd64.zip",
-            "extract_dir": "rclone-v1.52.2-250-g4f9a80e2-beta-windows-amd64",
-            "hash": "e60f5eb60dbe95dee2512c43cbff5db4143fe71be608dd91dd5fcc5a0594c116"
+            "url": "https://beta.rclone.org/v1.52.2-253-g71173605-beta/rclone-v1.52.2-253-g71173605-beta-windows-amd64.zip",
+            "extract_dir": "rclone-v1.52.2-253-g71173605-beta-windows-amd64",
+            "hash": "625788bf1ca9641c1e6dbf60dfcb06a4fc18f93e2fe8be30b0fbca122c27cb5c"
         },
         "32bit": {
-            "url": "https://beta.rclone.org/v1.52.2-250-g4f9a80e2-beta/rclone-v1.52.2-250-g4f9a80e2-beta-windows-386.zip",
-            "extract_dir": "rclone-v1.52.2-250-g4f9a80e2-beta-windows-386",
-            "hash": "04c4d6faac1d76fd18d31dea66617d32c5734cc603dacd0880c2de54e125b178"
+            "url": "https://beta.rclone.org/v1.52.2-253-g71173605-beta/rclone-v1.52.2-253-g71173605-beta-windows-386.zip",
+            "extract_dir": "rclone-v1.52.2-253-g71173605-beta-windows-386",
+            "hash": "9172f7210a06fbb2f0d36657840854e40702d655b87c04d11ad40dbe03345fbf"
         }
     },
     "bin": [

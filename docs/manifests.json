@@ -5417,18 +5417,18 @@
         }
     }
 },{ "name": "dart-dev", "bucket": "extras", 
-    "version": "2.11.0-180.0.dev",
+    "version": "2.11.0-189.0.dev",
     "description": "The libraries and command-line tools that you need to develop Dart web, command-line, and server apps",
     "homepage": "https://www.dartlang.org/",
     "license": "BSD-3-Clause",
     "architecture": {
         "64bit": {
-            "url": "https://storage.googleapis.com/dart-archive/channels/dev/release/2.11.0-180.0.dev/sdk/dartsdk-windows-x64-release.zip",
-            "hash": "1c4bbd83a706442f963c928006eebc55585fdb134dc1ff82584f67f07726e1e7"
+            "url": "https://storage.googleapis.com/dart-archive/channels/dev/release/2.11.0-189.0.dev/sdk/dartsdk-windows-x64-release.zip",
+            "hash": "1a3c2c0a789e03aaefdf6eed65dd0a82f545b90fd212d4fa7fccfa0027499b8e"
         },
         "32bit": {
-            "url": "https://storage.googleapis.com/dart-archive/channels/dev/release/2.11.0-180.0.dev/sdk/dartsdk-windows-ia32-release.zip",
-            "hash": "999b1671e081733c62be706cc09c5365c83f4ded9788e813712b64c37bed9403"
+            "url": "https://storage.googleapis.com/dart-archive/channels/dev/release/2.11.0-189.0.dev/sdk/dartsdk-windows-ia32-release.zip",
+            "hash": "c023f3efbd0a07bd98f69b90a66c644c80f639e800a4f1ff48604dc26483bd5d"
         }
     },
     "extract_dir": "dart-sdk",
@@ -5816,7 +5816,7 @@
         }
     }
 },{ "name": "deepl", "bucket": "extras", 
-    "version": "1.13.0",
+    "version": "1.14.1",
     "description": "An online translator",
     "homepage": "https://www.deepl.com/",
     "license": {
@@ -5825,12 +5825,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://www.deepl.com/windows/download/x64/1_13_0/DeepL-1.13.0-full.nupkg",
-            "hash": "sha1:7d097962639f2cbcfeebd320cfc5a7c255f2a047"
+            "url": "https://www.deepl.com/windows/download/x64/1_14_1/DeepL-1.14.1-full.nupkg",
+            "hash": "sha1:183c13fa76cb6e68ab51bf9417b26f83edada1de"
         },
         "32bit": {
-            "url": "https://www.deepl.com/windows/download/x86/1_13_0/DeepL-1.13.0-full.nupkg",
-            "hash": "sha1:4d5ce59439c373a9381bb3a2f3e5506cf90bafe4"
+            "url": "https://www.deepl.com/windows/download/x86/1_14_1/DeepL-1.14.1-full.nupkg",
+            "hash": "sha1:5967986b89a017b5ac8582cc96506bc2e3fa7bca"
         }
     },
     "pre_install": [
@@ -6687,7 +6687,7 @@
     "description": "Fork of DOSBox, an Intel x86-based PC emulator, complete with sound, graphics, mouse, joystick, modem, etc.",
     "homepage": "http://dosbox-x.com",
     "license": "GPL-2.0-or-later",
-    "url": "https://github.com/joncampbell123/dosbox-x/releases/download/dosbox-x-v0.83.6/dosbox-x-windows-20200930-224615-windows.zip",
+    "url": "https://github.com/joncampbell123/dosbox-x/releases/download/dosbox-x-v0.83.6/dosbox-x-vsbuild-win-20200930224615.zip",
     "hash": "fa743c7bb52d06ec30083a6b73089dd4ea1d16847eb884260e3b8c8f3439b3de",
     "architecture": {
         "64bit": {
@@ -6706,16 +6706,16 @@
     ],
     "pre_install": [
         "if (!(Test-Path \"$persist_dir\\dosbox.conf\")) {",
-        "   Copy-Item \"$dir\\dosbox.reference.conf\" \"$dir\\dosbox.conf\"",
+        "   Copy-Item \"$dir\\dosbox-x.reference.conf\" \"$dir\\dosbox.conf\"",
         "}"
     ],
     "persist": "dosbox.conf",
     "checkver": {
         "github": "https://github.com/joncampbell123/dosbox-x/",
-        "regex": "download/dosbox-x-v([\\d.]+)/dosbox-x-windows-(?<release>[\\d-]+)-windows"
+        "regex": "download/dosbox-x-v([\\d.]+)/dosbox-x-vsbuild-win-(?<release>[\\d-]+)"
     },
     "autoupdate": {
-        "url": "https://github.com/joncampbell123/dosbox-x/releases/download/dosbox-x-v$version/dosbox-x-windows-$matchRelease-windows.zip"
+        "url": "https://github.com/joncampbell123/dosbox-x/releases/download/dosbox-x-v$version/dosbox-x-vsbuild-win-$matchRelease.zip"
     }
 },{ "name": "dotPeek", "bucket": "extras", 
     "version": "2020.2.4",
@@ -8301,15 +8301,15 @@
         }
     }
 },{ "name": "enpass", "bucket": "extras", 
-    "version": "6.5.0.707",
+    "version": "6.5.1.723",
     "description": "A cross-platform password management app to securely store passwords and other credentials in a virtual vault locked with a master password.",
     "homepage": "https://www.enpass.io",
     "license": {
         "identifier": "Proprietary",
         "url": "https://www.enpass.io/legal/"
     },
-    "url": "https://dl.enpass.io/stable/windows/setup/6.5.0.707/Enpass-setup.exe",
-    "hash": "9386871d2b0cce8d9e604eb219e0020a2bc21a0af3022035f5b072c324c1ae62",
+    "url": "https://dl.enpass.io/stable/windows/setup/6.5.1.723/Enpass-setup.exe",
+    "hash": "94d981db5c0fbd66f8343a8253eed7bb4094a9e6e683e55252e8de95a3ca2c1a",
     "installer": {
         "script": [
             "Expand-DarkArchive \"$dir\\$fname\" \"$dir\\tmp\" -Removal",
@@ -8895,7 +8895,7 @@
         "url": "https://fastglacier.com/download/fastglacier-$dashVersion.exe"
     }
 },{ "name": "fbflipper", "bucket": "extras", 
-    "version": "0.60.0",
+    "version": "0.61.0",
     "description": "A desktop debugging platform for mobile developers",
     "homepage": "https://fbflipper.com",
     "license": "MIT",
@@ -8905,8 +8905,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/facebook/flipper/releases/download/v0.60.0/Flipper-win.zip",
-            "hash": "f0b68cf2df858b4ec379798f26a3e0904b15b6e81af0a3048866bf8b07d0d2e3"
+            "url": "https://github.com/facebook/flipper/releases/download/v0.61.0/Flipper-win.zip",
+            "hash": "24e6c6f726d4675453e69a10aeb687a17e79674591b3cbb5a2e649a069d928aa"
         }
     },
     "bin": "Flipper.exe",
@@ -9487,18 +9487,18 @@
         }
     }
 },{ "name": "firefox-nightly", "bucket": "extras", 
-    "version": "83.0a1.20201005093214",
+    "version": "83.0a1.20201006161706",
     "description": "Nightly builds of Firefox: the popular open source web browser.",
     "homepage": "https://www.mozilla.org/en-US/firefox/nightly/",
     "license": "MPL-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://archive.mozilla.org/pub/firefox/nightly/2020/10/2020-10-05-09-32-14-mozilla-central/firefox-83.0a1.en-US.win64.installer.exe#/dl.7z",
-            "hash": "sha512:0fb13d49442e9ea80772337abef641abbbe2911b046f3b089c277fb6d5e7008ae5e906b45a55377a749f1d3425ccb2cca59a28cef40e9c48d3c79d6703068f76"
+            "url": "https://archive.mozilla.org/pub/firefox/nightly/2020/10/2020-10-06-16-17-06-mozilla-central/firefox-83.0a1.en-US.win64.installer.exe#/dl.7z",
+            "hash": "sha512:50d121d08b7acc0f188bf0348eb7b6712547032abe3615fcd9bfd8805ec6a7eb983940fd61fbe0fdb755f74299b9ab2906c0f72a7fd6c2e1ce5ae5450012334c"
         },
         "32bit": {
-            "url": "https://archive.mozilla.org/pub/firefox/nightly/2020/10/2020-10-05-09-32-14-mozilla-central/firefox-83.0a1.en-US.win32.installer.exe#/dl.7z",
-            "hash": "sha512:2939bfbf46101598cbd147dc6017841a4162cb418ce67de9acb259c2448f6bc2bb1888b7a446df425f5b4eca5e1af3a07b90f4457bc83dcf5831545e59ffc31f"
+            "url": "https://archive.mozilla.org/pub/firefox/nightly/2020/10/2020-10-06-16-17-06-mozilla-central/firefox-83.0a1.en-US.win32.installer.exe#/dl.7z",
+            "hash": "sha512:e300682de5ee6c6a4b5025a0ccc760ac16b9c4006dd8950246652eef5367ac52592d5aa56d200769660cbecac148041e6dbbb9bb4ac2e9f04157af628466de27"
         }
     },
     "extract_dir": "core",
@@ -10968,7 +10968,7 @@
         ]
     ]
 },{ "name": "gcloud", "bucket": "extras", 
-    "version": "312.0.0",
+    "version": "313.0.0",
     "description": "Command-line interface for Google Cloud Platform products and services.",
     "homepage": "https://cloud.google.com/sdk/",
     "license": "Proprietary",
@@ -10980,12 +10980,12 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-312.0.0-windows-x86_64-bundled-python.zip",
-            "hash": "2eac11f4ff0ba117435643cebc710fc5a8f34f99ea605c6f7562414306a22b69"
+            "url": "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-313.0.0-windows-x86_64-bundled-python.zip",
+            "hash": "9599f24c662c18e7922105a0cf24cc727997a83f600448e8414dcc6965f26cb4"
         },
         "32bit": {
-            "url": "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-312.0.0-windows-x86-bundled-python.zip",
-            "hash": "25eb0c1825052f22642161a531f7cb5a8f2d7ed171db8e3872e9d4d5e4d15080"
+            "url": "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-313.0.0-windows-x86-bundled-python.zip",
+            "hash": "075151b66731fe0f5f65a01c91fe130b16d975ebf4f23bc75478cb5a6c86e49c"
         }
     },
     "extract_dir": "google-cloud-sdk",
@@ -11726,7 +11726,7 @@
         "url": "https://github.com/google/google-java-format/releases/download/google-java-format-$version/google-java-format-$version-all-deps.jar#/google-java-format.jar"
     }
 },{ "name": "googlechrome-beta", "bucket": "extras", 
-    "version": "86.0.4240.68",
+    "version": "86.0.4240.72",
     "description": "Fast, secure, and free web browser, built for the modern web.",
     "homepage": "https://www.google.com/chrome/beta",
     "license": {
@@ -11735,12 +11735,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://dl.google.com/release2/chrome/ALP0LaTw0qakHIKeNxVl_eg_86.0.4240.68/86.0.4240.68_chrome_installer.exe#/dl.7z",
-            "hash": "93f6cffe9297771a857c8ce1c0dad00b9fcced71d1bdbdefd116d31bdef6abec"
+            "url": "https://dl.google.com/release2/chrome/ajphJ06DZSkhc2tKcR8rOw_86.0.4240.72/86.0.4240.72_chrome_installer.exe#/dl.7z",
+            "hash": "e21b7f7fb748e77652d1eed5974fe0d5f133cb3c1e1eb205ebe3daa156b73d5c"
         },
         "32bit": {
-            "url": "https://dl.google.com/release2/chrome/AIzggIk74W0smghNdGnR0IA_86.0.4240.68/86.0.4240.68_chrome_installer.exe#/dl.7z",
-            "hash": "fe6d7b77e6ba156849d47844122322a107f2a701db78d5656c4d2c5f297a8a0e"
+            "url": "https://dl.google.com/release2/chrome/LK4djt9atNbxqprCocLNXw_86.0.4240.72/86.0.4240.72_chrome_installer.exe#/dl.7z",
+            "hash": "9e2ac5bf237f63b5ad7350a8cd5c973294dcc6945a126faa1a0083a9574b7ca4"
         }
     },
     "installer": {
@@ -11781,7 +11781,7 @@
         }
     }
 },{ "name": "googlechrome-canary", "bucket": "extras", 
-    "version": "88.0.4283.0",
+    "version": "88.0.4284.0",
     "description": "Fast, secure, and free web browser, built for the modern web.",
     "homepage": "https://www.google.com/chrome/canary",
     "license": {
@@ -11790,12 +11790,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://dl.google.com/release2/chrome/BQz1qjkL387Jymdf56y9sw_88.0.4283.0/88.0.4283.0_chrome_installer.exe#/dl.7z",
-            "hash": "f362b010b6ef4c12c084f35d148347c32c092924d9d4a95b7133bb154f8a04ef"
+            "url": "https://dl.google.com/release2/chrome/cV2KABiEuYAbHM6mS9chQA_88.0.4284.0/88.0.4284.0_chrome_installer.exe#/dl.7z",
+            "hash": "d93f0ad000c89d5d71fdf16c85b60ac722c6bc576e19bbd8fbbc692a7afa6af2"
         },
         "32bit": {
-            "url": "https://dl.google.com/release2/chrome/XOjpgABzBEOr1JjVYXesQw_88.0.4283.0/88.0.4283.0_chrome_installer.exe#/dl.7z",
-            "hash": "7d3228311cb46774458f809f01b17f8ab0314eb0b3bc49366b153c8e9d6cbf8e"
+            "url": "https://dl.google.com/release2/chrome/EjvY1hn3sBdn40dTRTCikA_88.0.4284.0/88.0.4284.0_chrome_installer.exe#/dl.7z",
+            "hash": "5858d0755dd2a37c150412d5898900b9eece28c5c68aa0d0aadd1ff2c6c52550"
         }
     },
     "installer": {
@@ -13659,15 +13659,15 @@
         }
     }
 },{ "name": "idea-ultimate", "bucket": "extras", 
-    "version": "2020.2.2",
+    "version": "2020.2.3",
     "description": "IntelliJ IDEA Ultimate Edition for web and enterprise development.",
     "homepage": "https://www.jetbrains.com/idea/",
     "license": {
         "identifier": "Shareware",
         "url": "https://www.jetbrains.com/legal/agreements/user.html"
     },
-    "url": "https://download.jetbrains.com/idea/ideaIU-2020.2.2.win.zip",
-    "hash": "d8e22ed466c9a89ebf30f644c4f703dd650f038db0b4e8bad70891258441965a",
+    "url": "https://download.jetbrains.com/idea/ideaIU-2020.2.3.win.zip",
+    "hash": "49af7a3c9efbc622d62684a5c0beedd476d1c535b10ed466903e85a15d522012",
     "bin": "bin\\idea.bat",
     "env_add_path": "bin",
     "notes": "Please restart your command line for changes to take effect.",
@@ -13702,12 +13702,12 @@
         }
     }
 },{ "name": "idea", "bucket": "extras", 
-    "version": "2020.2.2",
+    "version": "2020.2.3",
     "description": "IntelliJ IDEA Community Edition for JVM and Android development.",
     "homepage": "https://www.jetbrains.com/idea/",
     "license": "Apache-2.0",
-    "url": "https://download.jetbrains.com/idea/ideaIC-2020.2.2.win.zip",
-    "hash": "e0837752304155c31f11ab355f372c638badd5f12856b2a5194ef979847f4f36",
+    "url": "https://download.jetbrains.com/idea/ideaIC-2020.2.3.win.zip",
+    "hash": "ea3d9c4bf654bc1565c9cc8cd1204750311fadcac828e3d5db2678051a33ff7c",
     "env_add_path": "bin",
     "notes": "Please restart your command line for changes to take effect.",
     "architecture": {
@@ -14977,7 +14977,7 @@
         "url": "https://downloads.sourceforge.net/project/jpegview/jpegview/$version/JPEGView_$version.zip"
     }
 },{ "name": "juce", "bucket": "extras", 
-    "version": "6.0.1",
+    "version": "6.0.3",
     "description": "C++ audio application framework",
     "homepage": "https://juce.com",
     "license": {
@@ -14986,8 +14986,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/juce-framework/JUCE/releases/download/6.0.1/juce-6.0.1-windows.zip",
-            "hash": "54e50027c4421dbe0a7420228a4ca672012d2c373fa89fec65fdd1642fdce438"
+            "url": "https://github.com/juce-framework/JUCE/releases/download/6.0.3/juce-6.0.3-windows.zip",
+            "hash": "f386625c20debadbf1d16b354b507aa3ddb5d8d9972a952ec413d4d00a4cec2a"
         }
     },
     "extract_dir": "JUCE",
@@ -15009,12 +15009,12 @@
         }
     }
 },{ "name": "kakaotalk", "bucket": "extras", 
-    "version": "3.1.6.2572",
+    "version": "3.1.7.2601",
     "description": "An easy, no-cost messenger that transcends standard chat.",
     "homepage": "https://www.kakaocorp.com/service/KakaoTalk",
     "license": "Unknown",
     "url": "http://app.pc.kakao.com/talk/win32/KakaoTalk_Setup.exe#/dl.7z",
-    "hash": "41d86e8f015eb363fcbf281cd0260e4a159a8636b3fbc13c97bacf4674d4389a",
+    "hash": "82f128d9344091847a8971ede2c5bf3b475d102c23a12b14b5e69d227a83389f",
     "pre_install": "Remove-Item \"$dir\\`$*\", \"$dir\\unisntall*\" -Recurse",
     "shortcuts": [
         [
@@ -18605,18 +18605,18 @@
         }
     }
 },{ "name": "monero", "bucket": "extras", 
-    "version": "0.16.0.3",
+    "version": "0.17.0.1",
     "description": "The secure, private, untraceable cryptocurrency",
     "homepage": "https://getmonero.org",
     "license": "BSD-3-Clause",
     "notes": "For 32bit, use 'monero-cli' instead.",
     "architecture": {
         "64bit": {
-            "url": "https://dlsrc.getmonero.org/gui/monero-gui-win-x64-v0.16.0.3.zip",
-            "hash": "371cb4de2c9ccb5ed99b2622068b6aeea5bdfc7b9805340ea7eb92e7c17f2478"
+            "url": "https://dlsrc.getmonero.org/gui/monero-gui-win-x64-v0.17.0.1.zip",
+            "hash": "c18a47e6d6c273406ea4cf7cc834982a7905a53021268d4fe503ef95507890b5"
         }
     },
-    "extract_dir": "monero-gui-v0.16.0.3",
+    "extract_dir": "monero-gui-v0.17.0.1",
     "bin": [
         "monerod.exe",
         "monero-wallet-rpc.exe",
@@ -19757,12 +19757,13 @@
         }
     }
 },{ "name": "musique", "bucket": "extras", 
-    "version": "1.9",
+    "version": "1.10",
     "description": "A music player built for speed, simplicity and style.",
     "homepage": "https://flavio.tordini.org/musique",
     "license": "GPL-3.0-only",
     "url": "https://flavio.tordini.org/files/musique/musique.exe#/dl.7z",
-    "hash": "5926fcf4a71b280af2202157a10990b00834c9e1063669e2485e0d519eff5934",
+    "hash": "03f841e703a3e966416ac37dd847a48f668c6d943395ca55b1cfc500ea27dcb3",
+    "pre_install": "Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse",
     "bin": "musique.exe",
     "shortcuts": [
         [
@@ -19770,7 +19771,6 @@
             "Musique"
         ]
     ],
-    "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse",
     "checkver": {
         "github": "https://github.com/flaviotordini/musique"
     },
@@ -20015,14 +20015,14 @@
         }
     }
 },{ "name": "netch", "bucket": "extras", 
-    "version": "1.5.1",
+    "version": "1.6.0",
     "description": "Game accelerator",
     "homepage": "https://github.com/NetchX/Netch",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/NetchX/Netch/releases/download/1.5.1/Netch.7z",
-            "hash": "6ba5c8faab99bf36034de751e4fca423690c2d0adfb17d9298cf787d5e6d8caf"
+            "url": "https://github.com/NetchX/Netch/releases/download/1.6.0/Netch.7z",
+            "hash": "7120c9b63d8149af40f7890fb97ee8d70942a5fb75d42e754ec0494a4061ff0a"
         }
     },
     "extract_dir": "Netch",
@@ -22639,7 +22639,7 @@
         }
     }
 },{ "name": "notejoy", "bucket": "extras", 
-    "version": "1.12.0",
+    "version": "1.13.0",
     "description": "Collaborative notes for you and your team",
     "homepage": "https://notejoy.com",
     "license": {
@@ -22648,8 +22648,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://s3.amazonaws.com/notejoy/clients/Notejoy-1.12.0-full.nupkg",
-            "hash": "sha1:a465e5de516addd50433421a9f66099bc5520718"
+            "url": "https://s3.amazonaws.com/notejoy/clients/Notejoy-1.13.0-full.nupkg",
+            "hash": "sha1:ffa5a168b84dd0e74f1ad5f42c000c23000b8449"
         }
     },
     "extract_dir": "lib\\net45",
@@ -23283,14 +23283,14 @@
         "portable_mode.txt"
     ]
 },{ "name": "obs-studio", "bucket": "extras", 
-    "version": "26.0",
+    "version": "26.0.2",
     "description": "Video recording and live streaming software",
     "homepage": "https://obsproject.com",
     "license": "GPL-2.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://cdn-fastly.obsproject.com/downloads/OBS-Studio-26.0-Full-x64.zip",
-            "hash": "a4364e2a8ebc95af870add36e56fd4d8ddabb356dc39fe7277ade875c47eae8d",
+            "url": "https://cdn-fastly.obsproject.com/downloads/OBS-Studio-26.0.2-Full-x64.zip",
+            "hash": "e529d7fc7569d42f4f4e5ac241dbb10810de932fda518ba00efe8371fe49c6d7",
             "shortcuts": [
                 [
                     "bin\\64bit\\obs64.exe",
@@ -23299,8 +23299,8 @@
             ]
         },
         "32bit": {
-            "url": "https://cdn-fastly.obsproject.com/downloads/OBS-Studio-26.0-Full-x86.zip",
-            "hash": "ad134f7ebabcbd69ab40523b470858dc6ae10604e602d5d08017ca810e165913",
+            "url": "https://cdn-fastly.obsproject.com/downloads/OBS-Studio-26.0.2-Full-x86.zip",
+            "hash": "2dd7a98177c21d57ceb7c38e0fee3b5c9c62261ebec07a14e8ef87c36a8e9926",
             "shortcuts": [
                 [
                     "bin\\32bit\\obs32.exe",
@@ -24285,7 +24285,7 @@
         }
     }
 },{ "name": "opera", "bucket": "extras", 
-    "version": "71.0.3770.198",
+    "version": "71.0.3770.228",
     "description": "Fast, secure, easy-to-use browser.",
     "homepage": "https://www.opera.com/",
     "license": {
@@ -24294,12 +24294,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://download1.operacdn.com/pub/opera/desktop/71.0.3770.198/win/Opera_71.0.3770.198_Setup_x64.exe#/dl.7z",
-            "hash": "382e4a0f3f412ca10e231817485d78cea597a47ef96628f097e1b99e134651e6"
+            "url": "https://download1.operacdn.com/pub/opera/desktop/71.0.3770.228/win/Opera_71.0.3770.228_Setup_x64.exe#/dl.7z",
+            "hash": "577870c1693cb67a75ac74d30d1b2b7fb7831bc3a540291edc48330556070ba6"
         },
         "32bit": {
-            "url": "https://download1.operacdn.com/pub/opera/desktop/71.0.3770.198/win/Opera_71.0.3770.198_Setup.exe#/dl.7z",
-            "hash": "8201129f56d23074a14ecd470432ae1f1233f33c8a999a1e9a43197c52059adf"
+            "url": "https://download1.operacdn.com/pub/opera/desktop/71.0.3770.228/win/Opera_71.0.3770.228_Setup.exe#/dl.7z",
+            "hash": "4391b174355a4d0dc7f2ca4248b140e5608af14bed8dcd319a3e0c13b9bc9e21"
         }
     },
     "installer": {
@@ -26325,18 +26325,18 @@
         "url": "https://www.ppsspp.org/files/$underscoreVersion/ppsspp_win.zip"
     }
 },{ "name": "praat", "bucket": "extras", 
-    "version": "6.1.25",
+    "version": "6.1.26",
     "description": "The scientific analysis of speech in phonetics",
     "homepage": "http://www.fon.hum.uva.nl/praat/",
     "license": "GPL-2.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/praat/praat/releases/download/v6.1.25/praat6125_win64.zip",
-            "hash": "36b479712d882b6fd6bf8cad176eaa4a485e25a690da4d6900da30d9d208e417"
+            "url": "https://github.com/praat/praat/releases/download/v6.1.26/praat6126_win64.zip",
+            "hash": "51432f9098bebc606457e227fdf2ca024e549687aadc94d17e168214ad48f9df"
         },
         "32bit": {
-            "url": "https://github.com/praat/praat/releases/download/v6.1.25/praat6125_win32.zip",
-            "hash": "249b403b9d9e3ece112b40b396f760ef771f91fd5f2c3721299476faeca5a40f"
+            "url": "https://github.com/praat/praat/releases/download/v6.1.26/praat6126_win32.zip",
+            "hash": "c0b2998726ccf0b980e8916e2eade3a2cef66ad23b28c8bf35b92c7798b91b2b"
         }
     },
     "bin": "Praat.exe",
@@ -26933,7 +26933,7 @@
         }
     }
 },{ "name": "q-dir", "bucket": "extras", 
-    "version": "8.94",
+    "version": "8.95",
     "description": "A quad window file manager based on Windows File Explorer",
     "homepage": "https://www.softwareok.com/?seite=Freeware/Q-Dir",
     "license": {
@@ -26943,7 +26943,7 @@
     "architecture": {
         "64bit": {
             "url": "https://www.softwareok.com/Download/Q-Dir_Portable_x64.zip",
-            "hash": "27b9d73cbe598f9b370bb47c142ab84d80743905b635be1e082227d6aa5a5fcb",
+            "hash": "18a89c8a175466b8f53c14adccbd6820e093139767103f25ae6118d3569f29f8",
             "bin": [
                 [
                     "Q-Dir_x64.exe",
@@ -26959,7 +26959,7 @@
         },
         "32bit": {
             "url": "https://www.softwareok.com/Download/Q-Dir_Portable.zip",
-            "hash": "41ef25ad63a9519c2dd61faa68860988b8de6f76e0580dfcd0d04a88ecbc17ad",
+            "hash": "bc4e55328dc40bebecaafacd4ea7936ffbd91ea9c276f57dcc88e89e17f8fb71",
             "bin": "Q-Dir.exe",
             "shortcuts": [
                 [
@@ -30407,7 +30407,7 @@
         }
     }
 },{ "name": "slack", "bucket": "extras", 
-    "version": "4.9.0",
+    "version": "4.10.0",
     "description": "Collaboration software",
     "homepage": "https://slack.com",
     "license": {
@@ -30416,12 +30416,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://downloads.slack-edge.com/releases/windows/4.9.0/prod/x64/slack-4.9.0-full.nupkg",
-            "hash": "sha1:b183cd7a7839fd0db93a1d19a5aa6dfb9b5f2601"
+            "url": "https://downloads.slack-edge.com/releases/windows/4.10.0/prod/x64/slack-4.10.0-full.nupkg",
+            "hash": "sha1:97ed1941a47cfc27095363e34b0b2522c335542c"
         },
         "32bit": {
-            "url": "https://downloads.slack-edge.com/releases/windows/4.9.0/prod/ia32/slack-4.9.0-full.nupkg",
-            "hash": "sha1:01dd01cc402ade489cc46ebd759efa4b46e40625"
+            "url": "https://downloads.slack-edge.com/releases/windows/4.10.0/prod/ia32/slack-4.10.0-full.nupkg",
+            "hash": "sha1:67f3223745b1e7b93846e5a9d97f05551bec9f2f"
         }
     },
     "extract_dir": "lib\\net45",
@@ -32420,18 +32420,20 @@
         "extract_dir": "sts-$version.RELEASE"
     }
 },{ "name": "stunnel", "bucket": "extras", 
-    "homepage": "https://www.stunnel.org",
     "version": "5.56",
-    "license": "GPL-2.0-or-later",
     "description": "A multiplatform GNU/GPL-licensed proxy encrypting arbitrary TCP connections with SSL/TLS",
+    "homepage": "https://www.stunnel.org",
+    "license": "GPL-2.0-or-later",
+    "notes": [
+        "For Windows 32bit, use 'stunnel549' instead",
+        "Run 'stunnel -install' in the directory where a configured stunnel.conf is located (eg C:\\ProgramData\\scoop\\persist\\stunnel\\config) to create a native Windows service."
+    ],
     "architecture": {
         "64bit": {
             "url": "https://www.stunnel.org/downloads/archive/5.x/stunnel-5.56-win64-installer.exe#/dl.7z",
             "hash": "e9d7dea3976219f0fc89cfb4f645f47b1291ebec8ce55cff46dbbfbb2e9b4084"
         }
     },
-    "bin": "bin\\stunnel.exe",
-    "persist": "config",
     "uninstaller": {
         "script": [
             "stunnel -stop -quiet",
@@ -32439,24 +32441,22 @@
             "stunnel -exit -quiet"
         ]
     },
+    "bin": "bin\\stunnel.exe",
+    "persist": "config",
     "checkver": {
         "url": "https://www.stunnel.org/downloads.html",
-        "re": "stunnel-(.+?)-win64"
+        "regex": "stunnel-([\\d.]+)-win64"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://www.stunnel.org/downloads/archive/$majorVersion.x/stunnel-$version-win64-installer.exe#/dl.7z",
-                "hash": {
-                    "url": "$url.sha256"
-                }
+                "url": "https://www.stunnel.org/downloads/archive/$majorVersion.x/stunnel-$version-win64-installer.exe#/dl.7z"
             }
+        },
+        "hash": {
+            "url": "$url.sha256"
         }
-    },
-    "notes": [
-        "For Windows 32bit, use \"stunnel549\" instead",
-        "Run \"stunnel -install\" in the directory where a configured stunnel.conf is located (eg C:\\ProgramData\\scoop\\persist\\stunnel\\config) to create a native Windows service. Please note that as of version 5.50 Stunnel is a 64 bit application."
-    ]
+    }
 },{ "name": "sublime-merge", "bucket": "extras", 
     "version": "2032",
     "description": "A Git client with snappy UI, three-way merge tool, side-by-side diffs, syntax highlighting, and more.",
@@ -32562,14 +32562,13 @@
         }
     }
 },{ "name": "subtitleedit", "bucket": "extras", 
+    "version": "3.5.17",
+    "description": "Video subtitles editor",
     "homepage": "http://www.nikse.dk/subtitleedit/",
-    "description": "Editor for video subtitles.",
     "license": "GPL-3.0-only",
-    "version": "3.5.16",
-    "url": "https://github.com/SubtitleEdit/subtitleedit/releases/download/3.5.16/SE3516.zip",
-    "hash": "bc7c218b55d7df4fbad66966ea2f8d46c927f05105a63a886049de65cddab227",
-    "pre_install": "if(!(Test-Path(\"$persist_dir\\Settings.xml\"))) { New-Item \"$dir\\Settings.xml\" -Type File | Out-Null }",
-    "persist": "Settings.xml",
+    "url": "https://github.com/SubtitleEdit/subtitleedit/releases/download/3.5.17/SE3517.zip",
+    "hash": "11b739bea4c9ba873ff3388a4b98ebb31fbe574b12b5e5eca686e01fc4942af5",
+    "pre_install": "if (!(Test-Path \"$persist_dir\\Settings.xml\")) { New-Item \"$dir\\Settings.xml\" | Out-Null }",
     "bin": "SubtitleEdit.exe",
     "shortcuts": [
         [
@@ -32577,14 +32576,15 @@
             "SubtitleEdit"
         ]
     ],
+    "persist": "Settings.xml",
     "checkver": {
-        "github": "https://github.com/SubtitleEdit/subtitleedit/"
+        "github": "https://github.com/SubtitleEdit/subtitleedit"
     },
     "autoupdate": {
         "url": "https://github.com/SubtitleEdit/subtitleedit/releases/download/$version/SE$cleanVersion.zip",
         "hash": {
             "url": "https://github.com/SubtitleEdit/subtitleedit/releases/tag/$version/",
-            "regex": "(?sm)$basename.+SHA256 Checksum:\\s*<code>([A-Fa-f\\d]{64})</code></p>\\s*<p><strong>SE[\\d]+FI\\.zip"
+            "regex": "(?sm)$basename.*?SHA256 Checksum:\\s*<code>$sha256</"
         }
     }
 },{ "name": "sumatrapdf", "bucket": "extras", 
@@ -35696,18 +35696,18 @@
         }
     }
 },{ "name": "tumblthree", "bucket": "extras", 
-    "version": "1.0.11.10",
+    "version": "1.0.11.11",
     "description": "A Tumblr Backup Application",
     "homepage": "https://github.com/TumblThreeApp/TumblThree",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/TumblThreeApp/TumblThree/releases/download/v1.0.11.10/TumblThree-v1.0.11.10-x64-Application.zip",
-            "hash": "1db6cec750d3cef0d4b7e93364adc93ee62296c9fc35ba5531cde85a78d4918a"
+            "url": "https://github.com/TumblThreeApp/TumblThree/releases/download/v1.0.11.11/TumblThree-v1.0.11.11-x64-Application.zip",
+            "hash": "8c6d8acbc3e0bfb8e77e73640dbfff83e9c07a3567020e63edbf892994c45494"
         },
         "32bit": {
-            "url": "https://github.com/TumblThreeApp/TumblThree/releases/download/v1.0.11.10/TumblThree-v1.0.11.10-x86-Application.zip",
-            "hash": "93bc6043284d65f7f68f50c7e93c4aa900771518c363056bff5526f16c8e3436"
+            "url": "https://github.com/TumblThreeApp/TumblThree/releases/download/v1.0.11.11/TumblThree-v1.0.11.11-x86-Application.zip",
+            "hash": "7bc213a91427acb953194a151dfe7322b0c59bc489e685acd82503184fbeaf63"
         }
     },
     "extract_dir": "TumblThree",
@@ -36100,18 +36100,18 @@
         "url": "https://github.com/Bioruebe/UniExtract2/releases/download/v$version/$matchFilename"
     }
 },{ "name": "universal-ctags", "bucket": "extras", 
-    "version": "2020-09-21",
+    "version": "2020-10-06",
     "description": "Generates an index (or tag) file of language objects found in source files for many popular programming languages.",
     "homepage": "https://ctags.io",
     "license": "GPL-2.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/universal-ctags/ctags-win32/releases/download/2020-09-21/86bdb84c/ctags-2020-09-21_86bdb84c-x64.zip",
-            "hash": "8a3c0bbcea7317b19d2a3e7241f60dbcb1004d20d6a6ca4162bdeb817a1b3b6f"
+            "url": "https://github.com/universal-ctags/ctags-win32/releases/download/2020-10-06/9ce35430/ctags-2020-10-06_9ce35430-x64.zip",
+            "hash": "990a1ad8dfe80b76b7afece5d765e156a798fffa1f74ee71adc0afa3062e749d"
         },
         "32bit": {
-            "url": "https://github.com/universal-ctags/ctags-win32/releases/download/2020-09-21/86bdb84c/ctags-2020-09-21_86bdb84c-x86.zip",
-            "hash": "5544436631a1d6b62593ed3e5d6d1332691e6fdbf04526a12954ec364e02590e"
+            "url": "https://github.com/universal-ctags/ctags-win32/releases/download/2020-10-06/9ce35430/ctags-2020-10-06_9ce35430-x86.zip",
+            "hash": "5e95b8404ad47b4bcabee7779138e77b327efe72ff5d78cd11e692dc54c05f81"
         }
     },
     "bin": [
@@ -38152,15 +38152,15 @@
     },
     "bin": "Microsoft\\Web Platform Installer\\WebpiCmd.exe"
 },{ "name": "webstorm", "bucket": "extras", 
-    "version": "2020.2.2",
+    "version": "2020.2.3",
     "description": "A lightweight and intelligent IDE for front-end development and server-side JavaScript.",
     "homepage": "https://www.jetbrains.com/webstorm/",
     "license": {
         "identifier": "Shareware",
         "url": "https://www.jetbrains.com/legal/agreements/user.html"
     },
-    "url": "https://download.jetbrains.com/webstorm/WebStorm-2020.2.2.exe#/dl.7z",
-    "hash": "8dd3919db9d8730e54e5488b81aeff21e657898ddec5e64ec99b5d5ccce4af92",
+    "url": "https://download.jetbrains.com/webstorm/WebStorm-2020.2.3.exe#/dl.7z",
+    "hash": "98926a5690484a237056389c4eed43e5b6daf22e7c0f065448a68c28f0728849",
     "architecture": {
         "64bit": {
             "bin": [
@@ -42892,15 +42892,15 @@
     "homepage": "https://mgba.io/",
     "description": "A fast, accurate, and portable GBA emulator (development version)",
     "license": "MPL-2.0",
-    "version": "0.8.3-6524",
+    "version": "0.8.3-6525",
     "architecture": {
         "64bit": {
             "url": "https://s3.amazonaws.com/mgba/mGBA-build-latest-win64.7z",
-            "hash": "a5392a3f42e602a325b0cdd7915a9bd4dda430ec471e8021ed902168a4cb74d5"
+            "hash": "1d5966d06d5303c56c5bbba87757ae0a2d0457cb83e526ced95a42d91db1a4c2"
         },
         "32bit": {
             "url": "https://s3.amazonaws.com/mgba/mGBA-build-latest-win32.7z",
-            "hash": "43ebcb69ca4b33a749b663e72aafdd836d2c1f64f11bb1d3dcb77968268e748c"
+            "hash": "6829104c50d1ebdb92659b72a112fd2486258b1b163b107799c6a31dec0b2273"
         }
     },
     "installer": {
@@ -43838,10 +43838,10 @@
     "homepage": "https://pcsx2.net/",
     "description": "A feature rich FOSS PlayStation 2 emulator (development version)",
     "license": "LGPL-3.0-or-later",
-    "version": "1.7.0-423",
-    "url": "https://buildbot.orphis.net/pcsx2/index.php?m=dl&rev=v1.7.0-dev-423-gbd1cc9b4f&platform=windows-x86#/dl.7z",
-    "hash": "c0595d711dc93639a3f4f07bd33597afe23a66dbe357ebc46b379004452a1883",
-    "extract_dir": "pcsx2-v1.7.0-dev-423-gbd1cc9b4f-windows-x86",
+    "version": "1.7.0-430",
+    "url": "https://buildbot.orphis.net/pcsx2/index.php?m=dl&rev=v1.7.0-dev-430-g49b92d956&platform=windows-x86#/dl.7z",
+    "hash": "206779d7111ae3efe1637add41bc92fe382b87b951cb7f927acc5acf4451751c",
+    "extract_dir": "pcsx2-v1.7.0-dev-430-g49b92d956-windows-x86",
     "bin": "pcsx2.exe",
     "persist": [
         "bios",
@@ -44227,9 +44227,9 @@
     "homepage": "https://rpcs3.net/",
     "description": "Open-source Sony PlayStation 3 emulator (development version)",
     "license": "GPL-2.0-only",
-    "version": "0.0.12-10978",
-    "url": "https://github.com/rpcs3/rpcs3-binaries-win/releases/download/build-2a258dc21e9d6ac1bcb3da58056a9bb276545ef1/rpcs3-v0.0.12-10978-2a258dc2_win64.7z",
-    "hash": "a04e0d527d6dcc04fc9772a4f392e1b4bd1b75e21b6b3fb62dcfba1febf6ec53",
+    "version": "0.0.12-10981",
+    "url": "https://github.com/rpcs3/rpcs3-binaries-win/releases/download/build-a5cff8b18679a988e1fb4cbfb523b6a458f30ee2/rpcs3-v0.0.12-10981-a5cff8b1_win64.7z",
+    "hash": "fb2fbd71ce1e0770d24cb8b79ea668f9a4972ea9c6393c65d2ec2c9297466a14",
     "bin": "rpcs3.exe",
     "depends": "vcredist2019",
     "persist": [
@@ -46730,15 +46730,453 @@
         },
         "extract_dir": "jdk-$matchMajor+$matchBuild"
     }
-},{ "name": "adopt8-hotspot-jre-nightly", "bucket": "java", 
-    "description": "AdoptOpenJDK 8 JRE with Oracle HotSpot JVM (Nightly builds)",
+},{ "name": "adopt15-hotspot-jre-nightly", "bucket": "java", 
+    "description": "AdoptOpenJDK 15 JRE with Oracle HotSpot JVM (Nightly builds)",
     "homepage": "https://adoptopenjdk.net",
-    "version": "202010051107",
+    "version": "202010050816",
     "license": "GPL-2.0-only WITH Classpath-exception-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-10-05-11-07/OpenJDK8U-jre_x64_windows_hotspot_2020-10-05-11-07.zip",
-            "hash": "23838ef056bc0dbb78838bfb3706c1a72892be1931f3a22ede426819d23b0393"
+            "url": "https://github.com/AdoptOpenJDK/openjdk15-binaries/releases/download/jdk15u-2020-10-05-08-16/OpenJDK15U-jre_x64_windows_hotspot_2020-10-05-08-16.zip",
+            "hash": "7fcff5a6655206679d7e61dc765bda2c63b3d6c20f07b48c775af36fc85b0b59"
+        }
+    },
+    "extract_to": "tmp",
+    "installer": {
+        "script": [
+            "(Get-ChildItem -Directory \"$dir\\tmp\").FullName | % { Move-Item \"$_\\*\" \"$dir\" }",
+            "Remove-Item -Recurse \"$dir\\tmp\""
+        ]
+    },
+    "env_add_path": "bin",
+    "env_set": {
+        "JAVA_HOME": "$dir"
+    },
+    "checkver": {
+        "url": "https://api.adoptopenjdk.net/v3/assets/feature_releases/15/ea?jvm_impl=hotspot&heap_size=normal&os=windows&architecture=x64&image_type=jre&project=jdk&vendor=adoptopenjdk&page_size=1&sort_order=DESC",
+        "jp": "$..binaries[0].package.link",
+        "re": "https://github.com/(?<url>.*?jdk(?<major>[\\d]+)u-(?<date>(?<year>[\\d]{4})-(?<month>[\\d]{2})-(?<day>[\\d]{2})-(?<hour>[\\d]{2})-(?<minute>[\\d]{2})))",
+        "replace": "${year}${month}${day}${hour}${minute}"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/$matchUrl/OpenJDK$matchMajorU-jre_x64_windows_hotspot_$matchDate.zip"
+            }
+        },
+        "hash": {
+            "url": "$url.sha256.txt",
+            "find": "^([a-fA-F0-9]+)\\s"
+        }
+    }
+},{ "name": "adopt15-hotspot-jre", "bucket": "java", 
+    "description": "AdoptOpenJDK 15 JRE with Oracle HotSpot JVM",
+    "homepage": "https://adoptopenjdk.net",
+    "version": "15-36",
+    "license": "GPL-2.0-only WITH Classpath-exception-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/AdoptOpenJDK/openjdk15-binaries/releases/download/jdk-15%2B36/OpenJDK15U-jre_x64_windows_hotspot_15_36.zip",
+            "hash": "2f6586199ee50db32ce459cbf55f4a0da93dfd68986e1b75fee40aba8f52beec"
+        }
+    },
+    "extract_dir": "jdk-15+36-jre",
+    "env_add_path": "bin",
+    "env_set": {
+        "JAVA_HOME": "$dir"
+    },
+    "checkver": {
+        "url": "https://api.adoptopenjdk.net/v3/assets/feature_releases/15/ga?jvm_impl=hotspot&heap_size=normal&os=windows&architecture=x64&image_type=jre&project=jdk&vendor=adoptopenjdk&page_size=1&sort_order=DESC",
+        "jp": "$..binaries[0].package.link",
+        "re": "https://github.com/(?<url>.*?(?<tag>jdk-(?<major>(?<jdk>[\\d]+)[\\d.]*)(?:\\%2B|\\+)(?<build>[\\d]+)(?<patch>[\\d.]*)))/",
+        "replace": "${major}-${build}${patch}"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/$matchUrl/OpenJDK$matchJdkU-jre_x64_windows_hotspot_$matchMajor_$matchBuild.zip"
+            }
+        },
+        "hash": {
+            "url": "$url.sha256.txt",
+            "find": "^([a-fA-F0-9]+)\\s"
+        },
+        "extract_dir": "jdk-$matchMajor+$matchBuild-jre"
+    }
+},{ "name": "adopt15-hotspot-nightly", "bucket": "java", 
+    "description": "AdoptOpenJDK 15 with Oracle HotSpot JVM (Nightly builds)",
+    "homepage": "https://adoptopenjdk.net",
+    "version": "202010050816",
+    "license": "GPL-2.0-only WITH Classpath-exception-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/AdoptOpenJDK/openjdk15-binaries/releases/download/jdk15u-2020-10-05-08-16/OpenJDK15U-jdk_x64_windows_hotspot_2020-10-05-08-16.zip",
+            "hash": "c8eb1859d036ee2d37a9076f948d65b245c7c593a59908ee43060acd1c834366"
+        }
+    },
+    "extract_to": "tmp",
+    "installer": {
+        "script": [
+            "(Get-ChildItem -Directory \"$dir\\tmp\").FullName | % { Move-Item \"$_\\*\" \"$dir\" }",
+            "Remove-Item -Recurse \"$dir\\tmp\""
+        ]
+    },
+    "env_add_path": "bin",
+    "env_set": {
+        "JAVA_HOME": "$dir"
+    },
+    "checkver": {
+        "url": "https://api.adoptopenjdk.net/v3/assets/feature_releases/15/ea?jvm_impl=hotspot&heap_size=normal&os=windows&architecture=x64&image_type=jdk&project=jdk&vendor=adoptopenjdk&page_size=1&sort_order=DESC",
+        "jp": "$..binaries[0].package.link",
+        "re": "https://github.com/(?<url>.*?(?<year>[\\d]{4})-(?<month>[\\d]{2})-(?<day>[\\d]{2})-(?<hour>[\\d]{2})-(?<minute>[\\d]{2}).*?).zip",
+        "replace": "${year}${month}${day}${hour}${minute}"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/$matchUrl.zip"
+            }
+        },
+        "hash": {
+            "url": "$url.sha256.txt",
+            "find": "^([a-fA-F0-9]+)\\s"
+        }
+    }
+},{ "name": "adopt15-hotspot", "bucket": "java", 
+    "description": "AdoptOpenJDK 15 with Oracle HotSpot JVM",
+    "homepage": "https://adoptopenjdk.net",
+    "version": "15-36",
+    "license": "GPL-2.0-only WITH Classpath-exception-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/AdoptOpenJDK/openjdk15-binaries/releases/download/jdk-15%2B36/OpenJDK15U-jdk_x64_windows_hotspot_15_36.zip",
+            "hash": "0ec6b009c00e3786a30fd2327973ba8971817e482f658c732bea5cb9e268998f"
+        }
+    },
+    "extract_dir": "jdk-15+36",
+    "env_add_path": "bin",
+    "env_set": {
+        "JAVA_HOME": "$dir"
+    },
+    "checkver": {
+        "url": "https://api.adoptopenjdk.net/v3/assets/feature_releases/15/ga?jvm_impl=hotspot&heap_size=normal&os=windows&architecture=x64&image_type=jdk&project=jdk&vendor=adoptopenjdk&page_size=1&sort_order=DESC",
+        "jp": "$..binaries[0].package.link",
+        "re": "https://github.com/(?<url>.*?(?<tag>jdk-(?<major>(?<jdk>[\\d]+)[\\d.]*)(?:\\%2B|\\+)(?<build>[\\d]+)(?<patch>[\\d.]*)))/",
+        "replace": "${major}-${build}${patch}"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/$matchUrl/OpenJDK$matchJdkU-jdk_x64_windows_hotspot_$matchMajor_$matchBuild.zip"
+            }
+        },
+        "hash": {
+            "url": "$url.sha256.txt",
+            "find": "^([a-fA-F0-9]+)\\s"
+        },
+        "extract_dir": "jdk-$matchMajor+$matchBuild"
+    }
+},{ "name": "adopt15-openj9-jre-nightly", "bucket": "java", 
+    "description": "AdoptOpenJDK 15 JRE with Eclipse OpenJ9 JVM (Nightly builds)",
+    "homepage": "https://adoptopenjdk.net",
+    "version": "202010050816",
+    "license": "GPL-2.0-only WITH Classpath-exception-2.0,EPL-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/AdoptOpenJDK/openjdk15-binaries/releases/download/jdk15u-2020-10-05-08-16/OpenJDK15U-jre_x64_windows_openj9_2020-10-05-08-16.zip",
+            "hash": "0576c81303309ed4b475ec52ced43b6de35ca5946ec348865eb8d9f5424c9731"
+        }
+    },
+    "extract_to": "tmp",
+    "installer": {
+        "script": [
+            "(Get-ChildItem -Directory \"$dir\\tmp\").FullName | % { Move-Item \"$_\\*\" \"$dir\" }",
+            "Remove-Item -Recurse \"$dir\\tmp\""
+        ]
+    },
+    "env_add_path": "bin",
+    "env_set": {
+        "JAVA_HOME": "$dir"
+    },
+    "checkver": {
+        "url": "https://api.adoptopenjdk.net/v3/assets/feature_releases/15/ea?jvm_impl=openj9&heap_size=normal&os=windows&architecture=x64&image_type=jre&project=jdk&vendor=adoptopenjdk&page_size=1&sort_order=DESC",
+        "jp": "$..binaries[0].package.link",
+        "re": "https://github.com/(?<url>.*?(?<year>[\\d]{4})-(?<month>[\\d]{2})-(?<day>[\\d]{2})-(?<hour>[\\d]{2})-(?<minute>[\\d]{2}).*?).zip",
+        "replace": "${year}${month}${day}${hour}${minute}"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/$matchUrl.zip"
+            }
+        },
+        "hash": {
+            "url": "$url.sha256.txt",
+            "find": "^([a-fA-F0-9]+)\\s"
+        }
+    }
+},{ "name": "adopt15-openj9-jre", "bucket": "java", 
+    "description": "AdoptOpenJDK 15 JRE with Eclipse OpenJ9 JVM",
+    "homepage": "https://adoptopenjdk.net",
+    "version": "15-36-0.22.0",
+    "license": "GPL-2.0-only WITH Classpath-exception-2.0,EPL-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/AdoptOpenJDK/openjdk15-binaries/releases/download/jdk-15%2B36_openj9-0.22.0/OpenJDK15U-jre_x64_windows_openj9_15_36_openj9-0.22.0.zip",
+            "hash": "1a9559e6b534122cc7497bf7b9b6814e977ada19e04750218447b38e4fc416db"
+        }
+    },
+    "extract_dir": "jdk-15+36-jre",
+    "env_add_path": "bin",
+    "env_set": {
+        "JAVA_HOME": "$dir"
+    },
+    "checkver": {
+        "url": "https://api.adoptopenjdk.net/v3/assets/feature_releases/15/ga?jvm_impl=openj9&heap_size=normal&os=windows&architecture=x64&image_type=jre&project=jdk&vendor=adoptopenjdk&page_size=1&sort_order=DESC",
+        "jp": "$..binaries[0].package.link",
+        "re": "https://github.com/(?<url>.*?(?<tag>jdk-(?<major>(?<jdk>[\\d]+)[\\d.]+)(?:\\%2B|\\+)(?<build>[\\d]+)(?<patch>[\\d.]*)(?:(?<oj>_openj9?)(?<jvmver>-[\\d.]+))?)/.*?).zip",
+        "replace": "${major}-${build}${patch}${jvmver}"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/$matchUrl.zip"
+            }
+        },
+        "hash": {
+            "url": "$url.sha256.txt",
+            "find": "^([a-fA-F0-9]+)\\s"
+        },
+        "extract_dir": "jdk-$matchMajor+$matchBuild-jre"
+    }
+},{ "name": "adopt15-openj9-nightly", "bucket": "java", 
+    "description": "AdoptOpenJDK 15 with Eclipse OpenJ9 JVM (Nightly builds)",
+    "homepage": "https://adoptopenjdk.net",
+    "version": "202010050816",
+    "license": "GPL-2.0-only WITH Classpath-exception-2.0,EPL-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/AdoptOpenJDK/openjdk15-binaries/releases/download/jdk15u-2020-10-05-08-16/OpenJDK15U-jdk_x64_windows_openj9_2020-10-05-08-16.zip",
+            "hash": "fdfa206d94ecf8f99ed2c5c0da3c8d49951a0f224f1ad88cb53f5716b375bef4"
+        }
+    },
+    "extract_to": "tmp",
+    "installer": {
+        "script": [
+            "(Get-ChildItem -Directory \"$dir\\tmp\").FullName | % { Move-Item \"$_\\*\" \"$dir\" }",
+            "Remove-Item -Recurse \"$dir\\tmp\""
+        ]
+    },
+    "env_add_path": "bin",
+    "env_set": {
+        "JAVA_HOME": "$dir"
+    },
+    "checkver": {
+        "url": "https://api.adoptopenjdk.net/v3/assets/feature_releases/15/ea?jvm_impl=openj9&heap_size=normal&os=windows&architecture=x64&image_type=jdk&project=jdk&vendor=adoptopenjdk&page_size=1&sort_order=DESC",
+        "jp": "$..binaries[0].package.link",
+        "re": "https://github.com/(?<url>.*?(?<year>[\\d]{4})-(?<month>[\\d]{2})-(?<day>[\\d]{2})-(?<hour>[\\d]{2})-(?<minute>[\\d]{2}).*?).zip",
+        "replace": "${year}${month}${day}${hour}${minute}"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/$matchUrl.zip"
+            }
+        },
+        "hash": {
+            "url": "$url.sha256.txt",
+            "find": "^([a-fA-F0-9]+)\\s"
+        }
+    }
+},{ "name": "adopt15-openj9-xl-jre-nightly", "bucket": "java", 
+    "description": "AdoptOpenJDK 15 JRE with Eclipse OpenJ9 JVM with large heap (Nightly builds)",
+    "homepage": "https://adoptopenjdk.net",
+    "version": "202010050816",
+    "license": "GPL-2.0-only WITH Classpath-exception-2.0,EPL-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/AdoptOpenJDK/openjdk15-binaries/releases/download/jdk15u-2020-10-05-08-16/OpenJDK15U-jre_x64_windows_openj9_windowsXL_2020-10-05-08-16.zip",
+            "hash": "c826ba9bba98433cbdde11c9c5a169ff261ffb04a1d6a701d9462a365ea571d8"
+        }
+    },
+    "extract_to": "tmp",
+    "installer": {
+        "script": [
+            "(Get-ChildItem -Directory \"$dir\\tmp\").FullName | % { Move-Item \"$_\\*\" \"$dir\" }",
+            "Remove-Item -Recurse \"$dir\\tmp\""
+        ]
+    },
+    "env_add_path": "bin",
+    "env_set": {
+        "JAVA_HOME": "$dir"
+    },
+    "checkver": {
+        "url": "https://api.adoptopenjdk.net/v3/assets/feature_releases/15/ea?jvm_impl=openj9&heap_size=large&os=windows&architecture=x64&image_type=jre&project=jdk&vendor=adoptopenjdk&page_size=1&sort_order=DESC",
+        "jp": "$..binaries[0].package.link",
+        "re": "https://github.com/(?<url>.*?(?<year>[\\d]{4})-(?<month>[\\d]{2})-(?<day>[\\d]{2})-(?<hour>[\\d]{2})-(?<minute>[\\d]{2}).*?).zip",
+        "replace": "${year}${month}${day}${hour}${minute}"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/$matchUrl.zip"
+            }
+        },
+        "hash": {
+            "url": "$url.sha256.txt",
+            "find": "^([a-fA-F0-9]+)\\s"
+        }
+    }
+},{ "name": "adopt15-openj9-xl-jre", "bucket": "java", 
+    "description": "AdoptOpenJDK 15 JRE with Eclipse OpenJ9 JVM with large heap",
+    "homepage": "https://adoptopenjdk.net",
+    "version": "15-36-0.22.0",
+    "license": "GPL-2.0-only WITH Classpath-exception-2.0,EPL-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/AdoptOpenJDK/openjdk15-binaries/releases/download/jdk-15%2B36_openj9-0.22.0/OpenJDK15U-jre_x64_windows_openj9_windowsXL_15_36_openj9-0.22.0.zip",
+            "hash": "c069cfca56b5b8537e087af15ef672032fb63b12c1a67ef6b4c5d860706de0b2"
+        }
+    },
+    "extract_dir": "jdk-15+36-jre",
+    "env_add_path": "bin",
+    "env_set": {
+        "JAVA_HOME": "$dir"
+    },
+    "checkver": {
+        "url": "https://api.adoptopenjdk.net/v3/assets/feature_releases/15/ga?jvm_impl=openj9&heap_size=large&os=windows&architecture=x64&image_type=jre&project=jdk&vendor=adoptopenjdk&page_size=1&sort_order=DESC",
+        "jp": "$..binaries[0].package.link",
+        "re": "https://github.com/(?<url>.*?(?<tag>jdk-(?<major>(?<jdk>[\\d]+)[\\d.]+)(?:\\%2B|\\+)(?<build>[\\d]+)(?<patch>[\\d.]*)(?:(?<oj>_openj9?)(?<jvmver>-[\\d.]+))?)/.*?).zip",
+        "replace": "${major}-${build}${patch}${jvmver}"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/$matchUrl.zip"
+            }
+        },
+        "hash": {
+            "url": "$url.sha256.txt",
+            "find": "^([a-fA-F0-9]+)\\s"
+        },
+        "extract_dir": "jdk-$matchMajor+$matchBuild-jre"
+    }
+},{ "name": "adopt15-openj9-xl-nightly", "bucket": "java", 
+    "description": "AdoptOpenJDK 15 with Eclipse OpenJ9 JVM with large heap (Nightly builds)",
+    "homepage": "https://adoptopenjdk.net",
+    "version": "202010050816",
+    "license": "GPL-2.0-only WITH Classpath-exception-2.0,EPL-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/AdoptOpenJDK/openjdk15-binaries/releases/download/jdk15u-2020-10-05-08-16/OpenJDK15U-jdk_x64_windows_openj9_windowsXL_2020-10-05-08-16.zip",
+            "hash": "77fb5f780ad75b182b679f1df9e698eb48696d2ff5c0ec8f91783e5dbdeb344c"
+        }
+    },
+    "extract_to": "tmp",
+    "installer": {
+        "script": [
+            "(Get-ChildItem -Directory \"$dir\\tmp\").FullName | % { Move-Item \"$_\\*\" \"$dir\" }",
+            "Remove-Item -Recurse \"$dir\\tmp\""
+        ]
+    },
+    "env_add_path": "bin",
+    "env_set": {
+        "JAVA_HOME": "$dir"
+    },
+    "checkver": {
+        "url": "https://api.adoptopenjdk.net/v3/assets/feature_releases/15/ea?jvm_impl=openj9&heap_size=large&os=windows&architecture=x64&image_type=jdk&project=jdk&vendor=adoptopenjdk&page_size=1&sort_order=DESC",
+        "jp": "$..binaries[0].package.link",
+        "re": "https://github.com/(?<url>.*?(?<year>[\\d]{4})-(?<month>[\\d]{2})-(?<day>[\\d]{2})-(?<hour>[\\d]{2})-(?<minute>[\\d]{2}).*?).zip",
+        "replace": "${year}${month}${day}${hour}${minute}"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/$matchUrl.zip"
+            }
+        },
+        "hash": {
+            "url": "$url.sha256.txt",
+            "find": "^([a-fA-F0-9]+)\\s"
+        }
+    }
+},{ "name": "adopt15-openj9-xl", "bucket": "java", 
+    "description": "AdoptOpenJDK 15 with Eclipse OpenJ9 JVM with large heap",
+    "homepage": "https://adoptopenjdk.net",
+    "version": "15-36-0.22.0",
+    "license": "GPL-2.0-only WITH Classpath-exception-2.0,EPL-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/AdoptOpenJDK/openjdk15-binaries/releases/download/jdk-15%2B36_openj9-0.22.0/OpenJDK15U-jdk_x64_windows_openj9_windowsXL_15_36_openj9-0.22.0.zip",
+            "hash": "3374577a639ff507d9d6ec562a4b4d7c5245fe37180bbd5f7a3ac8737c55013f"
+        }
+    },
+    "extract_dir": "jdk-15+36",
+    "env_add_path": "bin",
+    "env_set": {
+        "JAVA_HOME": "$dir"
+    },
+    "checkver": {
+        "url": "https://api.adoptopenjdk.net/v3/assets/feature_releases/15/ga?jvm_impl=openj9&heap_size=large&os=windows&architecture=x64&image_type=jdk&project=jdk&vendor=adoptopenjdk&page_size=1&sort_order=DESC",
+        "jp": "$..binaries[0].package.link",
+        "re": "https://github.com/(?<url>.*?(?<tag>jdk-(?<major>(?<jdk>[\\d]+)[\\d.]+)(?:\\%2B|\\+)(?<build>[\\d]+)(?<patch>[\\d.]*)(?:(?<oj>_openj9?)(?<jvmver>-[\\d.]+))?)/.*?).zip",
+        "replace": "${major}-${build}${patch}${jvmver}"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/$matchUrl.zip"
+            }
+        },
+        "hash": {
+            "url": "$url.sha256.txt",
+            "find": "^([a-fA-F0-9]+)\\s"
+        },
+        "extract_dir": "jdk-$matchMajor+$matchBuild"
+    }
+},{ "name": "adopt15-openj9", "bucket": "java", 
+    "description": "AdoptOpenJDK 15 with Eclipse OpenJ9 JVM",
+    "homepage": "https://adoptopenjdk.net",
+    "version": "15-36-0.22.0",
+    "license": "GPL-2.0-only WITH Classpath-exception-2.0,EPL-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/AdoptOpenJDK/openjdk15-binaries/releases/download/jdk-15%2B36_openj9-0.22.0/OpenJDK15U-jdk_x64_windows_openj9_15_36_openj9-0.22.0.zip",
+            "hash": "fad3b4f31e70fa929c866778a2f796212ac5a31180fe4679d5dbf08ccca68493"
+        }
+    },
+    "extract_dir": "jdk-15+36",
+    "env_add_path": "bin",
+    "env_set": {
+        "JAVA_HOME": "$dir"
+    },
+    "checkver": {
+        "url": "https://api.adoptopenjdk.net/v3/assets/feature_releases/15/ga?jvm_impl=openj9&heap_size=normal&os=windows&architecture=x64&image_type=jdk&project=jdk&vendor=adoptopenjdk&page_size=1&sort_order=DESC",
+        "jp": "$..binaries[0].package.link",
+        "re": "https://github.com/(?<url>.*?(?<tag>jdk-(?<major>(?<jdk>[\\d]+)[\\d.]+)(?:\\%2B|\\+)(?<build>[\\d]+)(?<patch>[\\d.]*)(?:(?<oj>_openj9?)(?<jvmver>-[\\d.]+))?)/.*?).zip",
+        "replace": "${major}-${build}${patch}${jvmver}"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/$matchUrl.zip"
+            }
+        },
+        "hash": {
+            "url": "$url.sha256.txt",
+            "find": "^([a-fA-F0-9]+)\\s"
+        },
+        "extract_dir": "jdk-$matchMajor+$matchBuild"
+    }
+},{ "name": "adopt8-hotspot-jre-nightly", "bucket": "java", 
+    "description": "AdoptOpenJDK 8 JRE with Oracle HotSpot JVM (Nightly builds)",
+    "homepage": "https://adoptopenjdk.net",
+    "version": "202010061040",
+    "license": "GPL-2.0-only WITH Classpath-exception-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-10-06-10-40/OpenJDK8U-jre_x64_windows_hotspot_2020-10-06-10-40.zip",
+            "hash": "04a3a18f1c95434e58f4befdecccdf7bc106b8a961a520f9238bdeaf9a6e491b"
         }
     },
     "extract_to": "tmp",
@@ -46813,12 +47251,12 @@
 },{ "name": "adopt8-hotspot-nightly", "bucket": "java", 
     "description": "AdoptOpenJDK 8 with Oracle HotSpot JVM (Nightly builds)",
     "homepage": "https://adoptopenjdk.net",
-    "version": "202010051107",
+    "version": "202010061040",
     "license": "GPL-2.0-only WITH Classpath-exception-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-10-05-11-07/OpenJDK8U-jdk_x64_windows_hotspot_2020-10-05-11-07.zip",
-            "hash": "08577d8a52d49bfb0545f1bbfe64747032517b60b5f6ad95a3a8fc4d8c7489e5"
+            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-10-06-10-40/OpenJDK8U-jdk_x64_windows_hotspot_2020-10-06-10-40.zip",
+            "hash": "fd2fb5aaa9eb8c782f55ac6163886592165fb6f4ddce32614294e86c744f40c3"
         }
     },
     "extract_to": "tmp",
@@ -46893,16 +47331,16 @@
 },{ "name": "adopt8-openj9-jre-nightly", "bucket": "java", 
     "description": "AdoptOpenJDK 8 JRE with Eclipse OpenJ9 JVM (Nightly builds)",
     "homepage": "https://adoptopenjdk.net",
-    "version": "202010051107",
+    "version": "202010061040",
     "license": "GPL-2.0-only WITH Classpath-exception-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-10-05-11-07/OpenJDK8U-jre_x64_windows_openj9_2020-10-05-11-07.zip",
-            "hash": "62aef888147650f06ca909967c7a234d5c72b6f640faca3f58155e0f36955360"
+            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-10-06-10-40/OpenJDK8U-jre_x64_windows_openj9_2020-10-06-10-40.zip",
+            "hash": "5ccaf5b94f98cf51b44c8344bb702cef452fea7388429a891086dbb8f93a9822"
         },
         "32bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-10-05-11-07/OpenJDK8U-jre_x86-32_windows_openj9_2020-10-05-11-07.zip",
-            "hash": "1467a4fb6d27f1f6950b9bda883ee7dbd423d99c1cdecdc83210fd0e4a0894f1"
+            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-10-06-10-40/OpenJDK8U-jre_x86-32_windows_openj9_2020-10-06-10-40.zip",
+            "hash": "4107c4c3a9eedf7459061c49e123a88191a92ba2526fe9c3ef6bb08d3d2edf17"
         }
     },
     "extract_to": "tmp",
@@ -46980,16 +47418,16 @@
 },{ "name": "adopt8-openj9-nightly", "bucket": "java", 
     "description": "AdoptOpenJDK 8 with Eclipse OpenJ9 JVM (Nightly builds)",
     "homepage": "https://adoptopenjdk.net",
-    "version": "202010051107",
+    "version": "202010061040",
     "license": "GPL-2.0-only WITH Classpath-exception-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-10-05-11-07/OpenJDK8U-jdk_x64_windows_openj9_2020-10-05-11-07.zip",
-            "hash": "91f48f850b949de7efa8a2397f07f2173a3113dfc7cef3faa495b9a950e25653"
+            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-10-06-10-40/OpenJDK8U-jdk_x64_windows_openj9_2020-10-06-10-40.zip",
+            "hash": "77b180606972dc0c0e04ac48d28d0960932e3ebbca025430df38d2458a1ad3b7"
         },
         "32bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-10-05-11-07/OpenJDK8U-jdk_x86-32_windows_openj9_2020-10-05-11-07.zip",
-            "hash": "a75477b49664e9dd0be20b8e4f9d08541345f31c118d964afb70d916ec5917ca"
+            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-10-06-10-40/OpenJDK8U-jdk_x86-32_windows_openj9_2020-10-06-10-40.zip",
+            "hash": "2329eba1e1875d6ba88218e1181570346776792d0382ef0654fe514322515e2a"
         }
     },
     "extract_to": "tmp",
@@ -47026,12 +47464,12 @@
 },{ "name": "adopt8-openj9-xl-jre-nightly", "bucket": "java", 
     "description": "AdoptOpenJDK 8 JRE with Eclipse OpenJ9 JVM with large heap (Nightly builds)",
     "homepage": "https://adoptopenjdk.net",
-    "version": "202010051107",
+    "version": "202010061040",
     "license": "GPL-2.0-only WITH Classpath-exception-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-10-05-11-07/OpenJDK8U-jre_x64_windows_openj9_windowsXL_2020-10-05-11-07.zip",
-            "hash": "2e2815474fd74379078be4e5e131c3975f8ce9ea858da7e964c3f9e0103f32ee"
+            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-10-06-10-40/OpenJDK8U-jre_x64_windows_openj9_windowsXL_2020-10-06-10-40.zip",
+            "hash": "4a95cdfb540ff1b5cf20f7d2a104e966407e639785e80c094873706c5e641b3f"
         }
     },
     "extract_to": "tmp",
@@ -47099,12 +47537,12 @@
 },{ "name": "adopt8-openj9-xl-nightly", "bucket": "java", 
     "description": "AdoptOpenJDK 8 with Eclipse OpenJ9 JVM with large heap (Nightly builds)",
     "homepage": "https://adoptopenjdk.net",
-    "version": "202010051107",
+    "version": "202010061040",
     "license": "GPL-2.0-only WITH Classpath-exception-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-10-05-11-07/OpenJDK8U-jdk_x64_windows_openj9_windowsXL_2020-10-05-11-07.zip",
-            "hash": "83be11ecac7a288b84d900481587c2d8d35c2e2860729d9ff82e44d2f4846bc8"
+            "url": "https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u-2020-10-06-10-40/OpenJDK8U-jdk_x64_windows_openj9_windowsXL_2020-10-06-10-40.zip",
+            "hash": "bbb3b307be61b0bd7d5ab532bc7f42096fbe8a616339deab42516c811fb86f1c"
         }
     },
     "extract_to": "tmp",
@@ -52916,14 +53354,14 @@
         }
     }
 },{ "name": "balena-cli", "bucket": "main", 
-    "version": "12.23.3",
+    "version": "12.23.4",
     "description": "Official balena CLI for interacting with balenaCloud and balena API.",
     "homepage": "https://github.com/balena-io/balena-cli",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/balena-io/balena-cli/releases/download/v12.23.3/balena-cli-v12.23.3-windows-x64-standalone.zip",
-            "hash": "8ed6e1e357a97d69c84a1d8bc2e367b0ef6676cd000d65589b4c150706445b9e"
+            "url": "https://github.com/balena-io/balena-cli/releases/download/v12.23.4/balena-cli-v12.23.4-windows-x64-standalone.zip",
+            "hash": "d12ac3c9b51745e98134851911e8409d90282450e7b258c6d7114081793c69ae"
         }
     },
     "extract_dir": "balena-cli",
@@ -52962,11 +53400,10 @@
         }
     }
 },{ "name": "bazel", "bucket": "main", 
-    "version": "3.5.1",
+    "version": "3.6.0",
     "description": "A fast, scalable, multi-language and extensible build system",
     "homepage": "https://bazel.build",
     "license": "Apache-2.0",
-    "bin": "bazel.exe",
     "suggest": {
         "MSYS2": "msys2",
         "Python27": "versions/python27",
@@ -52974,9 +53411,13 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/bazelbuild/bazel/releases/download/3.5.1/bazel-3.5.1-windows-x86_64.zip",
-            "hash": "89fbb086760b6fb922f87ac02f501861ac649af28e7d745ce00dec8faac3dc6f"
+            "url": "https://github.com/bazelbuild/bazel/releases/download/3.6.0/bazel-3.6.0-windows-x86_64.zip",
+            "hash": "c58954a2266980d6f5cb10137d1f5bed8abfd4df38e3a908aa8133387cbb0001"
         }
+    },
+    "bin": "bazel.exe",
+    "env_set": {
+        "BAZEL_SH": "$(appdir msys2 $global)\\current\\usr\\bin\\bash.exe"
     },
     "checkver": {
         "github": "https://github.com/bazelbuild/bazel"
@@ -52991,9 +53432,6 @@
             "mode": "extract",
             "url": "$url.sha256"
         }
-    },
-    "env_set": {
-        "BAZEL_SH": "$(appdir msys2 $global)\\current\\usr\\bin\\bash.exe"
     }
 },{ "name": "bbk-cli", "bucket": "main", 
     "version": "1.0",
@@ -53023,14 +53461,14 @@
         }
     }
 },{ "name": "beeflang", "bucket": "main", 
-    "version": "0.42.6",
+    "version": "0.42.7",
     "description": "Performance-oriented compiled programming language which has been built hand-in-hand with its IDE environment.",
     "homepage": "https://www.beeflang.org",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/beefytech/Beef/releases/download/0.42.6/BeefSetup_0_42_6.exe#/dl.7z",
-            "hash": "262c7e8d59c1287f7cdcfa451057518e82352851a254b4bed22b71bd895e6fe0"
+            "url": "https://github.com/beefytech/Beef/releases/download/0.42.7/BeefSetup_0_42_7.exe#/dl.7z",
+            "hash": "6752a335de081e1b1d83518d62a408cc11f9c8a291ca25abb080e8f909344d6b"
         }
     },
     "bin": [
@@ -54765,12 +55203,12 @@
         }
     }
 },{ "name": "chromedriver", "bucket": "main", 
-    "version": "85.0.4183.87",
+    "version": "86.0.4240.22",
     "description": "An open source tool for automated testing of webapps across many browsers",
     "homepage": "https://chromedriver.chromium.org/",
     "license": "BSD-3-Clause",
-    "url": "https://chromedriver.storage.googleapis.com/85.0.4183.87/chromedriver_win32.zip",
-    "hash": "md5:d8dd294b56d92add7cafea4afb899359",
+    "url": "https://chromedriver.storage.googleapis.com/86.0.4240.22/chromedriver_win32.zip",
+    "hash": "md5:bfbb2a4b657284571b390002086b5eb3",
     "bin": "chromedriver.exe",
     "checkver": "stable.*?([\\d.]+)<",
     "autoupdate": {
@@ -54846,15 +55284,15 @@
         "url": "http://chuck.stanford.edu/release/files/exe/chuck-$version.msi"
     }
 },{ "name": "circleci-cli", "bucket": "main", 
-    "version": "0.1.10458",
+    "version": "0.1.10656",
     "description": "Set of CircleCI’s advanced and powerful tools.",
     "homepage": "https://circleci-public.github.io/circleci-cli/",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/CircleCI-Public/circleci-cli/releases/download/v0.1.10458/circleci-cli_0.1.10458_windows_amd64.zip",
-            "hash": "4d5abc05100d3888662c100bc4b642a9302b6a33753108224508b91afc630ab0",
-            "extract_dir": "circleci-cli_0.1.10458_windows_amd64"
+            "url": "https://github.com/CircleCI-Public/circleci-cli/releases/download/v0.1.10656/circleci-cli_0.1.10656_windows_amd64.zip",
+            "hash": "1e4acd71ac36e6ed7f83bc199f6e64424772f8595f056c2aad3dcaea9f3bd06f",
+            "extract_dir": "circleci-cli_0.1.10656_windows_amd64"
         }
     },
     "bin": "circleci.exe",
@@ -54969,19 +55407,19 @@
         }
     }
 },{ "name": "cloud-sql-proxy", "bucket": "main", 
-    "version": "1.17.0",
+    "version": "1.18.0",
     "description": "Provides secure access to Cloud SQL Second Generation instances without having to add Authorized networks or configure SSL.",
     "homepage": "https://cloud.google.com/sql/docs/mysql/sql-proxy",
     "license": "Apache-2.0",
     "depends": "gcloud",
     "architecture": {
         "64bit": {
-            "url": "https://storage.googleapis.com/cloudsql-proxy/v1.17/cloud_sql_proxy_x64.exe#/cloud_sql_proxy.exe",
-            "hash": "a905f26a89880d9a3c4b17daac33dbc758e174030eff0ac3700a063a22eb3e0f"
+            "url": "https://storage.googleapis.com/cloudsql-proxy/v1.18.0/cloud_sql_proxy_x64.exe#/cloud_sql_proxy.exe",
+            "hash": "621804d3f34dcd19ad1f9c2163ac4e1255d4b40f70e6116f6751d59b202300de"
         },
         "32bit": {
-            "url": "https://storage.googleapis.com/cloudsql-proxy/v1.17/cloud_sql_proxy_x86.exe#/cloud_sql_proxy.exe",
-            "hash": "2449b2da9d86f3260f58a5a9f26155bc72d1830c8c159242e1b10dc5a029d546"
+            "url": "https://storage.googleapis.com/cloudsql-proxy/v1.18.0/cloud_sql_proxy_x86.exe#/cloud_sql_proxy.exe",
+            "hash": "02f293a0166e67646446fa8033b246f00f368029f5627eda1af2c82cc0292050"
         }
     },
     "bin": "cloud_sql_proxy.exe",
@@ -54991,51 +55429,51 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://storage.googleapis.com/cloudsql-proxy/v$majorVersion.$minorVersion/cloud_sql_proxy_x64.exe#/cloud_sql_proxy.exe"
+                "url": "https://storage.googleapis.com/cloudsql-proxy/v$version/cloud_sql_proxy_x64.exe#/cloud_sql_proxy.exe"
             },
             "32bit": {
-                "url": "https://storage.googleapis.com/cloudsql-proxy/v$majorVersion.$minorVersion/cloud_sql_proxy_x86.exe#/cloud_sql_proxy.exe"
+                "url": "https://storage.googleapis.com/cloudsql-proxy/v$version/cloud_sql_proxy_x86.exe#/cloud_sql_proxy.exe"
             }
         },
         "hash": {
             "url": "https://github.com/GoogleCloudPlatform/cloudsql-proxy/releases/tag/v$version",
-            "regex": "(?sm)$basename.*?td>$sha256</td"
+            "regex": "(?sm)$basename.*?td>$sha256"
         }
     }
 },{ "name": "cmake", "bucket": "main", 
-    "version": "3.18.3",
+    "version": "3.18.4",
     "description": "Open-source, cross-platform family of tools designed to build, test and package software",
-    "homepage": "https://cmake.org/",
+    "homepage": "https://cmake.org",
     "license": "BSD-3-Clause",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Kitware/CMake/releases/download/v3.18.3/cmake-3.18.3-win64-x64.zip",
-            "hash": "6b442a2e7877105ff80b8e5d116221ef37a5faea840d916658e2defe8551d4b3",
-            "extract_dir": "cmake-3.18.3-win64-x64"
+            "url": "https://github.com/Kitware/CMake/releases/download/v3.18.4/cmake-3.18.4-win64-x64.zip",
+            "hash": "a932bc0c8ee79f1003204466c525b38a840424d4ae29f9e5fb88959116f2407d",
+            "extract_dir": "cmake-3.18.4-win64-x64"
         },
         "32bit": {
-            "url": "https://github.com/Kitware/CMake/releases/download/v3.18.3/cmake-3.18.3-win32-x86.zip",
-            "hash": "f3f3ae2dc602100717ccec26436d97c85dd2944c59c02e71a1dc71b2e2f098da",
-            "extract_dir": "cmake-3.18.3-win32-x86"
+            "url": "https://github.com/Kitware/CMake/releases/download/v3.18.4/cmake-3.18.4-win32-x86.zip",
+            "hash": "4c519051853686927f87df99669ada3ff15a3086535a7131892febd7c6e2f122",
+            "extract_dir": "cmake-3.18.4-win32-x86"
         }
     },
     "bin": [
-        "bin/cmake.exe",
-        "bin/cmcldeps.exe",
-        "bin/cpack.exe",
-        "bin/ctest.exe",
-        "bin/cmake-gui.exe"
+        "bin\\cmake.exe",
+        "bin\\cmcldeps.exe",
+        "bin\\cpack.exe",
+        "bin\\ctest.exe",
+        "bin\\cmake-gui.exe"
+    ],
+    "shortcuts": [
+        [
+            "bin\\cmake-gui.exe",
+            "cmake-gui"
+        ]
     ],
     "checkver": {
         "url": "https://cmake.org/download/",
         "regex": "Latest Release \\(([\\d.]+)\\)"
     },
-    "shortcuts": [
-        [
-            "bin/cmake-gui.exe",
-            "cmake-gui"
-        ]
-    ],
     "autoupdate": {
         "architecture": {
             "64bit": {
@@ -55910,7 +56348,7 @@
         }
     }
 },{ "name": "dart", "bucket": "main", 
-    "version": "2.10.0",
+    "version": "2.10.1",
     "description": "SDK for the Dart programming language",
     "homepage": "https://www.dartlang.org/",
     "license": "BSD-3-Clause",
@@ -55918,12 +56356,12 @@
     "env_add_path": "bin",
     "architecture": {
         "64bit": {
-            "url": "https://storage.googleapis.com/dart-archive/channels/stable/release/2.10.0/sdk/dartsdk-windows-x64-release.zip",
-            "hash": "d7ba2db0120e8a7f8ba0aff6bf378a3a2ebb5c8ab1b3e4d63a473d6c1d979c27"
+            "url": "https://storage.googleapis.com/dart-archive/channels/stable/release/2.10.1/sdk/dartsdk-windows-x64-release.zip",
+            "hash": "90fea48a4b583bb571256b5d3ed818ed82be4151c3ca8e6dce3b214853121835"
         },
         "32bit": {
-            "url": "https://storage.googleapis.com/dart-archive/channels/stable/release/2.10.0/sdk/dartsdk-windows-ia32-release.zip",
-            "hash": "8d96cec9d18bf664b06fcafa629da2af17595970c434a0bfdf2a2cc397250bf5"
+            "url": "https://storage.googleapis.com/dart-archive/channels/stable/release/2.10.1/sdk/dartsdk-windows-ia32-release.zip",
+            "hash": "d82eaeffb290238fa242f7c33e9010389bd6643a813bd7229391ef51a43e077a"
         }
     },
     "checkver": {
@@ -56245,18 +56683,18 @@
         }
     }
 },{ "name": "direnv", "bucket": "main", 
-    "version": "2.22.0",
+    "version": "2.22.1",
     "description": "load or unload environment variables depending on the current directory",
     "homepage": "https://direnv.net",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/direnv/direnv/releases/download/v2.22.0/direnv.windows-amd64.exe#/direnv.exe",
-            "hash": "186fcaff2c387e885616bb952e2f029f9f5243776af0d7f9414db00a8cf580e7"
+            "url": "https://github.com/direnv/direnv/releases/download/v2.22.1/direnv.windows-amd64.exe#/direnv.exe",
+            "hash": "d9b74175b7200b4f07c8a58f5dd0f9ab3cd31d10a99e4139b75998f1cb756877"
         },
         "32bit": {
-            "url": "https://github.com/direnv/direnv/releases/download/v2.22.0/direnv.windows-386.exe#/direnv.exe",
-            "hash": "c291eadaee4130da80062fb95865355f832f8fe70476968a6becb07a96b03106"
+            "url": "https://github.com/direnv/direnv/releases/download/v2.22.1/direnv.windows-386.exe#/direnv.exe",
+            "hash": "8459f53b8ddd3e5537700a815e646f8d75bcd04eec73e4ed66a251776f0bdcb1"
         }
     },
     "bin": "direnv.exe",
@@ -56613,18 +57051,18 @@
         }
     }
 },{ "name": "doctl", "bucket": "main", 
-    "version": "1.46.0",
+    "version": "1.48.0",
     "description": "A command line tool for DigitalOcean services",
     "homepage": "https://github.com/digitalocean/doctl",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/digitalocean/doctl/releases/download/v1.46.0/doctl-1.46.0-windows-amd64.zip",
-            "hash": "c90b5529d6a23f91851f90ae1cd9e790b887d486292314ecbe8b51add476390c"
+            "url": "https://github.com/digitalocean/doctl/releases/download/v1.48.0/doctl-1.48.0-windows-amd64.zip",
+            "hash": "970966cfa66f7d252d0b094f96b82e3e84be4be2296f42172957fe6a6e342aa0"
         },
         "32bit": {
-            "url": "https://github.com/digitalocean/doctl/releases/download/v1.46.0/doctl-1.46.0-windows-386.zip",
-            "hash": "13320df9135b7af20af3c292ff31ce502e10b5bc942c081190ab4374519bd46a"
+            "url": "https://github.com/digitalocean/doctl/releases/download/v1.48.0/doctl-1.48.0-windows-386.zip",
+            "hash": "347fad9c4a9fc769d06d9b45fc0c2884d2930d12a47bdca9443491a7b7b33864"
         }
     },
     "bin": "doctl.exe",
@@ -56965,7 +57403,7 @@
         "url": "http://madshi.net/eac3to.zip"
     }
 },{ "name": "edgedriver", "bucket": "main", 
-    "version": "87.0.661.0",
+    "version": "87.0.662.0",
     "description": "Close the loop on your developer cycle by automating testing of your website in Microsoft Edge (Chromium).",
     "homepage": "https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver",
     "license": {
@@ -56975,12 +57413,12 @@
     "notes": "For legacy (EdgeHTML) version, see 'versions/edgedriver-legacy'.",
     "architecture": {
         "64bit": {
-            "url": "https://msedgedriver.azureedge.net/87.0.661.0/edgedriver_win64.zip",
-            "hash": "064f087fb1e2076376e25e37a3aa022c3813e37277d4a121e0511921511d2335"
+            "url": "https://msedgedriver.azureedge.net/87.0.662.0/edgedriver_win64.zip",
+            "hash": "1e034539f1a85b26b3cc3ba7015d1a7f041319cda259b22e5256f5947dc64a8c"
         },
         "32bit": {
-            "url": "https://msedgedriver.azureedge.net/87.0.661.0/edgedriver_win32.zip",
-            "hash": "d6336ab11244a79d04ef266684936cb9571b470df018a82cce904cade21373e8"
+            "url": "https://msedgedriver.azureedge.net/87.0.662.0/edgedriver_win32.zip",
+            "hash": "ae25b8f163b86c1c8f9827c4c47d19dd5edac39d10535c0c6666b78d20719ba2"
         }
     },
     "bin": "msedgedriver.exe",
@@ -57042,13 +57480,13 @@
         }
     }
 },{ "name": "elixir", "bucket": "main", 
-    "version": "1.10.4",
+    "version": "1.11.0",
     "description": "A dynamic and functional programming language designed for building scalable and maintainable applications.",
     "homepage": "https://elixir-lang.org/",
     "license": "Apache-2.0",
     "depends": "erlang",
-    "url": "https://github.com/elixir-lang/elixir/releases/download/v1.10.4/Precompiled.zip",
-    "hash": "sha512:9727ae96d187d8b64e471ff0bb5694fcd1009cdcfd8b91a6b78b7542bb71fca59869d8440bb66a2523a6fec025f1d23394e7578674b942274c52b44e19ba2d43",
+    "url": "https://github.com/elixir-lang/elixir/releases/download/v1.11.0/Precompiled.zip",
+    "hash": "sha512:6293f2a0ca87872789a9b3909e782cde77409e8b3f1699f42c95ef55360bdba27c69fe6aaa1c843ef004cc4ded9d92e4cc0053f845c0208ec38f1d11945cae07",
     "env_add_path": "bin",
     "checkver": {
         "github": "https://github.com/elixir-lang/elixir"
@@ -58691,18 +59129,18 @@
         }
     }
 },{ "name": "gh", "bucket": "main", 
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Official GitHub CLI",
     "homepage": "https://cli.github.com",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/cli/cli/releases/download/v1.0.0/gh_1.0.0_windows_amd64.zip",
-            "hash": "989c1f5a7d6f252e551ae7a9c0b19f1dcb1215f58ebad7d0798b83176b18f07a"
+            "url": "https://github.com/cli/cli/releases/download/v1.1.0/gh_1.1.0_windows_amd64.zip",
+            "hash": "94cbfff8cf50ca24ae9d2f60dbda3e1f3aa1a68be896d657ce4885f2a045bad4"
         },
         "32bit": {
-            "url": "https://github.com/cli/cli/releases/download/v1.0.0/gh_1.0.0_windows_386.zip",
-            "hash": "3ca84fd8d6289749c8f40bdffd322d62c5e99adcd1894ff24493b23c6c268717"
+            "url": "https://github.com/cli/cli/releases/download/v1.1.0/gh_1.1.0_windows_386.zip",
+            "hash": "8abe5a333bec49e49170db164d62c2db9086f716a3206abdc27b2b348bfeb6a2"
         }
     },
     "bin": "bin\\gh.exe",
@@ -61258,14 +61696,14 @@
         }
     }
 },{ "name": "hugo-extended", "bucket": "main", 
-    "version": "0.75.1",
+    "version": "0.76.0",
     "description": "Speedy and flexible static site generator. (with Sass/SCSS support)",
     "homepage": "https://gohugo.io",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/gohugoio/hugo/releases/download/v0.75.1/hugo_extended_0.75.1_windows-64bit.zip",
-            "hash": "02c5ebff880aac6a7b6e3b0a054871c37026151e25383f49f306b28afcaf1bb1"
+            "url": "https://github.com/gohugoio/hugo/releases/download/v0.76.0/hugo_extended_0.76.0_windows-64bit.zip",
+            "hash": "1d994284a96f2bb13cbc52b891f3410415805e4d58dc8baaa155bcbc69bbed19"
         }
     },
     "bin": "hugo.exe",
@@ -61283,18 +61721,18 @@
         }
     }
 },{ "name": "hugo", "bucket": "main", 
-    "version": "0.75.1",
+    "version": "0.76.0",
     "description": "Speedy and flexible static site generator (without Sass/SCSS support)",
     "homepage": "https://gohugo.io",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/gohugoio/hugo/releases/download/v0.75.1/hugo_0.75.1_windows-64bit.zip",
-            "hash": "bdb12757be5546ea2f88f1f9b93f54fe70c84d2715a4404e0e23d25b7ea4c29c"
+            "url": "https://github.com/gohugoio/hugo/releases/download/v0.76.0/hugo_0.76.0_windows-64bit.zip",
+            "hash": "49503dcf48d93e5f9e8574d9bad69b3fad4485d260fd7f0d71a9e7fadbae6fd2"
         },
         "32bit": {
-            "url": "https://github.com/gohugoio/hugo/releases/download/v0.75.1/hugo_0.75.1_windows-32bit.zip",
-            "hash": "c29ad8ace804709c59b10831a9085e7e6cc9965bc4186c7d91422380a220ffcf"
+            "url": "https://github.com/gohugoio/hugo/releases/download/v0.76.0/hugo_0.76.0_windows-32bit.zip",
+            "hash": "0bde4dcf0da47e2ad2be2b02f529367da1faf2acf085c4da90140956749e7f06"
         }
     },
     "bin": "hugo.exe",
@@ -61311,7 +61749,7 @@
             }
         },
         "hash": {
-            "url": "https://github.com/gohugoio/hugo/releases/download/v$version/hugo_$version_checksums.txt"
+            "url": "$baseurl/hugo_$version_checksums.txt"
         }
     }
 },{ "name": "hygen", "bucket": "main", 
@@ -62074,7 +62512,7 @@
     "url": "http://www.sentex.net/~mwandel/jhead/jhead.exe",
     "hash": "47d819ae4785dd89d8f6739a3de0f20448e148a12394c83c9abf78c07d279850",
     "bin": "jhead.exe",
-    "checkver": "Current release version: ([\\d\\.]+) \\(",
+    "checkver": "Latest release version: ([\\d.]+) \\(",
     "autoupdate": {
         "url": "http://www.sentex.net/~mwandel/jhead/jhead.exe"
     }
@@ -62317,7 +62755,7 @@
         }
     }
 },{ "name": "k3d", "bucket": "main", 
-    "version": "3.0.2",
+    "version": "3.1.0",
     "description": "Creates multi-node k3s cluster on a single machine using docker",
     "homepage": "https://github.com/rancher/k3d",
     "license": "MIT",
@@ -62330,8 +62768,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/rancher/k3d/releases/download/v3.0.2/k3d-windows-amd64.exe#/k3d.exe",
-            "hash": "1edf0eb210462447ecc8f94f47f8d699b711c80b1c933f8146973ac583f7c7fe"
+            "url": "https://github.com/rancher/k3d/releases/download/v3.1.0/k3d-windows-amd64.exe#/k3d.exe",
+            "hash": "db338da0457a1441c556f1a59af3a2974ddf0a51a7da1bbb1e4dbd3b2be8dc72"
         }
     },
     "bin": "k3d.exe",
@@ -62782,14 +63220,15 @@
         ]
     ]
 },{ "name": "kubefwd", "bucket": "main", 
+    "version": "1.14.7",
+    "description": "Bulk port forwarding Kubernetes services for local development.",
     "homepage": "https://github.com/txn2/kubefwd",
     "license": "Apache-2.0",
-    "version": "1.14.0",
-    "description": "Bulk port forwarding Kubernetes services for local development.",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/txn2/kubefwd/releases/download/1.14.0/kubefwd_windows_amd64.zip",
-            "hash": "e11b340daa0928ac9361eb3152fbe65d25018945db1b8bc649b3bf6c412d211c"
+            "url": "https://github.com/txn2/kubefwd/releases/download/1.14.7/kubefwd_1.14.7_Windows_x86_64.zip",
+            "hash": "a011593affda380400302b437e0c45654ad38c0acf934563eed221b33034f528",
+            "extract_dir": "kubefwd_1.14.7_Windows_x86_64"
         }
     },
     "bin": "kubefwd.exe",
@@ -62797,7 +63236,8 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/txn2/kubefwd/releases/download/$version/kubefwd_windows_amd64.zip"
+                "url": "https://github.com/txn2/kubefwd/releases/download/$version/kubefwd_$version_Windows_x86_64.zip",
+                "extract_dir": "kubefwd_$version_Windows_x86_64"
             }
         },
         "hash": {
@@ -65800,18 +66240,18 @@
 },{ "name": "nodejs-lts", "bucket": "main", 
     "homepage": "https://nodejs.org",
     "description": "As an asynchronous event driven JavaScript runtime, Node is designed to build scalable network applications. (Long Term Support)",
-    "version": "12.18.4",
+    "version": "12.19.0",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://nodejs.org/dist/v12.18.4/node-v12.18.4-win-x64.7z",
-            "hash": "ee974de37139ecf68e8b0d9ae029f3424a5ddba7f338aa936c877e863793702b",
-            "extract_dir": "node-v12.18.4-win-x64"
+            "url": "https://nodejs.org/dist/v12.19.0/node-v12.19.0-win-x64.7z",
+            "hash": "545358ca0d83e0d0de9df993453aa16af4c99221de3dcec6d2000d9826d3bd7a",
+            "extract_dir": "node-v12.19.0-win-x64"
         },
         "32bit": {
-            "url": "https://nodejs.org/dist/v12.18.4/node-v12.18.4-win-x86.7z",
-            "hash": "1ffb83bdc45ec54ef2663dfcbadcbebc6907a4f88a90cae818c999864aa501db",
-            "extract_dir": "node-v12.18.4-win-x86"
+            "url": "https://nodejs.org/dist/v12.19.0/node-v12.19.0-win-x86.7z",
+            "hash": "7eb3bc1db77404b4bb35b171916febc0964588cf51786ce6f76dddc1972a4901",
+            "extract_dir": "node-v12.19.0-win-x86"
         }
     },
     "persist": [
@@ -66326,14 +66766,14 @@
         }
     }
 },{ "name": "okteto", "bucket": "main", 
-    "version": "1.9.0",
+    "version": "1.9.1",
     "description": "Development platform for Kubernetes applications",
     "homepage": "https://okteto.com",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/okteto/okteto/releases/download/1.9.0/okteto.exe",
-            "hash": "25de371d926bf646ae00fc899e44a917c5b86add66de96a867b05ed9ce90b65e"
+            "url": "https://github.com/okteto/okteto/releases/download/1.9.1/okteto.exe",
+            "hash": "17466540be46eb9d3ff78c8dbf998a9b880e6edad8f8e5959f490aa90f9458e7"
         }
     },
     "bin": "okteto.exe",
@@ -66725,24 +67165,16 @@
         }
     }
 },{ "name": "oxipng", "bucket": "main", 
-    "homepage": "https://github.com/shssoichiro/oxipng",
+    "version": "3.0.1",
     "description": "Multi-threaded lossless PNG optimizer",
+    "homepage": "https://github.com/shssoichiro/oxipng",
     "license": "MIT",
-    "version": "3.0.0",
-    "architecture": {
-        "64bit": {
-            "url": "https://github.com/shssoichiro/oxipng/releases/download/v3.0.0/oxipng-v3.0.0-x86_64-pc-windows-msvc.zip",
-            "hash": "decdc7c6360fd16ec3b6d2b2b39bf60ef80b1a7e2b982e69128982c2614036f9"
-        }
-    },
+    "url": "https://github.com/shssoichiro/oxipng/releases/download/v3.0.1/oxipng-3.0.1-i686-pc-windows-msvc.zip",
+    "hash": "0d0453720fc041766b3f56131e825f7ac1782a18287d3214728fc62e32928f23",
     "bin": "oxipng.exe",
     "checkver": "github",
     "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://github.com/shssoichiro/oxipng/releases/download/v$version/oxipng-v$version-x86_64-pc-windows-msvc.zip"
-            }
-        }
+        "url": "https://github.com/shssoichiro/oxipng/releases/download/v$version/oxipng-$version-i686-pc-windows-msvc.zip"
     }
 },{ "name": "pack", "bucket": "main", 
     "version": "0.14.1",
@@ -66815,27 +67247,25 @@
         }
     }
 },{ "name": "pandoc-crossref", "bucket": "main", 
-    "version": "0.3.7.0a",
+    "version": "0.3.8.1",
     "description": "Pandoc filter for cross-references",
     "homepage": "https://hackage.haskell.org/package/pandoc-crossref",
     "license": "GPL-2.0-or-later",
     "depends": "pandoc",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/lierdakil/pandoc-crossref/releases/download/v0.3.7.0a/pandoc-crossref-Windows-2.10.1.7z",
-            "hash": "dbd41f0a23196e8a86fa6ffa4ab99b34d4ad59d4845a2e99965fa5c7cec5c7b9"
+            "url": "https://github.com/lierdakil/pandoc-crossref/releases/download/v0.3.8.1/pandoc-crossref-Windows.7z",
+            "hash": "edb5c0bd1b89748bcff5912867ec873ae04b6dc7f3e1d23859db5cfee84070c6"
         }
     },
-    "extract_dir": "windows-build",
     "bin": "pandoc-crossref.exe",
     "checkver": {
-        "github": "https://github.com/lierdakil/pandoc-crossref",
-        "regex": "download/v([\\w.]+)/pandoc-crossref-Windows-(?<pandoc>[\\d.]+)\\.7z"
+        "github": "https://github.com/lierdakil/pandoc-crossref"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/lierdakil/pandoc-crossref/releases/download/v$version/pandoc-crossref-Windows-$matchPandoc.7z"
+                "url": "https://github.com/lierdakil/pandoc-crossref/releases/download/v$version/pandoc-crossref-Windows.7z"
             }
         }
     }
@@ -67315,15 +67745,15 @@
     "bin": "pkg-config.exe"
 },{ "name": "plex-server", "bucket": "main", 
     "##": "https://support.plex.tv/articles/201941078-uninstall-plex-media-server/",
-    "version": "1.20.1.3252-a78fef9a9",
+    "version": "1.20.2.3402-0fec14d92",
     "description": "Plex Media Server. Stream content to all of devices, anywhere.",
     "homepage": "https://www.plex.tv/",
     "license": {
         "identifier": "Proprietary",
         "url": "https://support.plex.tv/articles/204096476-license-information/"
     },
-    "url": "https://downloads.plex.tv/plex-media-server-new/1.20.1.3252-a78fef9a9/windows/PlexMediaServer-1.20.1.3252-a78fef9a9-x86.exe",
-    "hash": "sha1:9edcade0fa5bf7bfcc016226f6fdc4cead721fda",
+    "url": "https://downloads.plex.tv/plex-media-server-new/1.20.2.3402-0fec14d92/windows/PlexMediaServer-1.20.2.3402-0fec14d92-x86.exe",
+    "hash": "sha1:4daff19d3c0d41a82fb9dfd04695dde0ced169e3",
     "installer": {
         "script": [
             "$extracted = \"$dir\\extracted\"",
@@ -69668,18 +70098,18 @@
 },{ "name": "ruby", "bucket": "main", 
     "homepage": "https://rubyinstaller.org",
     "description": "A dynamic programming language with a focus on simplicity and productivity.",
-    "version": "2.7.1-1",
+    "version": "2.7.2-1",
     "license": "BSD-3-Clause",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-2.7.1-1/rubyinstaller-2.7.1-1-x64.7z",
-            "hash": "e89f11517bfa9b8f58956fa387d36a08299740b776d10b3827938242e5306c5d",
-            "extract_dir": "rubyinstaller-2.7.1-1-x64"
+            "url": "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-2.7.2-1/rubyinstaller-2.7.2-1-x64.7z",
+            "hash": "925cc01d453951d1d0c077c44cec90849afc8d23e45946e19ecd3aaabc0c0ab3",
+            "extract_dir": "rubyinstaller-2.7.2-1-x64"
         },
         "32bit": {
-            "url": "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-2.7.1-1/rubyinstaller-2.7.1-1-x86.7z",
-            "hash": "23126b996412432ebf9df1adf411e113ca8ad56e1308497fb7411ee7c42fad91",
-            "extract_dir": "rubyinstaller-2.7.1-1-x86"
+            "url": "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-2.7.2-1/rubyinstaller-2.7.2-1-x86.7z",
+            "hash": "b803ca683ba926ffa14037cb8e964601cdd4e7d92688957b365719b4d4a681bd",
+            "extract_dir": "rubyinstaller-2.7.2-1-x86"
         }
     },
     "persist": "gems",
@@ -69763,12 +70193,12 @@
         "url": "https://raw.githubusercontent.com/lukesampson/psutils/$matchSha/runat.ps1"
     }
 },{ "name": "rust-analyzer", "bucket": "main", 
-    "version": "2020-09-28",
+    "version": "2020-10-05",
     "description": "An experimental Rust compiler front-end for IDEs",
     "homepage": "https://rust-analyzer.github.io/",
     "license": "Apache-2.0|MIT",
-    "url": "https://github.com/rust-analyzer/rust-analyzer/releases/download/2020-09-28/rust-analyzer-windows.exe#/rust-analyzer.exe",
-    "hash": "a65754bafd7bac231d9243f7d843784077efdc261b4ebaf95b42bffedf35ff01",
+    "url": "https://github.com/rust-analyzer/rust-analyzer/releases/download/2020-10-05/rust-analyzer-windows.exe#/rust-analyzer.exe",
+    "hash": "d7b0e2e068d47b8ced4645f4a4729e4ee499368f4dbddb4e7b2618f2a23f40c6",
     "bin": "rust-analyzer.exe",
     "checkver": {
         "github": "https://github.com/rust-analyzer/rust-analyzer",
@@ -70084,18 +70514,18 @@
         }
     }
 },{ "name": "sass", "bucket": "main", 
-    "version": "1.26.11",
+    "version": "1.26.12",
     "description": "The primary implementation of Sass, written in Dart.",
     "homepage": "https://sass-lang.com/dart-sass",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/sass/dart-sass/releases/download/1.26.11/dart-sass-1.26.11-windows-x64.zip",
-            "hash": "13f35784e32177fe3e1c4e01a4fbd81e71ed01d991e3ea53748a68d532a4ece1"
+            "url": "https://github.com/sass/dart-sass/releases/download/1.26.12/dart-sass-1.26.12-windows-x64.zip",
+            "hash": "537e7389df42abca1e4a711ee457d7e186d0ae4ebc855f9a354e90c08a033b0c"
         },
         "32bit": {
-            "url": "https://github.com/sass/dart-sass/releases/download/1.26.11/dart-sass-1.26.11-windows-ia32.zip",
-            "hash": "dc1fc3043d1bfd78f0c6edda77e5129501223930f683d6ed357e51fc0b555870"
+            "url": "https://github.com/sass/dart-sass/releases/download/1.26.12/dart-sass-1.26.12-windows-ia32.zip",
+            "hash": "b44c254497561567871776ce412bb98e182513a05b0c1647395633cf0f25e565"
         }
     },
     "extract_dir": "dart-sass",
@@ -71490,21 +71920,21 @@
         "url": "https://www.syncany.org/dist/releases/syncany-cli-$version-alpha.exe"
     }
 },{ "name": "syncthing", "bucket": "main", 
-    "version": "1.9.0",
+    "version": "1.10.0",
     "description": "Open Source Continuous File Synchronization.",
     "homepage": "https://syncthing.net/",
     "license": "MPL-2.0",
     "notes": "To start syncthing automatically, use a method described at https://github.com/syncthing/docs/blob/main/users/autostart.rst#windows",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/syncthing/syncthing/releases/download/v1.9.0/syncthing-windows-amd64-v1.9.0.zip",
-            "hash": "de484439ea1a75848e3ee5427f243417827ac87933a2616ae85d354b80483b3f",
-            "extract_dir": "syncthing-windows-amd64-v1.9.0"
+            "url": "https://github.com/syncthing/syncthing/releases/download/v1.10.0/syncthing-windows-amd64-v1.10.0.zip",
+            "hash": "2509f8b9c65f1c37fbfcaff76a3b31c27d72917974066954fa4fcad5e9a8e1f3",
+            "extract_dir": "syncthing-windows-amd64-v1.10.0"
         },
         "32bit": {
-            "url": "https://github.com/syncthing/syncthing/releases/download/v1.9.0/syncthing-windows-386-v1.9.0.zip",
-            "hash": "b803b02d21987666a3230111c0ac0888c9a80eaa70a651229f9f8024f191a497",
-            "extract_dir": "syncthing-windows-386-v1.9.0"
+            "url": "https://github.com/syncthing/syncthing/releases/download/v1.10.0/syncthing-windows-386-v1.10.0.zip",
+            "hash": "495ef8df628b89fd0a0a0a291bdbeaa416622c4f0edf5ac2bd038b3f0a2ccbb1",
+            "extract_dir": "syncthing-windows-386-v1.10.0"
         }
     },
     "bin": [
@@ -71516,10 +71946,10 @@
     ],
     "persist": "config",
     "pre_install": [
-        "if (!(Test-Path \"$persist_dir\\config\") -and (Test-Path \"$Env:LocalAppdata\\Syncthing\")) {",
-        "    Write-Host -F yellow \"Copying old '$Env:LocalAppdata\\Syncthing' to '$persist_dir\\config'\"",
-        "    New-Item \"$dir\\config\" -ItemType 'Directory' -Force | Out-Null",
-        "    Copy-Item \"$Env:LocalAppdata\\Syncthing\\*\" \"$dir\\config\" -Exclude LOCK -Recurse -Force",
+        "if (!(Test-Path \"$persist_dir\\config\") -and (Test-Path \"$env:LOCALAPPDATA\\Syncthing\")) {",
+        "    info \"Copying old '$env:LOCALAPPDATA\\Syncthing' to '$persist_dir\\config'\"",
+        "    ensure \"$dir\\config\" | Out-Null",
+        "    Copy-Item \"$env:LOCALAPPDATA\\Syncthing\\*\" \"$dir\\config\" -Exclude LOCK -Recurse -Force",
         "}"
     ],
     "checkver": {
@@ -73056,31 +73486,34 @@
         }
     }
 },{ "name": "vim-nightly", "bucket": "main", 
-    "version": "8.2.1801",
+    "version": "8.2.1787",
     "description": "A highly configurable text editor for efficiently creating and changing any kind of text.",
     "homepage": "https://www.vim.org",
     "license": "Vim",
+    "suggest": {
+        "vimtutor": "vimtutor"
+    },
     "architecture": {
         "64bit": {
             "url": [
-                "https://github.com/vim/vim-win32-installer/releases/download/v8.2.1801/gvim_8.2.1801_x64.zip",
+                "https://github.com/vim/vim-win32-installer/releases/download/v8.2.1787/gvim_8.2.1787_x64.zip",
                 "https://raw.githubusercontent.com/ScoopInstaller/Main/master/scripts/vim/install-context.reg",
                 "https://raw.githubusercontent.com/ScoopInstaller/Main/master/scripts/vim/uninstall-context.reg"
             ],
             "hash": [
-                "5a7a04206c8514170c529369db488afce96e814b1b9ae92b40632abe64bf3bdc",
+                "4978ac1140f471df33721e0e3c5a60605c37c35f149942054dd961f49e236e01",
                 "16a29881837047d783e8556506c73bbb292bdfefe042d77564d3c166d92b9d98",
                 "49225d3470bf4b397d3cab865eddca6e47610be356f812588588c2661a11557e"
             ]
         },
         "32bit": {
             "url": [
-                "https://github.com/vim/vim-win32-installer/releases/download/v8.2.1801/gvim_8.2.1801_x86.zip",
+                "https://github.com/vim/vim-win32-installer/releases/download/v8.2.1787/gvim_8.2.1787_x86.zip",
                 "https://raw.githubusercontent.com/ScoopInstaller/Main/master/scripts/vim/install-context.reg",
                 "https://raw.githubusercontent.com/ScoopInstaller/Main/master/master/scripts/vim/uninstall-context.reg"
             ],
             "hash": [
-                "eec2717f7dd9c464cf21e4504426721de63210bff118467663edde0220a6f927",
+                "f5ae393c1ec0d4249176f1560a9069e43e44c5f964c2d2a1325ed7fa514f1161",
                 "16a29881837047d783e8556506c73bbb292bdfefe042d77564d3c166d92b9d98",
                 "49225d3470bf4b397d3cab865eddca6e47610be356f812588588c2661a11557e"
             ]
@@ -73191,9 +73624,6 @@
             }
         },
         "extract_dir": "vim\\vim$majorVersion$minorVersion"
-    },
-    "suggest": {
-        "vimtutor": "vimtutor"
     }
 },{ "name": "vim", "bucket": "main", 
     "homepage": "https://www.vim.org",
@@ -76156,21 +76586,21 @@
         }
     }
 },{ "name": "nodejs-lts-np", "bucket": "nonportable", 
-    "version": "12.18.4",
+    "version": "12.19.0",
     "description": "JavaScript runtime environment.",
     "homepage": "https://nodejs.org",
     "license": "MIT",
     "notes": "npm global prefix set to: $env:APPDATA\\npm",
     "architecture": {
         "64bit": {
-            "url": "https://nodejs.org/dist/v12.18.4/node-v12.18.4-win-x64.7z",
-            "hash": "ee974de37139ecf68e8b0d9ae029f3424a5ddba7f338aa936c877e863793702b",
-            "extract_dir": "node-v12.18.4-win-x64"
+            "url": "https://nodejs.org/dist/v12.19.0/node-v12.19.0-win-x64.7z",
+            "hash": "545358ca0d83e0d0de9df993453aa16af4c99221de3dcec6d2000d9826d3bd7a",
+            "extract_dir": "node-v12.19.0-win-x64"
         },
         "32bit": {
-            "url": "https://nodejs.org/dist/v12.18.4/node-v12.18.4-win-x86.7z",
-            "hash": "1ffb83bdc45ec54ef2663dfcbadcbebc6907a4f88a90cae818c999864aa501db",
-            "extract_dir": "node-v12.18.4-win-x86"
+            "url": "https://nodejs.org/dist/v12.19.0/node-v12.19.0-win-x86.7z",
+            "hash": "7eb3bc1db77404b4bb35b171916febc0964588cf51786ce6f76dddc1972a4901",
+            "extract_dir": "node-v12.19.0-win-x86"
         }
     },
     "installer": {
@@ -89524,18 +89954,18 @@
 },{ "name": "nodejs12", "bucket": "versions", 
     "homepage": "https://nodejs.org",
     "description": "A JavaScript runtime built on Chrome's V8 JavaScript engine.",
-    "version": "12.18.4",
+    "version": "12.19.0",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://nodejs.org/dist/v12.18.4/node-v12.18.4-win-x64.7z",
-            "hash": "ee974de37139ecf68e8b0d9ae029f3424a5ddba7f338aa936c877e863793702b",
-            "extract_dir": "node-v12.18.4-win-x64"
+            "url": "https://nodejs.org/dist/v12.19.0/node-v12.19.0-win-x64.7z",
+            "hash": "545358ca0d83e0d0de9df993453aa16af4c99221de3dcec6d2000d9826d3bd7a",
+            "extract_dir": "node-v12.19.0-win-x64"
         },
         "32bit": {
-            "url": "https://nodejs.org/dist/v12.18.4/node-v12.18.4-win-x86.7z",
-            "hash": "1ffb83bdc45ec54ef2663dfcbadcbebc6907a4f88a90cae818c999864aa501db",
-            "extract_dir": "node-v12.18.4-win-x86"
+            "url": "https://nodejs.org/dist/v12.19.0/node-v12.19.0-win-x86.7z",
+            "hash": "7eb3bc1db77404b4bb35b171916febc0964588cf51786ce6f76dddc1972a4901",
+            "extract_dir": "node-v12.19.0-win-x86"
         }
     },
     "persist": [
@@ -91502,18 +91932,18 @@
 },{ "name": "rclone-beta", "bucket": "versions", 
     "homepage": "https://rclone.org",
     "description": "rsync for cloud storage",
-    "version": "1.54.0-beta.4797.3edc9ff0b",
+    "version": "1.54.0-beta.4811.e3a5bb9b4",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://beta.rclone.org/v1.54.0-beta.4797.3edc9ff0b/rclone-v1.54.0-beta.4797.3edc9ff0b-windows-amd64.zip",
-            "extract_dir": "rclone-v1.54.0-beta.4797.3edc9ff0b-windows-amd64",
-            "hash": "025bbb71cc6ba32265ebb9fe4a548a0ad0e24c9ac69d463f0f20219e6d74a1f7"
+            "url": "https://beta.rclone.org/v1.54.0-beta.4811.e3a5bb9b4/rclone-v1.54.0-beta.4811.e3a5bb9b4-windows-amd64.zip",
+            "extract_dir": "rclone-v1.54.0-beta.4811.e3a5bb9b4-windows-amd64",
+            "hash": "d7403381d616492c5c25b1aab2b44b8b61d86df3d925357f5fe996707e3dbea7"
         },
         "32bit": {
-            "url": "https://beta.rclone.org/v1.54.0-beta.4797.3edc9ff0b/rclone-v1.54.0-beta.4797.3edc9ff0b-windows-386.zip",
-            "extract_dir": "rclone-v1.54.0-beta.4797.3edc9ff0b-windows-386",
-            "hash": "e7a30c858ac2c3087f2f92283325c738da5ed713e95dbafba489edf9161749a5"
+            "url": "https://beta.rclone.org/v1.54.0-beta.4811.e3a5bb9b4/rclone-v1.54.0-beta.4811.e3a5bb9b4-windows-386.zip",
+            "extract_dir": "rclone-v1.54.0-beta.4811.e3a5bb9b4-windows-386",
+            "hash": "30dad19927998b0477c7494870f41681e7d59e67e7e456164f728c6bd62ead9c"
         }
     },
     "bin": [
@@ -91540,14 +91970,14 @@
         }
     }
 },{ "name": "rstudio-daily", "bucket": "versions", 
-    "version": "1.4.904",
+    "version": "1.4.909",
     "homepage": "https://www.rstudio.com/",
     "description": "An IDE for R, which includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management.",
     "license": "AGPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://s3.amazonaws.com/rstudio-ide-build/desktop/windows/RStudio-1.4.904.zip",
-            "hash": "1068ef02c565852c5f06c0b82fa6def243fe3013f23a01ded810d26ba32a5852",
+            "url": "https://s3.amazonaws.com/rstudio-ide-build/desktop/windows/RStudio-1.4.909.zip",
+            "hash": "b38fd768671061e18aeefc4aaf9d265905069a2ce270e5de0f5226bf9078f9e8",
             "post_install": [
                 "if (!(Test-Path \"$env:Appdata\\RStudio\")) {",
                 "    New-Item \"$env:Appdata\\RStudio\" -ItemType Directory -Force | Out-Null",
@@ -91656,17 +92086,17 @@
     }
 },{ "name": "ruby25", "bucket": "versions", 
     "homepage": "https://rubyinstaller.org",
-    "version": "2.5.8-1",
+    "version": "2.5.8-2",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-2.5.8-1/rubyinstaller-2.5.8-1-x64.7z",
-            "hash": "92b95c5b2e65e0a10aabf921bd2d1f69b8d2efc3e86632e9d854c3732c570149",
-            "extract_dir": "rubyinstaller-2.5.8-1-x64"
+            "url": "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-2.5.8-2/rubyinstaller-2.5.8-2-x64.7z",
+            "hash": "8364b25431e1df1b0f3be85032c027869178ca4db4c56d016d4fad0ab22e7634",
+            "extract_dir": "rubyinstaller-2.5.8-2-x64"
         },
         "32bit": {
-            "url": "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-2.5.8-1/rubyinstaller-2.5.8-1-x86.7z",
-            "hash": "d3783314d50c5a2eca44330454dbe1f2e10d843071308cb76941aeb1b4de6be5",
-            "extract_dir": "rubyinstaller-2.5.8-1-x86"
+            "url": "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-2.5.8-2/rubyinstaller-2.5.8-2-x86.7z",
+            "hash": "7d5cea5e51a0b09fd1ca5f7cf56182a3e7179ebdb80e8facc1bb5bca9be24ef0",
+            "extract_dir": "rubyinstaller-2.5.8-2-x86"
         }
     },
     "persist": "gems",
@@ -91706,18 +92136,18 @@
 },{ "name": "ruby26", "bucket": "versions", 
     "homepage": "https://rubyinstaller.org",
     "description": "A dynamic programming language with a focus on simplicity and productivity.",
-    "version": "2.6.6-1",
+    "version": "2.6.6-2",
     "license": "BSD-3-Clause",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-2.6.6-1/rubyinstaller-2.6.6-1-x64.7z",
-            "hash": "fe5ca2e3ceffa1a98051a85b4028a2bb57332ad4dbb439e377c5775e463096e3",
-            "extract_dir": "rubyinstaller-2.6.6-1-x64"
+            "url": "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-2.6.6-2/rubyinstaller-2.6.6-2-x64.7z",
+            "hash": "8c70348c9ab2e9df73ba3e1e7af5bb9603a7541659db7f606e8a4f8d6e8c4f1b",
+            "extract_dir": "rubyinstaller-2.6.6-2-x64"
         },
         "32bit": {
-            "url": "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-2.6.6-1/rubyinstaller-2.6.6-1-x86.7z",
-            "hash": "4bd6ed7a113ceb1b105b662bb34e83f348082f4577aade8544f7892c1567be6d",
-            "extract_dir": "rubyinstaller-2.6.6-1-x86"
+            "url": "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-2.6.6-2/rubyinstaller-2.6.6-2-x86.7z",
+            "hash": "04e66ad2f18c5c2c694760c97cab6fa7de4669bd648372928872289096e12caa",
+            "extract_dir": "rubyinstaller-2.6.6-2-x86"
         }
     },
     "persist": "gems",

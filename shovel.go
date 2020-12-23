@@ -42,7 +42,7 @@ func cloneBuckets() {
 		// Bucket{"nightlies", "https://github.com/ScoopInstaller/Nightlies"}, contains faulty manifest dotnet-nightly
 		Bucket{"nirsoft", "https://github.com/kodybrown/scoop-nirsoft"},
 		Bucket{"php", "https://github.com/ScoopInstaller/PHP"},
-		Bucket{"nonportable", "https://github.com/TheRandomLabs/scoop-nonportable"}
+		Bucket{"nonportable", "https://github.com/TheRandomLabs/scoop-nonportable"},
 		Bucket{"java", "https://github.com/ScoopInstaller/Java"},
 		Bucket{"games", "https://github.com/Calinou/scoop-games"},
 	}

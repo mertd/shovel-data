@@ -63,7 +63,7 @@ func clone(bucket Bucket) {
 	log.Println("Cloning bucket repository " + bucket.name)
 	var stdout bytes.Buffer
 	var stderr bytes.Buffer
-	cmd := exec.Command("git", "clone", bucket.url, bucket.name)
+	cmd := exec.Command("git", "clone", bucket.url, ".work/"+bucket.name)
 	cmd.Stdout = &stdout
 	cmd.Stderr = &stderr
 	err := cmd.Run()
@@ -101,15 +101,17 @@ func extractManifestDetails(path string) (string, string) {
 }
 
 func cleanOldRuns() {
+	log.Println("Creating clean .work dir")
+	err := os.Mkdir(".work", 0755)
+	if !os.IsExist(err) {
+		catch(err, "", "")
+	}
 	log.Println("Cleaning up previous runs (if any)")
-	files, err := filepath.Glob("./*/*")
+	files, err := filepath.Glob("./.work/*")
 	catch(err, "", "")
 	for i := 0; i < len(files); i++ {
-		// don't delete our .git
-		if !strings.HasPrefix(files[i], ".git") && !strings.HasPrefix(files[i], "docs") {
-			err := os.RemoveAll(files[i])
-			catch(err, "", "")
-		}
+		err := os.RemoveAll(files[i])
+		catch(err, "", "")
 	}
 	log.Println("Cleaned up " + strconv.Itoa(len(files)) + " paths")
 }

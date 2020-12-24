@@ -11,8 +11,11 @@ import (
 	"strings"
 )
 
+// configure
+var workDir = ".work"
+
 func main() {
-	cleanOldRuns()
+	prepareWorkDir()
 	cloneBuckets()
 	// get a list of all json files
 	files, err := filepath.Glob("./*/bucket/*.json")
@@ -62,7 +65,7 @@ func clone(bucket Bucket) {
 	log.Println("Cloning bucket repository " + bucket.name)
 	var stdout bytes.Buffer
 	var stderr bytes.Buffer
-	cmd := exec.Command("git", "clone", bucket.url, ".work/"+bucket.name)
+	cmd := exec.Command("git", "clone", bucket.url, workDir+"/"+bucket.name)
 	cmd.Stdout = &stdout
 	cmd.Stderr = &stderr
 	err := cmd.Run()
@@ -99,13 +102,13 @@ func extractManifestDetails(path string) (string, string) {
 	return name, bucket
 }
 
-func cleanOldRuns() {
+func prepareWorkDir() {
 	log.Println("Preparing work directory")
-	removeErr := os.RemoveAll(".work")
+	removeErr := os.RemoveAll(workDir)
 	if !os.IsNotExist(removeErr) {
 		catch(removeErr, "", "")
 	}
-	createErr := os.Mkdir(".work", 0755)
+	createErr := os.Mkdir(workDir, 0755)
 	if !os.IsExist(createErr) {
 		catch(createErr, "", "")
 	}

@@ -8,15 +8,17 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
-	"strconv"
 	"strings"
 )
 
+// configure
+var workDir = ".work"
+
 func main() {
-	cleanOldRuns()
+	prepareWorkDir()
 	cloneBuckets()
 	// get a list of all json files
-	files, err := filepath.Glob("./*/bucket/*.json")
+	files, err := filepath.Glob(workDir + "/*/bucket/*.json")
 	catch(err, "", "")
 	// read files
 	filesArray := readFilesToArray(files)
@@ -39,7 +41,7 @@ func cloneBuckets() {
 		Bucket{"main", "https://github.com/ScoopInstaller/Main"},
 		Bucket{"extras", "https://github.com/lukesampson/scoop-extras"},
 		Bucket{"versions", "https://github.com/ScoopInstaller/Versions"},
-		// Bucket{"nightlies", "https://github.com/ScoopInstaller/Nightlies"}, contains faulty manifest dotnet-nightly
+		// Bucket{"nightlies", "https://github.com/ScoopInstaller/Nightlies"}, contains faulty manifest
 		Bucket{"nirsoft", "https://github.com/kodybrown/scoop-nirsoft"},
 		Bucket{"php", "https://github.com/ScoopInstaller/PHP"},
 		Bucket{"nonportable", "https://github.com/TheRandomLabs/scoop-nonportable"},
@@ -63,7 +65,7 @@ func clone(bucket Bucket) {
 	log.Println("Cloning bucket repository " + bucket.name)
 	var stdout bytes.Buffer
 	var stderr bytes.Buffer
-	cmd := exec.Command("git", "clone", bucket.url, bucket.name)
+	cmd := exec.Command("git", "clone", bucket.url, workDir+"/"+bucket.name)
 	cmd.Stdout = &stdout
 	cmd.Stderr = &stderr
 	err := cmd.Run()
@@ -100,18 +102,16 @@ func extractManifestDetails(path string) (string, string) {
 	return name, bucket
 }
 
-func cleanOldRuns() {
-	log.Println("Cleaning up previous runs (if any)")
-	files, err := filepath.Glob("./*/*")
-	catch(err, "", "")
-	for i := 0; i < len(files); i++ {
-		// don't delete our .git
-		if !strings.HasPrefix(files[i], ".git") && !strings.HasPrefix(files[i], "docs") {
-			err := os.RemoveAll(files[i])
-			catch(err, "", "")
-		}
+func prepareWorkDir() {
+	log.Println("Preparing work directory")
+	removeErr := os.RemoveAll(workDir)
+	if !os.IsNotExist(removeErr) {
+		catch(removeErr, "", "")
 	}
-	log.Println("Cleaned up " + strconv.Itoa(len(files)) + " paths")
+	createErr := os.Mkdir(workDir, 0755)
+	if !os.IsExist(createErr) {
+		catch(createErr, "", "")
+	}
 }
 
 func catch(err error, stdout string, stderr string) {

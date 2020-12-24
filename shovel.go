@@ -8,7 +8,6 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
-	"strconv"
 	"strings"
 )
 
@@ -101,19 +100,15 @@ func extractManifestDetails(path string) (string, string) {
 }
 
 func cleanOldRuns() {
-	log.Println("Creating clean .work dir")
-	err := os.Mkdir(".work", 0755)
-	if !os.IsExist(err) {
-		catch(err, "", "")
+	log.Println("Preparing work directory")
+	removeErr := os.RemoveAll(".work")
+	if !os.IsNotExist(removeErr) {
+		catch(removeErr, "", "")
 	}
-	log.Println("Cleaning up previous runs (if any)")
-	files, err := filepath.Glob("./.work/*")
-	catch(err, "", "")
-	for i := 0; i < len(files); i++ {
-		err := os.RemoveAll(files[i])
-		catch(err, "", "")
+	createErr := os.Mkdir(".work", 0755)
+	if !os.IsExist(createErr) {
+		catch(createErr, "", "")
 	}
-	log.Println("Cleaned up " + strconv.Itoa(len(files)) + " paths")
 }
 
 func catch(err error, stdout string, stderr string) {

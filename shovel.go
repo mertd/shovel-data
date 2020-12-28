@@ -39,15 +39,15 @@ type Bucket struct {
 
 func cloneBuckets() {
 	buckets := []Bucket{
-		Bucket{"main", "https://github.com/ScoopInstaller/Main"},
-		Bucket{"extras", "https://github.com/lukesampson/scoop-extras"},
-		Bucket{"versions", "https://github.com/ScoopInstaller/Versions"},
-		Bucket{"nightlies", "https://github.com/ScoopInstaller/Nightlies"},
-		Bucket{"nirsoft", "https://github.com/kodybrown/scoop-nirsoft"},
-		Bucket{"php", "https://github.com/ScoopInstaller/PHP"},
-		Bucket{"nonportable", "https://github.com/TheRandomLabs/scoop-nonportable"},
-		Bucket{"java", "https://github.com/ScoopInstaller/Java"},
-		Bucket{"games", "https://github.com/Calinou/scoop-games"},
+		{"main", "https://github.com/ScoopInstaller/Main"},
+		{"extras", "https://github.com/lukesampson/scoop-extras"},
+		{"versions", "https://github.com/ScoopInstaller/Versions"},
+		{"nightlies", "https://github.com/ScoopInstaller/Nightlies"},
+		{"nirsoft", "https://github.com/kodybrown/scoop-nirsoft"},
+		{"php", "https://github.com/ScoopInstaller/PHP"},
+		{"nonportable", "https://github.com/TheRandomLabs/scoop-nonportable"},
+		{"java", "https://github.com/ScoopInstaller/Java"},
+		{"games", "https://github.com/Calinou/scoop-games"},
 	}
 	for i := 0; i < len(buckets); i++ {
 		clone(buckets[i])

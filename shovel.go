@@ -7,7 +7,6 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
-	"strconv"
 	"strings"
 
 	"github.com/Jeffail/gabs"
@@ -75,24 +74,25 @@ func clone(bucket Bucket) {
 }
 
 func readFilesToArray(files []string) []string {
-	log.Println("Reading manifests and gathering additional data")
+	log.Println("Parsing manifests")
 	var result []string
 	errorCount := 0
 	successCount := 0
 	for i := 0; i < len(files); i++ {
 		manifest, err := gabs.ParseJSONFile(files[i])
 		name, bucket := extractManifestDetails(files[i])
-		manifest, err = manifest.Set(name, "name")
-		manifest, err = manifest.Set(bucket, "bucket")
+		manifest.Set(name, "name")
+		manifest.Set(bucket, "bucket")
 		if err == nil {
 			result = append(result, manifest.String())
 			successCount = successCount + 1
 		} else {
+			log.Println("Skipping", name, "from", bucket, "--", err)
 			errorCount = errorCount + 1
 		}
 	}
-	log.Println("Successfully parsed " + strconv.Itoa(successCount) + " manifests.")
-	log.Println("Skipped " + strconv.Itoa(errorCount) + " erroneous manifests.")
+	log.Println("Successfully parsed", successCount, "manifest(s).")
+	log.Println("Skipped", errorCount, "erroneous manifest(s).")
 	return result
 }
 

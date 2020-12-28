@@ -3,12 +3,13 @@ package main
 import (
 	"bytes"
 	"io"
-	"io/ioutil"
 	"log"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"strings"
+
+	"github.com/Jeffail/gabs/v2"
 )
 
 // configure
@@ -21,7 +22,7 @@ func main() {
 	files, err := filepath.Glob(workDir + "/*/bucket/*.json")
 	catch(err, "", "")
 	// read files
-	filesArray := readFilesToArray(files)
+	filesArray := parseManifests(files)
 	filesString := strings.Join(filesArray, ",")
 	filesString = "[" + filesString + "]"
 	// write to file
@@ -38,15 +39,15 @@ type Bucket struct {
 
 func cloneBuckets() {
 	buckets := []Bucket{
-		Bucket{"main", "https://github.com/ScoopInstaller/Main"},
-		Bucket{"extras", "https://github.com/lukesampson/scoop-extras"},
-		Bucket{"versions", "https://github.com/ScoopInstaller/Versions"},
-		// Bucket{"nightlies", "https://github.com/ScoopInstaller/Nightlies"}, contains faulty manifest
-		Bucket{"nirsoft", "https://github.com/kodybrown/scoop-nirsoft"},
-		Bucket{"php", "https://github.com/ScoopInstaller/PHP"},
-		Bucket{"nonportable", "https://github.com/TheRandomLabs/scoop-nonportable"},
-		Bucket{"java", "https://github.com/ScoopInstaller/Java"},
-		Bucket{"games", "https://github.com/Calinou/scoop-games"},
+		{"main", "https://github.com/ScoopInstaller/Main"},
+		{"extras", "https://github.com/lukesampson/scoop-extras"},
+		{"versions", "https://github.com/ScoopInstaller/Versions"},
+		{"nightlies", "https://github.com/ScoopInstaller/Nightlies"},
+		{"nirsoft", "https://github.com/kodybrown/scoop-nirsoft"},
+		{"php", "https://github.com/ScoopInstaller/PHP"},
+		{"nonportable", "https://github.com/TheRandomLabs/scoop-nonportable"},
+		{"java", "https://github.com/ScoopInstaller/Java"},
+		{"games", "https://github.com/Calinou/scoop-games"},
 	}
 	for i := 0; i < len(buckets); i++ {
 		clone(buckets[i])
@@ -72,24 +73,27 @@ func clone(bucket Bucket) {
 	catch(err, stdout.String(), stderr.String())
 }
 
-func readFilesToArray(files []string) []string {
-	log.Println("Reading manifests and gathering additional data")
+func parseManifests(files []string) []string {
+	log.Println("Parsing manifests")
 	var result []string
+	errorCount := 0
+	successCount := 0
 	for i := 0; i < len(files); i++ {
-		dat, err := ioutil.ReadFile(files[i])
-		catch(err, "", "")
+		manifest, err := gabs.ParseJSONFile(files[i])
 		name, bucket := extractManifestDetails(files[i])
-		manifest := addManifestDetails(string(dat), name, bucket)
-		result = append(result, manifest)
+		manifest.Set(name, "name")
+		manifest.Set(bucket, "bucket")
+		if err == nil {
+			result = append(result, manifest.String())
+			successCount = successCount + 1
+		} else {
+			log.Println("Skipping", name, "from", bucket, "--", err)
+			errorCount = errorCount + 1
+		}
 	}
+	log.Println("Successfully parsed", successCount, "manifest(s).")
+	log.Println("Skipped", errorCount, "erroneous manifest(s).")
 	return result
-}
-
-func addManifestDetails(manifest string, name string, bucket string) string {
-	runes := []rune(manifest)
-	manifest = string(runes[2 : len(runes)-1])
-	manifest = "{ \"name\": \"" + name + "\", \"bucket\": \"" + bucket + "\", " + manifest
-	return manifest
 }
 
 func extractManifestDetails(path string) (string, string) {

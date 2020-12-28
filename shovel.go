@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/Jeffail/gabs"
+	"github.com/Jeffail/gabs/v2"
 )
 
 // configure

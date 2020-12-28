@@ -22,7 +22,7 @@ func main() {
 	files, err := filepath.Glob(workDir + "/*/bucket/*.json")
 	catch(err, "", "")
 	// read files
-	filesArray := readFilesToArray(files)
+	filesArray := parseManifests(files)
 	filesString := strings.Join(filesArray, ",")
 	filesString = "[" + filesString + "]"
 	// write to file
@@ -73,7 +73,7 @@ func clone(bucket Bucket) {
 	catch(err, stdout.String(), stderr.String())
 }
 
-func readFilesToArray(files []string) []string {
+func parseManifests(files []string) []string {
 	log.Println("Parsing manifests")
 	var result []string
 	errorCount := 0

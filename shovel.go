@@ -3,12 +3,14 @@ package main
 import (
 	"bytes"
 	"io"
-	"io/ioutil"
 	"log"
 	"os"
 	"os/exec"
 	"path/filepath"
+	"strconv"
 	"strings"
+
+	"github.com/Jeffail/gabs"
 )
 
 // configure
@@ -41,7 +43,7 @@ func cloneBuckets() {
 		Bucket{"main", "https://github.com/ScoopInstaller/Main"},
 		Bucket{"extras", "https://github.com/lukesampson/scoop-extras"},
 		Bucket{"versions", "https://github.com/ScoopInstaller/Versions"},
-		// Bucket{"nightlies", "https://github.com/ScoopInstaller/Nightlies"}, contains faulty manifest
+		Bucket{"nightlies", "https://github.com/ScoopInstaller/Nightlies"},
 		Bucket{"nirsoft", "https://github.com/kodybrown/scoop-nirsoft"},
 		Bucket{"php", "https://github.com/ScoopInstaller/PHP"},
 		Bucket{"nonportable", "https://github.com/TheRandomLabs/scoop-nonportable"},
@@ -75,21 +77,23 @@ func clone(bucket Bucket) {
 func readFilesToArray(files []string) []string {
 	log.Println("Reading manifests and gathering additional data")
 	var result []string
+	errorCount := 0
+	successCount := 0
 	for i := 0; i < len(files); i++ {
-		dat, err := ioutil.ReadFile(files[i])
-		catch(err, "", "")
+		manifest, err := gabs.ParseJSONFile(files[i])
 		name, bucket := extractManifestDetails(files[i])
-		manifest := addManifestDetails(string(dat), name, bucket)
-		result = append(result, manifest)
+		manifest, err = manifest.Set(name, "name")
+		manifest, err = manifest.Set(bucket, "bucket")
+		if err == nil {
+			result = append(result, manifest.String())
+			successCount = successCount + 1
+		} else {
+			errorCount = errorCount + 1
+		}
 	}
+	log.Println("Successfully parsed " + strconv.Itoa(successCount) + " manifests.")
+	log.Println("Skipped " + strconv.Itoa(errorCount) + " erroneous manifests.")
 	return result
-}
-
-func addManifestDetails(manifest string, name string, bucket string) string {
-	runes := []rune(manifest)
-	manifest = string(runes[2 : len(runes)-1])
-	manifest = "{ \"name\": \"" + name + "\", \"bucket\": \"" + bucket + "\", " + manifest
-	return manifest
 }
 
 func extractManifestDetails(path string) (string, string) {

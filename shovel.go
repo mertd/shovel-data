@@ -37,7 +37,7 @@ type Bucket struct {
 	url  string
 }
 
-func cloneBuckets() {
+func getBuckets() []Bucket {
 	buckets := []Bucket{
 		{"main", "https://github.com/ScoopInstaller/Main"},
 		{"extras", "https://github.com/lukesampson/scoop-extras"},
@@ -49,13 +49,18 @@ func cloneBuckets() {
 		{"java", "https://github.com/ScoopInstaller/Java"},
 		{"games", "https://github.com/Calinou/scoop-games"},
 	}
+	return buckets
+}
+
+func cloneBuckets() {
+	buckets := getBuckets()
 	for i := 0; i < len(buckets); i++ {
 		clone(buckets[i])
 	}
 }
 
-func write(filename string, content string) {
-	file, err := os.Create("docs/" + filename)
+func write(fileName string, content string) {
+	file, err := os.Create("docs/" + fileName)
 	catch(err, "", "")
 	defer file.Close()
 	_, err = io.WriteString(file, content)
@@ -80,9 +85,10 @@ func parseManifests(files []string) []string {
 	successCount := 0
 	for i := 0; i < len(files); i++ {
 		manifest, err := gabs.ParseJSONFile(files[i])
-		name, bucket := extractManifestDetails(files[i])
+		name, bucket, manifestURL := extractManifestDetails(files[i])
 		manifest.Set(name, "name")
 		manifest.Set(bucket, "bucket")
+		manifest.Set(manifestURL, "manifestURL")
 		if err == nil {
 			result = append(result, manifest.String())
 			successCount = successCount + 1
@@ -96,14 +102,24 @@ func parseManifests(files []string) []string {
 	return result
 }
 
-func extractManifestDetails(path string) (string, string) {
+func extractManifestDetails(path string) (string, string, string) {
+	// extract from filename
 	separator := string(os.PathSeparator)
-	pathParts := strings.Split(path, separator)
-	bucket := pathParts[1] // workDir/bucket
-	nameWithJSON := pathParts[len(pathParts)-1]
+	parts := strings.Split(path, separator)
+	bucket := parts[1] // workDir/bucket
+	nameWithJSON := parts[len(parts)-1]
 	jsonParts := strings.Split(nameWithJSON, ".json")
 	name := jsonParts[0]
-	return name, bucket
+	// extract from repository url
+	buckets := getBuckets()
+	var repositoryURL string
+	for i := 0; i < len(buckets); i++ {
+		if buckets[i].name == bucket {
+			repositoryURL = buckets[i].url
+		}
+	}
+	manifestURL := repositoryURL + "/" + bucket + "/" + name + ".json"
+	return name, bucket, manifestURL
 }
 
 func prepareWorkDir() {

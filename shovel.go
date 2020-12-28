@@ -34,20 +34,23 @@ func main() {
 // A Bucket consists of its name and a git url
 type Bucket struct {
 	name string
-	url  string
+	repo string
 }
+
+var gitHubURL = "https://github.com/"
+var rawGitHubURL = "https://raw.githubusercontent.com/"
 
 func getBuckets() []Bucket {
 	buckets := []Bucket{
-		{"main", "https://github.com/ScoopInstaller/Main"},
-		{"extras", "https://github.com/lukesampson/scoop-extras"},
-		{"versions", "https://github.com/ScoopInstaller/Versions"},
-		{"nightlies", "https://github.com/ScoopInstaller/Nightlies"},
-		{"nirsoft", "https://github.com/kodybrown/scoop-nirsoft"},
-		{"php", "https://github.com/ScoopInstaller/PHP"},
-		{"nonportable", "https://github.com/TheRandomLabs/scoop-nonportable"},
-		{"java", "https://github.com/ScoopInstaller/Java"},
-		{"games", "https://github.com/Calinou/scoop-games"},
+		{"main", "ScoopInstaller/Main"},
+		{"extras", "lukesampson/scoop-extras"},
+		{"versions", "ScoopInstaller/Versions"},
+		{"nightlies", "ScoopInstaller/Nightlies"},
+		{"nirsoft", "kodybrown/scoop-nirsoft"},
+		{"php", "ScoopInstaller/PHP"},
+		{"nonportable", "TheRandomLabs/scoop-nonportable"},
+		{"java", "ScoopInstaller/Java"},
+		{"games", "Calinou/scoop-games"},
 	}
 	return buckets
 }
@@ -71,7 +74,7 @@ func clone(bucket Bucket) {
 	log.Println("Cloning bucket repository " + bucket.name)
 	var stdout bytes.Buffer
 	var stderr bytes.Buffer
-	cmd := exec.Command("git", "clone", bucket.url, workDir+"/"+bucket.name)
+	cmd := exec.Command("git", "clone", gitHubURL+bucket.repo, workDir+"/"+bucket.name)
 	cmd.Stdout = &stdout
 	cmd.Stderr = &stderr
 	err := cmd.Run()
@@ -85,10 +88,11 @@ func parseManifests(files []string) []string {
 	successCount := 0
 	for i := 0; i < len(files); i++ {
 		manifest, err := gabs.ParseJSONFile(files[i])
-		name, bucket, manifestURL := extractManifestDetails(files[i])
+		name, bucket, manifestURL, rawManifestURL := extractManifestDetails(files[i])
 		manifest.Set(name, "name")
 		manifest.Set(bucket, "bucket")
 		manifest.Set(manifestURL, "manifestURL")
+		manifest.Set(rawManifestURL, "rawManifestURL")
 		if err == nil {
 			result = append(result, manifest.String())
 			successCount = successCount + 1
@@ -102,7 +106,7 @@ func parseManifests(files []string) []string {
 	return result
 }
 
-func extractManifestDetails(path string) (string, string, string) {
+func extractManifestDetails(path string) (string, string, string, string) {
 	// extract from filename
 	separator := string(os.PathSeparator)
 	parts := strings.Split(path, separator)
@@ -112,14 +116,16 @@ func extractManifestDetails(path string) (string, string, string) {
 	name := jsonParts[0]
 	// extract from repository url
 	buckets := getBuckets()
-	var repositoryURL string
+	var repo string
 	for i := 0; i < len(buckets); i++ {
 		if buckets[i].name == bucket {
-			repositoryURL = buckets[i].url
+			repo = buckets[i].repo
+
 		}
 	}
-	manifestURL := repositoryURL + "/tree/master/bucket/" + name + ".json"
-	return name, bucket, manifestURL
+	manifestURL := gitHubURL + repo + "/tree/master/bucket/" + name + ".json"
+	rawManifestURL := rawGitHubURL + repo + "/master/bucket/" + name + ".json"
+	return name, bucket, manifestURL, rawManifestURL
 }
 
 func prepareWorkDir() {

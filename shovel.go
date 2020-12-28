@@ -34,28 +34,36 @@ func main() {
 // A Bucket consists of its name and a git url
 type Bucket struct {
 	name string
-	url  string
+	repo string
+}
+
+var gitHubURL = "https://github.com/"
+var rawGitHubURL = "https://raw.githubusercontent.com/"
+
+func getBuckets() []Bucket {
+	buckets := []Bucket{
+		{"main", "ScoopInstaller/Main"},
+		{"extras", "lukesampson/scoop-extras"},
+		{"versions", "ScoopInstaller/Versions"},
+		{"nightlies", "ScoopInstaller/Nightlies"},
+		{"nirsoft", "kodybrown/scoop-nirsoft"},
+		{"php", "ScoopInstaller/PHP"},
+		{"nonportable", "TheRandomLabs/scoop-nonportable"},
+		{"java", "ScoopInstaller/Java"},
+		{"games", "Calinou/scoop-games"},
+	}
+	return buckets
 }
 
 func cloneBuckets() {
-	buckets := []Bucket{
-		{"main", "https://github.com/ScoopInstaller/Main"},
-		{"extras", "https://github.com/lukesampson/scoop-extras"},
-		{"versions", "https://github.com/ScoopInstaller/Versions"},
-		{"nightlies", "https://github.com/ScoopInstaller/Nightlies"},
-		{"nirsoft", "https://github.com/kodybrown/scoop-nirsoft"},
-		{"php", "https://github.com/ScoopInstaller/PHP"},
-		{"nonportable", "https://github.com/TheRandomLabs/scoop-nonportable"},
-		{"java", "https://github.com/ScoopInstaller/Java"},
-		{"games", "https://github.com/Calinou/scoop-games"},
-	}
+	buckets := getBuckets()
 	for i := 0; i < len(buckets); i++ {
 		clone(buckets[i])
 	}
 }
 
-func write(filename string, content string) {
-	file, err := os.Create("docs/" + filename)
+func write(fileName string, content string) {
+	file, err := os.Create("docs/" + fileName)
 	catch(err, "", "")
 	defer file.Close()
 	_, err = io.WriteString(file, content)
@@ -66,7 +74,7 @@ func clone(bucket Bucket) {
 	log.Println("Cloning bucket repository " + bucket.name)
 	var stdout bytes.Buffer
 	var stderr bytes.Buffer
-	cmd := exec.Command("git", "clone", bucket.url, workDir+"/"+bucket.name)
+	cmd := exec.Command("git", "clone", gitHubURL+bucket.repo, workDir+"/"+bucket.name)
 	cmd.Stdout = &stdout
 	cmd.Stderr = &stderr
 	err := cmd.Run()
@@ -80,9 +88,11 @@ func parseManifests(files []string) []string {
 	successCount := 0
 	for i := 0; i < len(files); i++ {
 		manifest, err := gabs.ParseJSONFile(files[i])
-		name, bucket := extractManifestDetails(files[i])
+		name, bucket, manifestURL, rawManifestURL := extractManifestDetails(files[i])
 		manifest.Set(name, "name")
 		manifest.Set(bucket, "bucket")
+		manifest.Set(manifestURL, "manifestURL")
+		manifest.Set(rawManifestURL, "rawManifestURL")
 		if err == nil {
 			result = append(result, manifest.String())
 			successCount = successCount + 1
@@ -96,14 +106,26 @@ func parseManifests(files []string) []string {
 	return result
 }
 
-func extractManifestDetails(path string) (string, string) {
+func extractManifestDetails(path string) (string, string, string, string) {
+	// extract from filename
 	separator := string(os.PathSeparator)
-	pathParts := strings.Split(path, separator)
-	bucket := pathParts[1] // workDir/bucket
-	nameWithJSON := pathParts[len(pathParts)-1]
+	parts := strings.Split(path, separator)
+	bucket := parts[1] // workDir/bucket
+	nameWithJSON := parts[len(parts)-1]
 	jsonParts := strings.Split(nameWithJSON, ".json")
 	name := jsonParts[0]
-	return name, bucket
+	// extract from repository url
+	buckets := getBuckets()
+	var repo string
+	for i := 0; i < len(buckets); i++ {
+		if buckets[i].name == bucket {
+			repo = buckets[i].repo
+
+		}
+	}
+	manifestURL := gitHubURL + repo + "/tree/master/bucket/" + name + ".json"
+	rawManifestURL := rawGitHubURL + repo + "/master/bucket/" + name + ".json"
+	return name, bucket, manifestURL, rawManifestURL
 }
 
 func prepareWorkDir() {

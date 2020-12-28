@@ -10,7 +10,7 @@ This is the prework for the [Shovel](https://shovel.sh) SPA that allows to searc
 
 ## Run
 
-`go run shovel.go`
+`go get && go run shovel.go`
 
 ## Use
 

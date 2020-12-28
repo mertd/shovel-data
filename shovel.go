@@ -118,7 +118,7 @@ func extractManifestDetails(path string) (string, string, string) {
 			repositoryURL = buckets[i].url
 		}
 	}
-	manifestURL := repositoryURL + "/" + bucket + "/" + name + ".json"
+	manifestURL := repositoryURL + "/tree/master/bucket/" + name + ".json"
 	return name, bucket, manifestURL
 }
 

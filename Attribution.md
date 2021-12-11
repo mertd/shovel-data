@@ -3,6 +3,7 @@
 The manifests included in this repository were originally created and are maintained by contributors to the following scoop buckets. Their respective licence are quoted as well.
 
 ### [main](https://github.com/ScoopInstaller/Main)
+
 ```
 This is free and unencumbered software released into the public domain.
 
@@ -29,7 +30,9 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to <http://unlicense.org/>
 ```
+
 ### [extras](https://github.com/lukesampson/scoop-extras)
+
 ```
 This is free and unencumbered software released into the public domain.
 
@@ -56,7 +59,9 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to <http://unlicense.org/>
 ```
+
 ### [versions](https://github.com/ScoopInstaller/Versions)
+
 ```
 This is free and unencumbered software released into the public domain.
 
@@ -83,7 +88,9 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to <http://unlicense.org>
 ```
+
 ### [nirsoft](https://github.com/kodybrown/scoop-nirsoft)
+
 ```
 This is free and unencumbered software released into the public domain.
 
@@ -110,7 +117,9 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to <http://unlicense.org/>
 ```
+
 ### [php](https://github.com/ScoopInstaller/PHP)
+
 ```
 MIT License
 
@@ -134,7 +143,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+
 ### [nonportable](https://github.com/TheRandomLabs/scoop-nonportable)
+
 ```
 This is free and unencumbered software released into the public domain.
 
@@ -161,7 +172,9 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to <http://unlicense.org>
 ```
+
 ### [java](https://github.com/ScoopInstaller/Java)
+
 ```
 This is free and unencumbered software released into the public domain.
 
@@ -188,7 +201,9 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to <http://unlicense.org>
 ```
+
 ### [games](https://github.com/Calinou/scoop-games)
+
 ```md
 ## creative commons
 

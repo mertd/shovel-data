@@ -6,6 +6,9 @@ on:
   push:
     branches: 
       - master
+  pull_request:
+    branches:
+      - master
   workflow_dispatch:
 
 jobs:
@@ -39,11 +42,13 @@ jobs:
       run: go run ./shovel.go
     
     - name: Commit
+      if: github.ref == 'refs/heads/master'
       run: |
         git config --local user.name "GitHub Action"
         git config --local user.email "action@github.com"
         git commit -am "Update manifests"
 
     - name: Push
+      if: github.ref == 'refs/heads/master'
       run: |
         git push origin master

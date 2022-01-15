@@ -91,16 +91,16 @@ func parseManifests(files []string) []string {
 		// set filtered manifest keys
 		manifest, err := gabs.ParseJSONFile(files[i])
 		homepage, version, description, github := extractManifestContents(manifest);
-		index.Set(homepage, "homepage");
-		index.Set(version, "version");
-		index.Set(description, "description");
-		index.Set(github, "checkver.github");
+		index.SetP(homepage, "homepage");
+		index.SetP(version, "version");
+		index.SetP(description, "description");
+		index.SetP(github, "checkver.github");
 		// set custom keys
 		name, bucket, manifestURL, rawManifestURL := extractManifestDetails(files[i])
-		index.Set(name, "name")
-		index.Set(bucket, "bucket")
-		index.Set(manifestURL, "manifestURL")
-		index.Set(rawManifestURL, "rawManifestURL")
+		index.SetP(name, "name")
+		index.SetP(bucket, "bucket")
+		index.SetP(manifestURL, "manifestURL")
+		index.SetP(rawManifestURL, "rawManifestURL")
 		if err == nil {
 			result = append(result, index.String())
 			successCount = successCount + 1

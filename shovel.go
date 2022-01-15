@@ -94,7 +94,9 @@ func parseManifests(files []string) []string {
 		index.SetP(homepage, "homepage");
 		index.SetP(version, "version");
 		index.SetP(description, "description");
-		index.SetP(github, "checkver.github");
+		if github != "" {
+			index.SetP(github, "checkver.github");
+		}
 		// set custom keys
 		name, bucket, manifestURL, rawManifestURL := extractManifestDetails(files[i])
 		index.SetP(name, "name")

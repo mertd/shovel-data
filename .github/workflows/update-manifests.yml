@@ -37,6 +37,12 @@ jobs:
 
     - name: Run
       run: go run ./shovel.go
+
+    - name: Archive
+      uses: actions/upload-artifact@v2
+      with:
+        name: manifests
+        path: docs/manifests.json
     
     - name: Commit
       if: github.ref == 'refs/heads/master'

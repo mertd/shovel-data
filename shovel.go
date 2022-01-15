@@ -38,7 +38,6 @@ type Bucket struct {
 }
 
 var gitHubURL = "https://github.com/"
-var rawGitHubURL = "https://raw.githubusercontent.com/"
 
 func getBuckets() []Bucket {
 	buckets := []Bucket{
@@ -87,14 +86,23 @@ func parseManifests(files []string) []string {
 	errorCount := 0
 	successCount := 0
 	for i := 0; i < len(files); i++ {
+		index := gabs.New()
+		// set filtered manifest keys
 		manifest, err := gabs.ParseJSONFile(files[i])
-		name, bucket, manifestURL, rawManifestURL := extractManifestDetails(files[i])
-		manifest.Set(name, "name")
-		manifest.Set(bucket, "bucket")
-		manifest.Set(manifestURL, "manifestURL")
-		manifest.Set(rawManifestURL, "rawManifestURL")
+		homepage, version, description, github := extractManifestContents(manifest);
+		index.SetP(homepage, "homepage");
+		index.SetP(version, "version");
+		index.SetP(description, "description");
+		if github != "" {
+			index.SetP(github, "checkver.github");
+		}
+		// set custom keys
+		name, bucket, manifestURL := extractManifestDetails(files[i])
+		index.SetP(name, "name")
+		index.SetP(bucket, "bucket")
+		index.SetP(manifestURL, "manifestURL")
 		if err == nil {
-			result = append(result, manifest.String())
+			result = append(result, index.String())
 			successCount = successCount + 1
 		} else {
 			log.Println("Skipping", name, "from", bucket, "--", err)
@@ -106,7 +114,32 @@ func parseManifests(files []string) []string {
 	return result
 }
 
-func extractManifestDetails(path string) (string, string, string, string) {
+func extractManifestContents(manifest *gabs.Container) (string, string, string, string) {
+	var homepage string
+	var version string
+	var description string
+	var github string
+	var ok bool
+	homepage, ok = manifest.Path("homepage").Data().(string)
+	if ok == false {
+		homepage = ""
+	}
+	version, ok = manifest.Path("version").Data().(string)
+	if ok == false {
+		version = ""
+	}
+	description, ok = manifest.Path("description").Data().(string)
+	if ok == false {
+		description = ""
+	}
+	github, ok = manifest.Path("checkver.github").Data().(string)
+	if ok == false {
+		github = ""
+	}
+	return homepage, version, description, github
+}
+
+func extractManifestDetails(path string) (string, string, string) {
 	// extract from filename
 	separator := string(os.PathSeparator)
 	parts := strings.Split(path, separator)
@@ -124,8 +157,7 @@ func extractManifestDetails(path string) (string, string, string, string) {
 		}
 	}
 	manifestURL := gitHubURL + repo + "/tree/master/bucket/" + name + ".json"
-	rawManifestURL := rawGitHubURL + repo + "/master/bucket/" + name + ".json"
-	return name, bucket, manifestURL, rawManifestURL
+	return name, bucket, manifestURL
 }
 
 func prepareWorkDir() {

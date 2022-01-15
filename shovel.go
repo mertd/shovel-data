@@ -38,7 +38,6 @@ type Bucket struct {
 }
 
 var gitHubURL = "https://github.com/"
-var rawGitHubURL = "https://raw.githubusercontent.com/"
 
 func getBuckets() []Bucket {
 	buckets := []Bucket{
@@ -98,11 +97,10 @@ func parseManifests(files []string) []string {
 			index.SetP(github, "checkver.github");
 		}
 		// set custom keys
-		name, bucket, manifestURL, rawManifestURL := extractManifestDetails(files[i])
+		name, bucket, manifestURL := extractManifestDetails(files[i])
 		index.SetP(name, "name")
 		index.SetP(bucket, "bucket")
 		index.SetP(manifestURL, "manifestURL")
-		index.SetP(rawManifestURL, "rawManifestURL")
 		if err == nil {
 			result = append(result, index.String())
 			successCount = successCount + 1
@@ -159,8 +157,7 @@ func extractManifestDetails(path string) (string, string, string, string) {
 		}
 	}
 	manifestURL := gitHubURL + repo + "/tree/master/bucket/" + name + ".json"
-	rawManifestURL := rawGitHubURL + repo + "/master/bucket/" + name + ".json"
-	return name, bucket, manifestURL, rawManifestURL
+	return name, bucket, manifestURL
 }
 
 func prepareWorkDir() {

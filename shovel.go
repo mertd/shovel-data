@@ -118,7 +118,11 @@ func extractManifestContents(manifest *gabs.Container) (string, string, string, 
 	homepage := manifest.Path("homepage").Data().(string)
 	version := manifest.Path("version").Data().(string)
 	description := manifest.Path("description").Data().(string)
-	github := manifest.Path("checkver.github").Data().(string)
+	string github = nil
+	_github, ok := manifest.Path("checkver.github").Data().(string)
+	if ok == true {
+		github = _github
+	}
 	return homepage, version, description, github
 }
 

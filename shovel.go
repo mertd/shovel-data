@@ -115,10 +115,10 @@ func parseManifests(files []string) []string {
 }
 
 func extractManifestContents(manifest *gabs.Container) (string, string, string, string) {
-	homepage := manifest.Path("homepage").Data().(string);
-	version := manifest.Path("version").Data().(string);
-	description := manifest.Path("description").Data().(string);
-	github := manifest.Path("checkver.github").Data().(string);
+	homepage := manifest.Path("homepage").Data().(string)
+	version := manifest.Path("version").Data().(string)
+	description := manifest.Path("description").Data().(string)
+	github := manifest.Path("checkver.github").Data().(string)
 	return homepage, version, description, github
 }
 

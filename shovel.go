@@ -114,7 +114,7 @@ func parseManifests(files []string) []string {
 	return result
 }
 
-func extractManifestContents(manifest gabs.Container) (string, string, string, string) {
+func extractManifestContents(manifest *gabs.Container) (string, string, string, string) {
 	homepage := manifest.Path("homepage");
 	version := manifest.Path("version");
 	description := manifest.Path("description");

@@ -90,7 +90,11 @@ func parseManifests(files []string) []string {
 		index := gabs.New()
 		// set filtered manifest keys
 		manifest, err := gabs.ParseJSONFile(files[i])
-		index = manifest // TODO: filter
+		homepage, version, description, github := extractManifestContents(manifest);
+		index.Set(homepage, "homepage");
+		index.Set(version, "version");
+		index.Set(description, "description");
+		index.Set(github, "checkver.github");
 		// set custom keys
 		name, bucket, manifestURL, rawManifestURL := extractManifestDetails(files[i])
 		index.Set(name, "name")
@@ -108,6 +112,14 @@ func parseManifests(files []string) []string {
 	log.Println("Successfully parsed", successCount, "manifest(s).")
 	log.Println("Skipped", errorCount, "erroneous manifest(s).")
 	return result
+}
+
+func extractManifestContents(manifest Container) (string, string, string, string) {
+	homepage := manifest.Path("homepage");
+	version := manifest.Path("version");
+	description := manifest.Path("description");
+	github := manifest.Path("checkver.github");
+	return homepage, version, description, github
 }
 
 func extractManifestDetails(path string) (string, string, string, string) {

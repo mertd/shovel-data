@@ -87,14 +87,18 @@ func parseManifests(files []string) []string {
 	errorCount := 0
 	successCount := 0
 	for i := 0; i < len(files); i++ {
+		index := gabs.New()
+		// set filtered manifest keys
 		manifest, err := gabs.ParseJSONFile(files[i])
+		index = manifest // TODO: filter
+		// set custom keys
 		name, bucket, manifestURL, rawManifestURL := extractManifestDetails(files[i])
-		manifest.Set(name, "name")
-		manifest.Set(bucket, "bucket")
-		manifest.Set(manifestURL, "manifestURL")
-		manifest.Set(rawManifestURL, "rawManifestURL")
+		index.Set(name, "name")
+		index.Set(bucket, "bucket")
+		index.Set(manifestURL, "manifestURL")
+		index.Set(rawManifestURL, "rawManifestURL")
 		if err == nil {
-			result = append(result, manifest.String())
+			result = append(result, index.String())
 			successCount = successCount + 1
 		} else {
 			log.Println("Skipping", name, "from", bucket, "--", err)

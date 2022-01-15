@@ -139,8 +139,6 @@ func extractManifestContents(manifest *gabs.Container) (string, string, string, 
 	return homepage, version, description, github
 }
 
-func extract()
-
 func extractManifestDetails(path string) (string, string, string, string) {
 	// extract from filename
 	separator := string(os.PathSeparator)

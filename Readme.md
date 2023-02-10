@@ -2,11 +2,9 @@
 
 A script that checks out all supported [scoop](https://scoop.sh/) buckets and collects the manifests in one searchable json file.
 
-Use [Shovel](https://shovel.sh) to access the search.
-
 ## Motivation
 
-This is the prework for the [Shovel](https://shovel.sh) SPA that allows to search for scoop apps without having to run a server. Also, I wanted to try out Go.
+This is the prework for the [Shovel](https://github.com/mertd/shovel) SPA that allows to search for scoop apps without having to run a server. Also, I wanted to try out Go.
 
 ## Run
 
